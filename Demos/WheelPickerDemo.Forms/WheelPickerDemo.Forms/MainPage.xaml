@@ -1,0 +1,64 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:wp="clr-namespace:Vapolia.WheelPickerForms;assembly=Vapolia.WheelPickerForms"
+             x:Class="WheelPickerDemo.Forms.MainPage">
+
+    <StackLayout Margin="20" Spacing="10">
+
+        <BoxView BackgroundColor="GreenYellow" HeightRequest="1" />
+        <Label Text="Vapolia Wheel Picker for Xamarin Forms" HorizontalOptions="Center" TextColor="Green" />
+        <Label Text="Circular image wheel, with spin button" HorizontalOptions="Center" />
+        <BoxView BackgroundColor="GreenYellow" HeightRequest="1" />
+        
+        <StackLayout Orientation="Horizontal">
+            <Label Text="Selection: '" />
+            <Label Text="{Binding DayPicker.SelectedItem}" />
+            <Label Text="'" />
+        </StackLayout>
+
+        <wp:WheelPicker x:Name="WheelDayPicker" ItemsSourceSimple="{Binding DayPicker.ItemsSource}" 
+                    SelectedItemsIndex="0"
+                    Command="{Binding DayPicker.ItemSelectedCommand}" 
+                    ItemTextColor="Green"
+                    ItemTextSelectedColor="Lime"
+                    ItemTextFont="Italic"
+                    HorizontalOptions="Fill"
+                    SelectionLinesColor="Aquamarine">
+            <wp:WheelPicker.WheelDefinitions>
+                <!--Simplest version
+                    <wp:WheelDefinition Width="Auto" HorizontalOptions="Left" Alignment="Center" />-->
+                <!--Circular wheel
+                    <wp:WheelDefinition Width="Auto" HorizontalOptions="Left" Alignment="Center" IsCircular="True" />-->
+                <!-- Templated wheel. Width can not be Auto. RowHeight is 44 by default on iOS. -->
+                <!-- When RowHeight is lower than HeightRequest, row spacing disappear, making a nice no-gap effect -->
+                <wp:WheelDefinition Width="*" HorizontalOptions="Left" Alignment="Center" IsCircular="True">
+                    <wp:WheelDefinition.RowHeight>
+                        <OnPlatform x:TypeArguments="x:Double" Android="48" iOS="48" />
+                        <!--
+                        Does not work
+                        <OnPlatform x:TypeArguments="x:Double">
+                            <On Platform="iOS" Value="48"/>
+                            <On Platform="Android" Value="50"/>
+                        </OnPlatform>-->
+                    </wp:WheelDefinition.RowHeight>
+                    <wp:WheelDefinition.ImageItemTemplate>
+                        <DataTemplate>
+                            <Image Source="{Binding .}" HeightRequest="48" Aspect="AspectFill" />
+                        </DataTemplate>
+                    </wp:WheelDefinition.ImageItemTemplate>
+                </wp:WheelDefinition>
+            </wp:WheelPicker.WheelDefinitions>
+        </wp:WheelPicker>
+
+        <Button Text="Spin wheel" Clicked="ButtonSpin_OnClicked" />
+
+        <Label TextColor="DimGray" FontSize="10">
+            This wheel uses an ImageItemTemplate in its single WheelDefinition. The template is bound to a collection of image source names.
+            The spin button demonstrates the ability to spin any wheel by code.
+            This wheel is also circular: it never ends when scrolling top or bottom.
+        </Label>
+        
+    </StackLayout>
+
+</ContentPage>

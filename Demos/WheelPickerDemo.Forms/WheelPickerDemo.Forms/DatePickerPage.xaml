@@ -1,0 +1,38 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:wp="clr-namespace:Vapolia.WheelPickerForms;assembly=Vapolia.WheelPickerForms"
+             x:Class="WheelPickerDemo.Forms.DatePickerPage">
+
+    <StackLayout Margin="20" Spacing="10">
+
+        <BoxView BackgroundColor="GreenYellow" HeightRequest="1" />
+        <Label Text="Vapolia Wheel Picker for Xamarin Forms" HorizontalOptions="Center" TextColor="Green" />
+        <Label Text="Date Picker, with dynamic wheel adjustement" HorizontalOptions="Center" />
+        <BoxView BackgroundColor="GreenYellow" HeightRequest="1" />
+
+        <Label Text="Selected date:" />
+        <Label Text="{Binding DatePicker.SelectedItem}" />
+
+        <!--SelectedItemsIndex="0,0,0"-->
+        <wp:WheelPicker SelectionLinesColor="Navy" 
+                        HorizontalSpaceBetweenWheels="40" 
+                        ItemsSourceMulti="{Binding DatePicker.ItemsSource}"  
+                        SelectedItemsIndex="{Binding DatePicker.SelectedItemsIndex,Mode=OneWay}" 
+                        Command="{Binding DatePicker.ItemSelectedCommand}"
+                        HorizontalOptions="Fill">
+            <wp:WheelPicker.WheelDefinitions>
+                <wp:WheelDefinition Width="*" HorizontalOptions="Right" />
+                <wp:WheelDefinition Width="Auto" HorizontalOptions="Left"  />
+                <wp:WheelDefinition Width="*" HorizontalOptions="Left"  />
+            </wp:WheelPicker.WheelDefinitions>
+        </wp:WheelPicker>
+
+        <Label TextColor="DimGray" FontSize="10">
+            This wheel uses three definitions to implement a date picker. The day collection is dynamically adjusted by the model when the selection of the month wheel is changed, so the day wheel is always limited to the days available in the selected month. For example if the selected day is 31 and february is selected, the day wheel will spin to 28 automatically.
+            The middle wheel width is set to Auto: it is adjusted to the width of its largest item and won't take more space. The left and right wheel takes the full remaining space, and the left wheel content is aligned to its right.
+        </Label>
+
+    </StackLayout>
+
+</ContentPage>
