@@ -42,11 +42,11 @@
                             <On Platform="Android" Value="50"/>
                         </OnPlatform>-->
                     </wp:WheelDefinition.RowHeight>
-                    <wp:WheelDefinition.ImageItemTemplate>
+                    <wp:WheelDefinition.ItemTemplate>
                         <DataTemplate>
                             <Image Source="{Binding .}" HeightRequest="48" Aspect="AspectFill" />
                         </DataTemplate>
-                    </wp:WheelDefinition.ImageItemTemplate>
+                    </wp:WheelDefinition.ItemTemplate>
                 </wp:WheelDefinition>
             </wp:WheelPicker.WheelDefinitions>
         </wp:WheelPicker>
@@ -54,7 +54,7 @@
         <Button Text="Spin wheel" Clicked="ButtonSpin_OnClicked" />
 
         <Label TextColor="DimGray" FontSize="10">
-            This wheel uses an ImageItemTemplate in its single WheelDefinition. The template is bound to a collection of image source names.
+            This wheel uses an ItemTemplate in its single WheelDefinition. The template is bound to a collection of image source names.
             The spin button demonstrates the ability to spin any wheel by code.
             This wheel is also circular: it never ends when scrolling top or bottom.
         </Label>

@@ -26,53 +26,10 @@ namespace WheelPickerDemo.Forms.Droid
 		
 		public static void UpdateIdValues()
 		{
-			global::Vapolia.Resource.Array.days = global::WheelPickerDemo.Forms.Droid.Resource.Array.days;
-			global::Vapolia.Resource.Array.months = global::WheelPickerDemo.Forms.Droid.Resource.Array.months;
-			global::Vapolia.Resource.Array.wheelDefaultItems = global::WheelPickerDemo.Forms.Droid.Resource.Array.wheelDefaultItems;
-			global::Vapolia.Resource.Array.wheelDefaultItems2 = global::WheelPickerDemo.Forms.Droid.Resource.Array.wheelDefaultItems2;
-			global::Vapolia.Resource.Array.years = global::WheelPickerDemo.Forms.Droid.Resource.Array.years;
-			global::Vapolia.Resource.Attribute.enableTrace = global::WheelPickerDemo.Forms.Droid.Resource.Attribute.enableTrace;
-			global::Vapolia.Resource.Attribute.fadingItems = global::WheelPickerDemo.Forms.Droid.Resource.Attribute.fadingItems;
-			global::Vapolia.Resource.Attribute.horizontalSpaceBetweenWheels = global::WheelPickerDemo.Forms.Droid.Resource.Attribute.horizontalSpaceBetweenWheels;
-			global::Vapolia.Resource.Attribute.isCurved = global::WheelPickerDemo.Forms.Droid.Resource.Attribute.isCurved;
-			global::Vapolia.Resource.Attribute.itemAlign = global::WheelPickerDemo.Forms.Droid.Resource.Attribute.itemAlign;
-			global::Vapolia.Resource.Attribute.itemAligns = global::WheelPickerDemo.Forms.Droid.Resource.Attribute.itemAligns;
-			global::Vapolia.Resource.Attribute.itemHeights = global::WheelPickerDemo.Forms.Droid.Resource.Attribute.itemHeights;
 			global::Vapolia.Resource.Attribute.itemTextColor = global::WheelPickerDemo.Forms.Droid.Resource.Attribute.itemTextColor;
-			global::Vapolia.Resource.Attribute.itemTextSize = global::WheelPickerDemo.Forms.Droid.Resource.Attribute.itemTextSize;
-			global::Vapolia.Resource.Attribute.itemWidths = global::WheelPickerDemo.Forms.Droid.Resource.Attribute.itemWidths;
-			global::Vapolia.Resource.Attribute.itemsSource = global::WheelPickerDemo.Forms.Droid.Resource.Attribute.itemsSource;
-			global::Vapolia.Resource.Attribute.selectedItem = global::WheelPickerDemo.Forms.Droid.Resource.Attribute.selectedItem;
-			global::Vapolia.Resource.Attribute.selectedItemTextColor = global::WheelPickerDemo.Forms.Droid.Resource.Attribute.selectedItemTextColor;
-			global::Vapolia.Resource.Attribute.selectionLinesColor = global::WheelPickerDemo.Forms.Droid.Resource.Attribute.selectionLinesColor;
-			global::Vapolia.Resource.Attribute.selectionLinesThickness = global::WheelPickerDemo.Forms.Droid.Resource.Attribute.selectionLinesThickness;
-			global::Vapolia.Resource.Attribute.showSelectionLines = global::WheelPickerDemo.Forms.Droid.Resource.Attribute.showSelectionLines;
-			global::Vapolia.Resource.Attribute.verticalSpaceBetweenItems = global::WheelPickerDemo.Forms.Droid.Resource.Attribute.verticalSpaceBetweenItems;
-			global::Vapolia.Resource.Attribute.visibleItemCount = global::WheelPickerDemo.Forms.Droid.Resource.Attribute.visibleItemCount;
 			global::Vapolia.Resource.Id.center = global::WheelPickerDemo.Forms.Droid.Resource.Id.center;
 			global::Vapolia.Resource.Id.left = global::WheelPickerDemo.Forms.Droid.Resource.Id.left;
 			global::Vapolia.Resource.Id.right = global::WheelPickerDemo.Forms.Droid.Resource.Id.right;
-			global::Vapolia.Resource.Style.WheelPickerStyle = global::WheelPickerDemo.Forms.Droid.Resource.Style.WheelPickerStyle;
-			global::Vapolia.Resource.Styleable.WheelPicker = global::WheelPickerDemo.Forms.Droid.Resource.Styleable.WheelPicker;
-			global::Vapolia.Resource.Styleable.WheelPicker_android_gravity = global::WheelPickerDemo.Forms.Droid.Resource.Styleable.WheelPicker_android_gravity;
-			global::Vapolia.Resource.Styleable.WheelPicker_enableTrace = global::WheelPickerDemo.Forms.Droid.Resource.Styleable.WheelPicker_enableTrace;
-			global::Vapolia.Resource.Styleable.WheelPicker_fadingItems = global::WheelPickerDemo.Forms.Droid.Resource.Styleable.WheelPicker_fadingItems;
-			global::Vapolia.Resource.Styleable.WheelPicker_horizontalSpaceBetweenWheels = global::WheelPickerDemo.Forms.Droid.Resource.Styleable.WheelPicker_horizontalSpaceBetweenWheels;
-			global::Vapolia.Resource.Styleable.WheelPicker_isCurved = global::WheelPickerDemo.Forms.Droid.Resource.Styleable.WheelPicker_isCurved;
-			global::Vapolia.Resource.Styleable.WheelPicker_itemAlign = global::WheelPickerDemo.Forms.Droid.Resource.Styleable.WheelPicker_itemAlign;
-			global::Vapolia.Resource.Styleable.WheelPicker_itemAligns = global::WheelPickerDemo.Forms.Droid.Resource.Styleable.WheelPicker_itemAligns;
-			global::Vapolia.Resource.Styleable.WheelPicker_itemHeights = global::WheelPickerDemo.Forms.Droid.Resource.Styleable.WheelPicker_itemHeights;
-			global::Vapolia.Resource.Styleable.WheelPicker_itemTextColor = global::WheelPickerDemo.Forms.Droid.Resource.Styleable.WheelPicker_itemTextColor;
-			global::Vapolia.Resource.Styleable.WheelPicker_itemTextSize = global::WheelPickerDemo.Forms.Droid.Resource.Styleable.WheelPicker_itemTextSize;
-			global::Vapolia.Resource.Styleable.WheelPicker_itemWidths = global::WheelPickerDemo.Forms.Droid.Resource.Styleable.WheelPicker_itemWidths;
-			global::Vapolia.Resource.Styleable.WheelPicker_itemsSource = global::WheelPickerDemo.Forms.Droid.Resource.Styleable.WheelPicker_itemsSource;
-			global::Vapolia.Resource.Styleable.WheelPicker_selectedItem = global::WheelPickerDemo.Forms.Droid.Resource.Styleable.WheelPicker_selectedItem;
-			global::Vapolia.Resource.Styleable.WheelPicker_selectedItemTextColor = global::WheelPickerDemo.Forms.Droid.Resource.Styleable.WheelPicker_selectedItemTextColor;
-			global::Vapolia.Resource.Styleable.WheelPicker_selectionLinesColor = global::WheelPickerDemo.Forms.Droid.Resource.Styleable.WheelPicker_selectionLinesColor;
-			global::Vapolia.Resource.Styleable.WheelPicker_selectionLinesThickness = global::WheelPickerDemo.Forms.Droid.Resource.Styleable.WheelPicker_selectionLinesThickness;
-			global::Vapolia.Resource.Styleable.WheelPicker_showSelectionLines = global::WheelPickerDemo.Forms.Droid.Resource.Styleable.WheelPicker_showSelectionLines;
-			global::Vapolia.Resource.Styleable.WheelPicker_verticalSpaceBetweenItems = global::WheelPickerDemo.Forms.Droid.Resource.Styleable.WheelPicker_verticalSpaceBetweenItems;
-			global::Vapolia.Resource.Styleable.WheelPicker_visibleItemCount = global::WheelPickerDemo.Forms.Droid.Resource.Styleable.WheelPicker_visibleItemCount;
 			global::Xamarin.Forms.Platform.Android.Resource.Attribute.actionBarSize = global::WheelPickerDemo.Forms.Droid.Resource.Attribute.actionBarSize;
 		}
 		
@@ -149,34 +106,6 @@ namespace WheelPickerDemo.Forms.Droid
 			}
 			
 			private Animator()
-			{
-			}
-		}
-		
-		public partial class Array
-		{
-			
-			// aapt resource value: 0x7f0e0001
-			public const int days = 2131623937;
-			
-			// aapt resource value: 0x7f0e0002
-			public const int months = 2131623938;
-			
-			// aapt resource value: 0x7f0e0000
-			public const int wheelDefaultItems = 2131623936;
-			
-			// aapt resource value: 0x7f0e0004
-			public const int wheelDefaultItems2 = 2131623940;
-			
-			// aapt resource value: 0x7f0e0003
-			public const int years = 2131623939;
-			
-			static Array()
-			{
-				global::Android.Runtime.ResourceIdManager.UpdateIdValues();
-			}
-			
-			private Array()
 			{
 			}
 		}
@@ -592,9 +521,6 @@ namespace WheelPickerDemo.Forms.Droid
 			// aapt resource value: 0x7f01003e
 			public const int elevation = 2130772030;
 			
-			// aapt resource value: 0x7f010173
-			public const int enableTrace = 2130772339;
-			
 			// aapt resource value: 0x7f01015e
 			public const int errorEnabled = 2130772318;
 			
@@ -633,9 +559,6 @@ namespace WheelPickerDemo.Forms.Droid
 			
 			// aapt resource value: 0x7f01013d
 			public const int fabSize = 2130772285;
-			
-			// aapt resource value: 0x7f01017d
-			public const int fadingItems = 2130772349;
 			
 			// aapt resource value: 0x7f010004
 			public const int fastScrollEnabled = 2130771972;
@@ -715,9 +638,6 @@ namespace WheelPickerDemo.Forms.Droid
 			// aapt resource value: 0x7f010032
 			public const int homeLayout = 2130772018;
 			
-			// aapt resource value: 0x7f010177
-			public const int horizontalSpaceBetweenWheels = 2130772343;
-			
 			// aapt resource value: 0x7f01002b
 			public const int icon = 2130772011;
 			
@@ -742,23 +662,11 @@ namespace WheelPickerDemo.Forms.Droid
 			// aapt resource value: 0x7f010149
 			public const int insetForeground = 2130772297;
 			
-			// aapt resource value: 0x7f010179
-			public const int isCurved = 2130772345;
-			
 			// aapt resource value: 0x7f010024
 			public const int isLightTheme = 2130772004;
 			
-			// aapt resource value: 0x7f01017c
-			public const int itemAlign = 2130772348;
-			
-			// aapt resource value: 0x7f010182
-			public const int itemAligns = 2130772354;
-			
 			// aapt resource value: 0x7f010146
 			public const int itemBackground = 2130772294;
-			
-			// aapt resource value: 0x7f010183
-			public const int itemHeights = 2130772355;
 			
 			// aapt resource value: 0x7f010144
 			public const int itemIconTint = 2130772292;
@@ -771,15 +679,6 @@ namespace WheelPickerDemo.Forms.Droid
 			
 			// aapt resource value: 0x7f010145
 			public const int itemTextColor = 2130772293;
-			
-			// aapt resource value: 0x7f01017b
-			public const int itemTextSize = 2130772347;
-			
-			// aapt resource value: 0x7f010181
-			public const int itemWidths = 2130772353;
-			
-			// aapt resource value: 0x7f010174
-			public const int itemsSource = 2130772340;
 			
 			// aapt resource value: 0x7f010131
 			public const int keylines = 2130772273;
@@ -1033,26 +932,11 @@ namespace WheelPickerDemo.Forms.Droid
 			// aapt resource value: 0x7f01008a
 			public const int selectableItemBackgroundBorderless = 2130772106;
 			
-			// aapt resource value: 0x7f010175
-			public const int selectedItem = 2130772341;
-			
-			// aapt resource value: 0x7f01017a
-			public const int selectedItemTextColor = 2130772346;
-			
-			// aapt resource value: 0x7f01017f
-			public const int selectionLinesColor = 2130772351;
-			
-			// aapt resource value: 0x7f010180
-			public const int selectionLinesThickness = 2130772352;
-			
 			// aapt resource value: 0x7f0100dc
 			public const int showAsAction = 2130772188;
 			
 			// aapt resource value: 0x7f0100d8
 			public const int showDividers = 2130772184;
-			
-			// aapt resource value: 0x7f01017e
-			public const int showSelectionLines = 2130772350;
 			
 			// aapt resource value: 0x7f010101
 			public const int showText = 2130772225;
@@ -1308,12 +1192,6 @@ namespace WheelPickerDemo.Forms.Droid
 			
 			// aapt resource value: 0x7f010140
 			public const int useCompatPadding = 2130772288;
-			
-			// aapt resource value: 0x7f010178
-			public const int verticalSpaceBetweenItems = 2130772344;
-			
-			// aapt resource value: 0x7f010176
-			public const int visibleItemCount = 2130772342;
 			
 			// aapt resource value: 0x7f0100f2
 			public const int voiceIcon = 2130772210;
@@ -4298,8 +4176,8 @@ namespace WheelPickerDemo.Forms.Droid
 			// aapt resource value: 0x7f0b0178
 			public const int Animation_Design_BottomSheetDialog = 2131427704;
 			
-			// aapt resource value: 0x7f0b019c
-			public const int AppCompatDialogStyle = 2131427740;
+			// aapt resource value: 0x7f0b019b
+			public const int AppCompatDialogStyle = 2131427739;
 			
 			// aapt resource value: 0x7f0b00b1
 			public const int Base_AlertDialog_AppCompat = 2131427505;
@@ -4802,11 +4680,11 @@ namespace WheelPickerDemo.Forms.Droid
 			// aapt resource value: 0x7f0b000e
 			public const int CardView_Light = 2131427342;
 			
-			// aapt resource value: 0x7f0b019a
-			public const int MainTheme = 2131427738;
+			// aapt resource value: 0x7f0b0199
+			public const int MainTheme = 2131427737;
 			
-			// aapt resource value: 0x7f0b019b
-			public const int MainTheme_Base = 2131427739;
+			// aapt resource value: 0x7f0b019a
+			public const int MainTheme_Base = 2131427738;
 			
 			// aapt resource value: 0x7f0b002d
 			public const int Platform_AppCompat = 2131427373;
@@ -5254,9 +5132,6 @@ namespace WheelPickerDemo.Forms.Droid
 			
 			// aapt resource value: 0x7f0b0008
 			public const int ThemeOverlay_MediaRouter_Light = 2131427336;
-			
-			// aapt resource value: 0x7f0b0199
-			public const int WheelPickerStyle = 2131427737;
 			
 			// aapt resource value: 0x7f0b0127
 			public const int Widget_AppCompat_ActionBar = 2131427623;
@@ -7635,84 +7510,6 @@ namespace WheelPickerDemo.Forms.Droid
 			
 			// aapt resource value: 1
 			public const int ViewStubCompat_android_layout = 1;
-			
-			public static int[] WheelPicker = new int[] {
-					16842927,
-					2130772293,
-					2130772339,
-					2130772340,
-					2130772341,
-					2130772342,
-					2130772343,
-					2130772344,
-					2130772345,
-					2130772346,
-					2130772347,
-					2130772348,
-					2130772349,
-					2130772350,
-					2130772351,
-					2130772352,
-					2130772353,
-					2130772354,
-					2130772355};
-			
-			// aapt resource value: 0
-			public const int WheelPicker_android_gravity = 0;
-			
-			// aapt resource value: 2
-			public const int WheelPicker_enableTrace = 2;
-			
-			// aapt resource value: 12
-			public const int WheelPicker_fadingItems = 12;
-			
-			// aapt resource value: 6
-			public const int WheelPicker_horizontalSpaceBetweenWheels = 6;
-			
-			// aapt resource value: 8
-			public const int WheelPicker_isCurved = 8;
-			
-			// aapt resource value: 11
-			public const int WheelPicker_itemAlign = 11;
-			
-			// aapt resource value: 17
-			public const int WheelPicker_itemAligns = 17;
-			
-			// aapt resource value: 18
-			public const int WheelPicker_itemHeights = 18;
-			
-			// aapt resource value: 1
-			public const int WheelPicker_itemTextColor = 1;
-			
-			// aapt resource value: 10
-			public const int WheelPicker_itemTextSize = 10;
-			
-			// aapt resource value: 16
-			public const int WheelPicker_itemWidths = 16;
-			
-			// aapt resource value: 3
-			public const int WheelPicker_itemsSource = 3;
-			
-			// aapt resource value: 4
-			public const int WheelPicker_selectedItem = 4;
-			
-			// aapt resource value: 9
-			public const int WheelPicker_selectedItemTextColor = 9;
-			
-			// aapt resource value: 14
-			public const int WheelPicker_selectionLinesColor = 14;
-			
-			// aapt resource value: 15
-			public const int WheelPicker_selectionLinesThickness = 15;
-			
-			// aapt resource value: 13
-			public const int WheelPicker_showSelectionLines = 13;
-			
-			// aapt resource value: 7
-			public const int WheelPicker_verticalSpaceBetweenItems = 7;
-			
-			// aapt resource value: 5
-			public const int WheelPicker_visibleItemCount = 5;
 			
 			static Styleable()
 			{
