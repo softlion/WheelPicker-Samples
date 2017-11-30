@@ -126,16 +126,16 @@
     <Reference Include="System.Xml" />
     <Reference Include="System.Core" />
     <Reference Include="Vapolia.WheelPickerCore, Version=2.0.0.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\..\..\packages\Vapolia.WheelPicker.Free.2.0.1\lib\Xamarin.iOS\Vapolia.WheelPickerCore.dll</HintPath>
+      <HintPath>..\..\..\packages\Vapolia.WheelPicker.Free.2.1.0\lib\Xamarin.iOS\Vapolia.WheelPickerCore.dll</HintPath>
     </Reference>
     <Reference Include="Vapolia.WheelPickerForms, Version=2.0.0.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\..\..\packages\Vapolia.WheelPicker.Free.2.0.1\lib\Xamarin.iOS\Vapolia.WheelPickerForms.dll</HintPath>
+      <HintPath>..\..\..\packages\Vapolia.WheelPicker.Free.2.1.0\lib\Xamarin.iOS\Vapolia.WheelPickerForms.dll</HintPath>
     </Reference>
     <Reference Include="Vapolia.WheelPickerForms.Ios, Version=2.0.0.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\..\..\packages\Vapolia.WheelPicker.Free.2.0.1\lib\Xamarin.iOS\Vapolia.WheelPickerForms.Ios.dll</HintPath>
+      <HintPath>..\..\..\packages\Vapolia.WheelPicker.Free.2.1.0\lib\Xamarin.iOS\Vapolia.WheelPickerForms.Ios.dll</HintPath>
     </Reference>
     <Reference Include="Vapolia.WheelPickerIos, Version=2.0.0.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\..\..\packages\Vapolia.WheelPicker.Free.2.0.1\lib\Xamarin.iOS\Vapolia.WheelPickerIos.dll</HintPath>
+      <HintPath>..\..\..\packages\Vapolia.WheelPicker.Free.2.1.0\lib\Xamarin.iOS\Vapolia.WheelPickerIos.dll</HintPath>
     </Reference>
     <Reference Include="Xamarin.Forms.Core, Version=2.0.0.0, Culture=neutral, processorArchitecture=MSIL">
       <HintPath>..\..\..\packages\Xamarin.Forms.2.5.0.91635\lib\Xamarin.iOS10\Xamarin.Forms.Core.dll</HintPath>

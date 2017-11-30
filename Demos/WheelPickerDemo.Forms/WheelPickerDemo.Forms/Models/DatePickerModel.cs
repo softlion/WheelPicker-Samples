@@ -13,10 +13,10 @@ namespace WheelPickerDemo.Forms
     public class DatePickerModel : INotifyPropertyChanged
     {
         public event PropertyChangedEventHandler PropertyChanged;
-        private readonly ObservableCollection<string> wheel0, wheel1, wheel2;
+        private readonly ObservableCollection<object> wheel0, wheel1, wheel2;
         private readonly DateTime MaxDate = DateTime.Now.AddYears(2);
 
-        public List<IList<string>> ItemsSource { get; }
+        public List<IList<object>> ItemsSource { get; }
 
         public IntegerList SelectedItemsIndex { get; }
 
@@ -29,11 +29,11 @@ namespace WheelPickerDemo.Forms
 
         public DatePickerModel()
         {
-            wheel2 = new ObservableCollection<string>(Enumerable.Range(1900, MaxDate.Year - 1900 + 1).Reverse().Select(year => year.ToString()));
-            wheel1 = new ObservableCollection<string>(Enumerable.Range(1, 12).Select(month => CultureInfo.CurrentCulture.DateTimeFormat.GetMonthName(month)));
-            wheel0 = new ObservableCollection<string>(Enumerable.Range(1, 31).Select(day => day.ToString()));
+            wheel2 = new ObservableCollection<object>(Enumerable.Range(1900, MaxDate.Year - 1900 + 1).Reverse().Select(year => year.ToString()));
+            wheel1 = new ObservableCollection<object>(Enumerable.Range(1, 12).Select(month => CultureInfo.CurrentCulture.DateTimeFormat.GetMonthName(month)));
+            wheel0 = new ObservableCollection<object>(Enumerable.Range(1, 31).Select(day => day.ToString()));
 
-            ItemsSource = new List<IList<string>>(3) { wheel0, wheel1, wheel2 };
+            ItemsSource = new List<IList<object>>(3) { wheel0, wheel1, wheel2 };
 
             ItemSelectedCommand = new Command<Tuple<int, int, IList<int>>>(tuple =>
             {

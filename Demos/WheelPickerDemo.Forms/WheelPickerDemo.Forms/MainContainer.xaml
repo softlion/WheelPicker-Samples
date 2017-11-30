@@ -7,5 +7,6 @@
     <forms:MainPage Title="Circular Images" />
     <forms:DatePickerPage Title="Date Picker" />
     <forms:SlotPage Title="Slot Machine" />
+    <forms:CustomPage Title="Custom" />
 
 </TabbedPage>

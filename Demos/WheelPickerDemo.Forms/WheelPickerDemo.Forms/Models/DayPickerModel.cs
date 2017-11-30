@@ -27,12 +27,12 @@ namespace WheelPickerDemo.Forms
         /// <summary>
         /// Data source for wheel picker
         /// </summary>
-        public IList<string> ItemsSource { get; }
+        public IList<object> ItemsSource { get; }
 
         public DayPickerModel()
         {
             ItemsSource = GetDayNames();
-            selectedItem = ItemsSource[0];
+            selectedItem = (string)ItemsSource[0];
 
             //Subscribe to the selection changed command
             ItemSelectedCommand = new Command<Tuple<int, int, IList<int>>>(tuple =>
@@ -41,7 +41,7 @@ namespace WheelPickerDemo.Forms
                 var selectedItemIndex = tuple.Item2;
                 var selectedValue = ItemsSource[selectedItemIndex];
                 Debug.WriteLine($"ItemSelectedCommand called wheel:{selectedWheelIndex} row:{selectedItemIndex} value:{selectedValue}");
-                SelectedItem = selectedValue;
+                SelectedItem = (string)selectedValue;
             });
         }
 
@@ -51,9 +51,9 @@ namespace WheelPickerDemo.Forms
             PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propertyName));
         }
 
-        private static string[] GetDayNames()
+        private static object[] GetDayNames()
         {
-            return new[] {"Image1", "Image2", "Image3", "Image4", "Image5", "Image6", "Image7" };
+            return new[] {(object)"Image1", "Image2", "Image3", "Image4", "Image5", "Image6", "Image7" };
             //return Shift(CultureInfo.CurrentCulture.DateTimeFormat.DayNames, (int)CultureInfo.CurrentCulture.DateTimeFormat.FirstDayOfWeek);
         }
 

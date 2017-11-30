@@ -2,38 +2,40 @@
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Diagnostics;
+using System.Linq;
 using System.Runtime.CompilerServices;
 using System.Threading.Tasks;
 using Xamarin.Forms;
-using Xamarin.Forms.Xaml;
 
 namespace WheelPickerDemo.Forms
 {
-    [XamlCompilation(XamlCompilationOptions.Compile)]
-    public partial class SlotPage : ContentPage
+    //[XamlCompilation(XamlCompilationOptions.Compile)]
+    public partial class CustomPage : ContentPage
     {
-        public SlotPage()
+        public CustomPage()
         {
             InitializeComponent();
-            BindingContext = new SlotPageModel();
+            BindingContext = new CustomPageModel();
         }
 
         private async void ButtonSpin_OnClicked(object sender, EventArgs e)
         {
             SlotPicker.Spin(-100, 0);
             await Task.Delay(500);
-            SlotPicker.Spin(-80, 1);
-            await Task.Delay(1500);
-            SlotPicker.Spin(-150, 2);
         }
     }
 
-    internal class SlotPageModel
+    internal class CustomPageModel
     {
-        public SlotModel Slot { get; } = new SlotModel();
+        public CustomModel Slot { get; } = new CustomModel();
     }
 
-    public class SlotModel : INotifyPropertyChanged
+    public class CustomItemModel
+    {
+        public string ImageRef { get; set; } = "seven";
+    }
+
+    public class CustomModel : INotifyPropertyChanged
     {
         public event PropertyChangedEventHandler PropertyChanged;
 
@@ -53,9 +55,9 @@ namespace WheelPickerDemo.Forms
         /// </summary>
         public List<IList<object>> ItemsSource { get; set; }
 
-        public SlotModel()
+        public CustomModel()
         {
-            ItemsSource = new List<IList<object>> {GetValues(), GetValues(), GetValues()};
+            ItemsSource = new List<IList<object>> {GetValues().Cast<object>().ToList()}; //, GetValues(), GetValues()
 
             //Subscribe to the selection changed command
             ItemSelectedCommand = new Command<Tuple<int, int, IList<int>>>(tuple =>
@@ -74,9 +76,9 @@ namespace WheelPickerDemo.Forms
             PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propertyName));
         }
 
-        private static object[] GetValues()
+        private static IList<CustomItemModel> GetValues()
         {
-            return new[] { (object)"seven", "seven", "seven", "seven", "seven", "seven", "seven" };
+            return new[] { new CustomItemModel(),new CustomItemModel(),new CustomItemModel(),new CustomItemModel(),new CustomItemModel(),new CustomItemModel(),new CustomItemModel(),new CustomItemModel() }.ToList();
         }
         #endregion
     }

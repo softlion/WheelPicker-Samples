@@ -71,16 +71,16 @@
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Xml" />
     <Reference Include="Vapolia.WheelPickerCore, Version=2.0.0.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\..\..\packages\Vapolia.WheelPicker.Free.2.0.1\lib\MonoAndroid41\Vapolia.WheelPickerCore.dll</HintPath>
+      <HintPath>..\..\..\packages\Vapolia.WheelPicker.Free.2.1.0\lib\MonoAndroid41\Vapolia.WheelPickerCore.dll</HintPath>
     </Reference>
     <Reference Include="Vapolia.WheelPickerDroid, Version=2.0.0.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\..\..\packages\Vapolia.WheelPicker.Free.2.0.1\lib\MonoAndroid41\Vapolia.WheelPickerDroid.dll</HintPath>
+      <HintPath>..\..\..\packages\Vapolia.WheelPicker.Free.2.1.0\lib\MonoAndroid41\Vapolia.WheelPickerDroid.dll</HintPath>
     </Reference>
     <Reference Include="Vapolia.WheelPickerForms, Version=2.0.0.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\..\..\packages\Vapolia.WheelPicker.Free.2.0.1\lib\MonoAndroid41\Vapolia.WheelPickerForms.dll</HintPath>
+      <HintPath>..\..\..\packages\Vapolia.WheelPicker.Free.2.1.0\lib\MonoAndroid41\Vapolia.WheelPickerForms.dll</HintPath>
     </Reference>
     <Reference Include="Vapolia.WheelPickerForms.Droid, Version=2.0.0.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\..\..\packages\Vapolia.WheelPicker.Free.2.0.1\lib\MonoAndroid41\Vapolia.WheelPickerForms.Droid.dll</HintPath>
+      <HintPath>..\..\..\packages\Vapolia.WheelPicker.Free.2.1.0\lib\MonoAndroid41\Vapolia.WheelPickerForms.Droid.dll</HintPath>
     </Reference>
     <Reference Include="Xamarin.Android.Arch.Core.Common, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
       <HintPath>..\..\..\packages\Xamarin.Android.Arch.Core.Common.1.0.0\lib\MonoAndroid80\Xamarin.Android.Arch.Core.Common.dll</HintPath>

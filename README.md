@@ -250,9 +250,9 @@ public partial class MainPage : ContentPage
 
 public class MainPageModel
 {
-    public IList<string> ItemsSource { get; } = new List<string>
+    public IList<object> ItemsSource { get; } = new List<object>
     {
-        "Monday",
+        (object)"Monday",
         "Tuesday",
         "Wednesday",
         "Thursday",
@@ -277,7 +277,7 @@ public class MainPageModel
 
 </details>
 
-<br/>In the above example, ```ItemsSourceSimple``` is bound to a list of strings. If you need more than one wheel, use the ```ItemsSourceMulti``` property and bind it to a ```List<IList<string>>``` where the outer list represents the wheels and the inner lists the items in each wheel.
+<br/>In the above example, ```ItemsSourceSimple``` is bound to a list of objects. If you need more than one wheel, use the ```ItemsSourceMulti``` property and bind it to a ```List<IList<object>>``` where the outer list represents the wheels and the inner lists the items in each wheel.
 
 ## Reference (Xamarin Forms)
 
@@ -285,8 +285,8 @@ public class MainPageModel
 
 Definition  
 - `IList<WheelDefinition>` **`WheelDefinitions`**
-- `IList<IList<string>>` **`ItemsSourceMulti`**
-- `IList<string>` **`ItemsSourceSimple`** (shortcut for ItemsSourceMulti with one wheel)
+- `IList<IList<object>>` **`ItemsSourceMulti`**
+- `IList<object>` **`ItemsSourceSimple`** (shortcut for ItemsSourceMulti with one wheel)
 
 Appearance  
 - `double` **`HorizontalSpaceBetweenWheels`**
@@ -314,7 +314,7 @@ Selection
 - `DataTemplate` **`ImageItemTemplate`**
 - `double` **`RowHeight`**
 
-When a wheel's `Width` is set to `Auto`, the control computes the max width of all strings in the data source.  When set to `*` (star), the wheel's width will be proportional to the remaining space. See the Xamarin Forms `Grid` control for more information about `GridLength`.
+When a wheel's `Width` is set to `Auto`, the control computes the max width of all strings in the data source (of object are strings).  When set to `*` (star), the wheel's width will be proportional to the remaining space. See the Xamarin Forms `Grid` control for more information about `GridLength`.
 
 `HorizontalOptions` is used to align a wheel inside the available WheelPicker's width, if it is larger than the wheel's width.
 
@@ -350,16 +350,16 @@ wheelView.SelectedItemIndexChanged += (sender, args) =>
 {
     var text = $"Wheel {args.WheelIndex} selection changed to item index {args.SelectedItemIndex}";
 };
-wheelView.ItemsSource = new List<string> { "Monday", "Tuesday", "Wednesday" };
+wheelView.ItemsSource = new List<object> { (object)"Monday", "Tuesday", "Wednesday" };
 wheelView.SelectedItemsIndex = new List<int> { 0 };
 ```
 
 **vapolia.WheelPicker**
 
 Definition  
-- object ItemsSource (either IList&lt;string&gt; or IList&lt;IList&lt;string&gt;&gt;)  
-- IList&lt;string&gt; ItemsSourceSimple (shortcut for ItemsSourceMulti with one wheel)
-- IList&lt;IList&lt;string&gt;&gt; ItemsSourceMulti
+- object ItemsSource (either IList&lt;object&gt; or IList&lt;IList&lt;object&gt;&gt;)  
+- IList&lt;object&gt; ItemsSourceSimple (shortcut for ItemsSourceMulti with one wheel)
+- IList&lt;IList&lt;object&gt;&gt; ItemsSourceMulti
 - int VisibleItemCount
 
 WheelPicker Appearance  
@@ -411,7 +411,7 @@ var picker = new UIPickerView {ShowSelectionIndicator = true, BackgroundColor = 
 var pickerViewModel = new WheelPickerModel(picker);
 picker.Model = pickerViewModel;
 
-pickerViewModel.ItemsSource = new List<string> { "Monday", "Tuesday", "Wednesday" };
+pickerViewModel.ItemsSource = new List<object> { (object)"Monday", "Tuesday", "Wednesday" };
 pickerViewModel.SelectedItemsIndex = new List<int> { 0 };
 pickerViewModel.ItemAligns = new List<WheelItemAlign> { WheelItemAlign.Left };
 ```
@@ -419,9 +419,9 @@ pickerViewModel.ItemAligns = new List<WheelItemAlign> { WheelItemAlign.Left };
 **Vapolia.WheelPickerIos.WheelPickerModel**
 
 Definition  
-- object ItemsSource (either IList&lt;string&gt; or IList&lt;IList&lt;string&gt;&gt;)  
-- IList&lt;string&gt; ItemsSourceSimple (shortcut for ItemsSourceMulti with one wheel)  
-- IList&lt;IList&lt;string&gt;&gt; ItemsSourceMulti
+- object ItemsSource (either IList&lt;object&gt; or IList&lt;IList&lt;object&gt;&gt;)  
+- IList&lt;object&gt; ItemsSourceSimple (shortcut for ItemsSourceMulti with one wheel)  
+- IList&lt;IList&lt;object&gt;&gt; ItemsSourceMulti
 
 Appearance  
 - nfloat HorizontalSpaceBetweenWheels
@@ -452,7 +452,7 @@ Templating
 The total WheelPicker width is distributed between the wheels by respecting either :
 
 - float number: the exact width
-- Auto: the width of the largest string in ItemsSource for a given wheel
+- Auto: the width of the largest string in ItemsSource for a given wheel (if ItemsSource contains strings)
 - star: the remaining space not assigned by the above rules, distributed among the other wheels using the optional float number as a weight
 
 Examples of ItemWidths:
@@ -461,4 +461,4 @@ Examples of ItemWidths:
 - `"* *"`: two wheels, each of the same width, exactly half of the width of the Wheel Picker
 - `"* * *"`: three wheels, each of the same width, exactly one third of the width of the Wheel Picker
 - `"100 2* *"`: three wheels, first has a `100` device pixel width, second is twice the size of the third, and `3*-100=width` of the WheelPicker, which resolves to `*=WheelPickerWidth-100`
-- `"* Auto *"`: three wheels, the middle wheel's width is computed from the largest string in its items source.
+- `"* Auto *"`: three wheels, the middle wheel's width is computed from the largest string in its items source (if items source contains strings).
