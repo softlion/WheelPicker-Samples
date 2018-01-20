@@ -9,7 +9,6 @@ Now braught to you by the team who created the best seller XamSvg control. This 
 
 | Xamarin.Forms (iOS, Android) + Android native + iOS native
 |:----------------------------:|
-| [![NuGet][store-img]][store-linkforms] 
 | [![NuGet][nuget-img]][nuget-link]
 | [![][demo-img]][demo-link]
 
@@ -27,7 +26,7 @@ Now braught to you by the team who created the best seller XamSvg control. This 
 [This component](https://components.xamarin.com/view/WheelPickerForms) brings the Wheel Picker view to Xamarin Forms on Android and iOS (it also supports native Xamarin Android and iOS).
 It mimics a slot-machine user interface on Android, while on iOS it makes easy to use multi wheel pickers.
 
-A Wheel Picker is made of one or more wheels, bound to a single data source of type `IList<IList<T>>`. If the picker has only one wheel, you can use `IList<T>` instead.
+A Wheel Picker is made of one or more wheels, bound to a single data source of type `IList<IList<object>>`. If the picker has only one wheel, you can use `IList<object>` instead. `object` can either be an instance of any class, or a simple string.
 
 ### Easy to use
 
