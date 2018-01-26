@@ -337,7 +337,7 @@ Sample usage in axml:
         app:itemAligns="Right Left Left"
         app:itemHeights="15dp 15dp 15dp"
         app:selectedItemTextColor="#ff228b22"
-        app:itemTextColor="#ffffb6c1"
+        app:wp_itemTextColor="#ffffb6c1"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:background="#FFFFFF" />
