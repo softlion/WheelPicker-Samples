@@ -1,6 +1,5 @@
 using System;
 using System.Collections.Generic;
-using System.Collections.ObjectModel;
 using System.ComponentModel;
 using System.Globalization;
 using System.Linq;
@@ -10,27 +9,27 @@ namespace Vapolia.WheelPickerDemo
 {
     public class DatePickerModel : INotifyPropertyChanged
     {
-        private readonly ObservableCollection<string> wheel0, wheel1, wheel2;
+        private readonly List<object> wheel0, wheel1, wheel2;
 
         public event PropertyChangedEventHandler PropertyChanged;
 
-        public List<IList<string>> Wheels { get; }
+        public List<IList<object>> Wheels { get; }
 
-        public DateTime SelectedDate { get { return selectedDate; } set { selectedDate = value; OnPropertyChanged(); } }
+        public DateTime SelectedDate { get => selectedDate; set { selectedDate = value; OnPropertyChanged(); } }
         private DateTime selectedDate;
 
-        private DateTime MaxDate = DateTime.Now;
+        private DateTime maxDate = DateTime.Now;
 
         public DatePickerModel()
         {
-            wheel2 = new ObservableCollection<string>(Enumerable.Range(1900, MaxDate.Year - 1900 + 1).Reverse().Select(year => year.ToString()));
-            wheel1 = new ObservableCollection<string>(Enumerable.Range(1, 12).Select(month => CultureInfo.CurrentCulture.DateTimeFormat.GetMonthName(month)));
-            wheel0 = new ObservableCollection<string>(Enumerable.Range(1, 31).Select(day => day.ToString()));
+            wheel2 = new List<object>(Enumerable.Range(1900, maxDate.Year - 1900 + 1).Reverse().Select(year => year.ToString()));
+            wheel1 = new List<object>(Enumerable.Range(1, 12).Select(month => CultureInfo.CurrentCulture.DateTimeFormat.GetMonthName(month)));
+            wheel0 = new List<object>(Enumerable.Range(1, 31).Select(day => day.ToString()));
 
-            Wheels = new List<IList<string>>(3) { wheel0, wheel1, wheel2 };
+            Wheels = new List<IList<object>>(3) { wheel0, wheel1, wheel2 };
         }
 
-        public ObservableCollection<string> GetWheel(int wheelIndex)
+        public List<object> GetWheel(int wheelIndex)
         {
             return wheelIndex == 0 ? wheel0 : wheelIndex == 1 ? wheel1 : wheel2;
         }
@@ -41,7 +40,7 @@ namespace Vapolia.WheelPickerDemo
         /// </summary>
         public void UpdateWheelsFromSelection(int wheelIndex, IList<int> selection)
         {
-            var date = new DateTime(MaxDate.Year - selection[2], 1 + selection[1], 1);
+            var date = new DateTime(maxDate.Year - selection[2], 1 + selection[1], 1);
             var dayInMonth = 1 + selection[0];
 
             if (wheelIndex != 0)

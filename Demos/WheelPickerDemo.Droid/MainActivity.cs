@@ -1,7 +1,13 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using Android.App;
+using Android.Content;
+using Android.Graphics;
 using Android.Widget;
 using Android.OS;
+using Android.Util;
+using Android.Views;
+using Java.Nio.Channels;
 
 namespace Vapolia.WheelPickerDemo
 {
@@ -34,8 +40,62 @@ namespace Vapolia.WheelPickerDemo
                 model.UpdateWheelsFromSelection(args.WheelIndex, wheelView.SelectedItemsIndex);
             };
 
+            //Optional: use an item builder to build complex cells for each wheel item
+            wheelView.ItemsSimpleTemplates = new List<ItemFactoryDelegate> { ItemBuilder, ItemBuilder, ItemBuilder };
+
             wheelView.ItemsSource = model.Wheels;
             wheelView.SelectedItemsIndex = new List<int> { 0, 0, 0 };
         }
+
+        #region Optional: use an item builder to build complex cells for each wheel item
+        private View ItemBuilder(Context context, int wheelIndex, int itemIndex, View reusableView, bool isSelected, object data, Rect rect, MeasureItem childChanged)
+        {
+            var view = (ViewGroup) reusableView ?? CreateCell(context, wheelIndex); //Create/use same cell for all wheels and index
+            
+            var textView = view.FindViewById<TextView>(Resource.Id.valueText);
+            textView.Text = data.ToString();
+            textView.SetTextColor(isSelected ? Color.Red : Color.Black);
+            
+            childChanged(view,false);
+            return view;
+        }
+
+        private ViewGroup CreateCell(Context context, int wheelIndex)
+        {
+            var group = new LinearLayout(context)
+            {
+                Orientation = Orientation.Horizontal,
+                LayoutParameters = new FrameLayout.LayoutParams(ViewGroup.LayoutParams.MatchParent, ViewGroup.LayoutParams.MatchParent)
+            };
+
+            if (wheelIndex == 0)
+            {
+                var iconView = new ImageView(context)
+                {
+                    LayoutParameters = new LinearLayout.LayoutParams(ViewGroup.LayoutParams.WrapContent, ViewGroup.LayoutParams.WrapContent)
+                    {
+                        RightMargin = 20
+                    }
+                };
+                iconView.SetImageResource(Resource.Drawable.Icon);
+                group.AddView(iconView);
+            }
+
+            var textView = new TextView(context)
+            {
+                Id = Resource.Id.valueText,
+                Gravity = GravityFlags.CenterVertical,
+                LayoutParameters = new LinearLayout.LayoutParams(ViewGroup.LayoutParams.WrapContent, ViewGroup.LayoutParams.WrapContent)
+                {
+                    Gravity = GravityFlags.CenterVertical,
+                }
+            };
+            textView.SetTextSize(ComplexUnitType.Dip, 14);
+            group.SetBackgroundColor(Color.Yellow);
+            group.AddView(textView);
+
+            return group;
+        }
+        #endregion
     }
 }

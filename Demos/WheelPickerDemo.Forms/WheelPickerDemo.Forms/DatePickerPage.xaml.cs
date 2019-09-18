@@ -1,15 +1,9 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
 using Xamarin.Forms;
-using Xamarin.Forms.Xaml;
 
 namespace WheelPickerDemo.Forms
 {
-    [XamlCompilation(XamlCompilationOptions.Compile)]
+    //[XamlCompilation(XamlCompilationOptions.Compile)]
     public partial class DatePickerPage : ContentPage
     {
         public DatePickerPage()
@@ -22,5 +16,13 @@ namespace WheelPickerDemo.Forms
     internal class DatePickerPageModel
     {
         public DatePickerModel DatePicker { get; } = new DatePickerModel();
+
+        public string ManualDate { get; set; }
+
+        public Command ManualDateCommand => new Command(() =>
+        {
+            if (DateTime.TryParse(ManualDate, out var date))
+                DatePicker.SetSelectedDate(date);
+        });
     }
 }

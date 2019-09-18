@@ -11,14 +11,23 @@
         <Label Text="Date Picker, with dynamic wheel adjustement" HorizontalOptions="Center" />
         <BoxView BackgroundColor="GreenYellow" HeightRequest="1" />
 
-        <Label Text="Selected date:" />
-        <Label Text="{Binding DatePicker.SelectedItem}" />
+        <StackLayout Orientation="Horizontal">
+            <Label Text="Selected date:" />
+            <Label Text="{Binding DatePicker.SelectedItem}" FontAttributes="Bold" />
+        </StackLayout>
+
+        <Label Text="Set date programatically:" />
+        <Grid>
+            <Grid.ColumnDefinitions><ColumnDefinition Width="*"/><ColumnDefinition Width="Auto"/></Grid.ColumnDefinitions>
+            <Entry Text="{Binding ManualDate}" />
+            <Button Text="SET" Command="{Binding ManualDateCommand}" Grid.Column="1" />
+        </Grid>
 
         <!--SelectedItemsIndex="0,0,0"-->
         <wp:WheelPicker SelectionLinesColor="Navy" 
                         HorizontalSpaceBetweenWheels="40" 
                         ItemsSourceMulti="{Binding DatePicker.ItemsSource}"  
-                        SelectedItemsIndex="{Binding DatePicker.SelectedItemsIndex,Mode=OneWay}" 
+                        SelectedItemsIndex="{Binding DatePicker.SelectedItemsIndex,Mode=TwoWay}" 
                         Command="{Binding DatePicker.ItemSelectedCommand}"
                         HorizontalOptions="Fill">
             <wp:WheelPicker.WheelDefinitions>
@@ -28,7 +37,7 @@
             </wp:WheelPicker.WheelDefinitions>
         </wp:WheelPicker>
 
-        <Label TextColor="DimGray" FontSize="10">
+        <Label TextColor="DimGray" FontSize="12">
             This wheel uses three definitions to implement a date picker. The day collection is dynamically adjusted by the model when the selection of the month wheel is changed, so the day wheel is always limited to the days available in the selected month. For example if the selected day is 31 and february is selected, the day wheel will spin to 28 automatically.
             The middle wheel width is set to Auto: it is adjusted to the width of its largest item and won't take more space. The left and right wheel takes the full remaining space, and the left wheel content is aligned to its right.
         </Label>

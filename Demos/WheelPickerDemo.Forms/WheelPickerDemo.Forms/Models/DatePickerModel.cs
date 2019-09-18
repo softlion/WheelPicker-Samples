@@ -18,14 +18,29 @@ namespace WheelPickerDemo.Forms
 
         public List<IList<object>> ItemsSource { get; }
 
-        public IntegerList SelectedItemsIndex { get; }
+        public IntegerList SelectedItemsIndex
+        {
+            get => selectedItemsIndex;
+            set { selectedItemsIndex = value; OnPropertyChanged(); }
+        }
 
         public string SelectedItem => selectedDate.ToString("D");
 
-        public DateTime SelectedDate { get { return selectedDate; } set { selectedDate = value; OnPropertyChanged(); OnPropertyChanged(nameof(SelectedItem)); } }
-        private DateTime selectedDate;
+        public DateTime SelectedDate
+        {
+            get => selectedDate;
+            private set
+            {
+                selectedDate = value;
+                OnPropertyChanged();
+                OnPropertyChanged(nameof(SelectedItem));
+            }
+        }
 
-        public Command<Tuple<int,int,IList<int>>> ItemSelectedCommand { get; }
+        private DateTime selectedDate;
+        private IntegerList selectedItemsIndex;
+
+        public Command<Tuple<int, int, IList<int>>> ItemSelectedCommand { get; }
 
         public DatePickerModel()
         {
@@ -33,7 +48,7 @@ namespace WheelPickerDemo.Forms
             wheel1 = new ObservableCollection<object>(Enumerable.Range(1, 12).Select(month => CultureInfo.CurrentCulture.DateTimeFormat.GetMonthName(month)));
             wheel0 = new ObservableCollection<object>(Enumerable.Range(1, 31).Select(day => day.ToString()));
 
-            ItemsSource = new List<IList<object>>(3) { wheel0, wheel1, wheel2 };
+            ItemsSource = new List<IList<object>>(3) {wheel0, wheel1, wheel2};
 
             ItemSelectedCommand = new Command<Tuple<int, int, IList<int>>>(tuple =>
             {
@@ -42,8 +57,12 @@ namespace WheelPickerDemo.Forms
             });
 
             //Set the initial selection
-            var now = DateTime.Now;
-            var selection = new List<int> {now.Day - 1, now.Month - 1, MaxDate.Year-now.Year};
+            SetSelectedDate(DateTime.Now);
+        }
+
+        public void SetSelectedDate(DateTime date)
+        {
+            var selection = new List<int> {date.Day - 1, date.Month - 1, MaxDate.Year-date.Year};
             SelectedItemsIndex = new IntegerList(selection);
             UpdateWheelsFromSelection(1, selection);
         }
@@ -59,7 +78,7 @@ namespace WheelPickerDemo.Forms
 
             if (wheelIndex != 0)
             {
-                var daysInMonth = (int)(date.AddMonths(1) - date).TotalDays;
+                var daysInMonth = (int) (date.AddMonths(1) - date).TotalDays;
                 if (dayInMonth > daysInMonth)
                     dayInMonth = daysInMonth;
 

@@ -38,7 +38,6 @@ namespace Vapolia.WheelPickerDemo
 			global::Vapolia.Resource.Attribute.itemAlign = global::Vapolia.WheelPickerDemo.Resource.Attribute.itemAlign;
 			global::Vapolia.Resource.Attribute.itemAligns = global::Vapolia.WheelPickerDemo.Resource.Attribute.itemAligns;
 			global::Vapolia.Resource.Attribute.itemHeights = global::Vapolia.WheelPickerDemo.Resource.Attribute.itemHeights;
-			global::Vapolia.Resource.Attribute.itemTextColor = global::Vapolia.WheelPickerDemo.Resource.Attribute.itemTextColor;
 			global::Vapolia.Resource.Attribute.itemTextSize = global::Vapolia.WheelPickerDemo.Resource.Attribute.itemTextSize;
 			global::Vapolia.Resource.Attribute.itemWidths = global::Vapolia.WheelPickerDemo.Resource.Attribute.itemWidths;
 			global::Vapolia.Resource.Attribute.itemsSource = global::Vapolia.WheelPickerDemo.Resource.Attribute.itemsSource;
@@ -49,6 +48,7 @@ namespace Vapolia.WheelPickerDemo
 			global::Vapolia.Resource.Attribute.showSelectionLines = global::Vapolia.WheelPickerDemo.Resource.Attribute.showSelectionLines;
 			global::Vapolia.Resource.Attribute.verticalSpaceBetweenItems = global::Vapolia.WheelPickerDemo.Resource.Attribute.verticalSpaceBetweenItems;
 			global::Vapolia.Resource.Attribute.visibleItemCount = global::Vapolia.WheelPickerDemo.Resource.Attribute.visibleItemCount;
+			global::Vapolia.Resource.Attribute.wp_itemTextColor = global::Vapolia.WheelPickerDemo.Resource.Attribute.wp_itemTextColor;
 			global::Vapolia.Resource.Id.center = global::Vapolia.WheelPickerDemo.Resource.Id.center;
 			global::Vapolia.Resource.Id.left = global::Vapolia.WheelPickerDemo.Resource.Id.left;
 			global::Vapolia.Resource.Id.right = global::Vapolia.WheelPickerDemo.Resource.Id.right;
@@ -62,7 +62,6 @@ namespace Vapolia.WheelPickerDemo
 			global::Vapolia.Resource.Styleable.WheelPicker_itemAlign = global::Vapolia.WheelPickerDemo.Resource.Styleable.WheelPicker_itemAlign;
 			global::Vapolia.Resource.Styleable.WheelPicker_itemAligns = global::Vapolia.WheelPickerDemo.Resource.Styleable.WheelPicker_itemAligns;
 			global::Vapolia.Resource.Styleable.WheelPicker_itemHeights = global::Vapolia.WheelPickerDemo.Resource.Styleable.WheelPicker_itemHeights;
-			global::Vapolia.Resource.Styleable.WheelPicker_itemTextColor = global::Vapolia.WheelPickerDemo.Resource.Styleable.WheelPicker_itemTextColor;
 			global::Vapolia.Resource.Styleable.WheelPicker_itemTextSize = global::Vapolia.WheelPickerDemo.Resource.Styleable.WheelPicker_itemTextSize;
 			global::Vapolia.Resource.Styleable.WheelPicker_itemWidths = global::Vapolia.WheelPickerDemo.Resource.Styleable.WheelPicker_itemWidths;
 			global::Vapolia.Resource.Styleable.WheelPicker_itemsSource = global::Vapolia.WheelPickerDemo.Resource.Styleable.WheelPicker_itemsSource;
@@ -73,6 +72,7 @@ namespace Vapolia.WheelPickerDemo
 			global::Vapolia.Resource.Styleable.WheelPicker_showSelectionLines = global::Vapolia.WheelPickerDemo.Resource.Styleable.WheelPicker_showSelectionLines;
 			global::Vapolia.Resource.Styleable.WheelPicker_verticalSpaceBetweenItems = global::Vapolia.WheelPickerDemo.Resource.Styleable.WheelPicker_verticalSpaceBetweenItems;
 			global::Vapolia.Resource.Styleable.WheelPicker_visibleItemCount = global::Vapolia.WheelPickerDemo.Resource.Styleable.WheelPicker_visibleItemCount;
+			global::Vapolia.Resource.Styleable.WheelPicker_wp_itemTextColor = global::Vapolia.WheelPickerDemo.Resource.Styleable.WheelPicker_wp_itemTextColor;
 		}
 		
 		public partial class Array
@@ -127,9 +127,6 @@ namespace Vapolia.WheelPickerDemo
 			// aapt resource value: 0x7f010011
 			public const int itemHeights = 2130771985;
 			
-			// aapt resource value: 0x7f010007
-			public const int itemTextColor = 2130771975;
-			
 			// aapt resource value: 0x7f010009
 			public const int itemTextSize = 2130771977;
 			
@@ -159,6 +156,9 @@ namespace Vapolia.WheelPickerDemo
 			
 			// aapt resource value: 0x7f010003
 			public const int visibleItemCount = 2130771971;
+			
+			// aapt resource value: 0x7f010007
+			public const int wp_itemTextColor = 2130771975;
 			
 			static Attribute()
 			{
@@ -313,9 +313,6 @@ namespace Vapolia.WheelPickerDemo
 			// aapt resource value: 18
 			public const int WheelPicker_itemHeights = 18;
 			
-			// aapt resource value: 8
-			public const int WheelPicker_itemTextColor = 8;
-			
 			// aapt resource value: 10
 			public const int WheelPicker_itemTextSize = 10;
 			
@@ -345,6 +342,9 @@ namespace Vapolia.WheelPickerDemo
 			
 			// aapt resource value: 4
 			public const int WheelPicker_visibleItemCount = 4;
+			
+			// aapt resource value: 8
+			public const int WheelPicker_wp_itemTextColor = 8;
 			
 			static Styleable()
 			{
