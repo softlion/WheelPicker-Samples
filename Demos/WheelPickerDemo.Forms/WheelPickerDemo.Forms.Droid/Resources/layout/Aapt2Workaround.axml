@@ -43,31 +43,5 @@
         android:layout_height="wrap_content"
         android:textColor="#000000"
         android:layout_marginLeft="10dp" />
-<!--<LinearLayout
-        android:orientation="horizontal"
-        android:paddingLeft="10dp"
-        android:paddingTop="10dp"
-        android:layout_marginTop="20dp"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content">
-        <TextView
-            android:text="ItemWidths: "
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:textColor="#000000" />
-        <EditText
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:id="@+id/itemWidthsFormat"
-            android:text="* Auto *"
-            android:inputType="textNoSuggestions"
-            android:lines="1"
-            android:maxLines="1" />
-    </LinearLayout>
-    <TextView
-        android:layout_marginLeft="10dp"
-        android:text="ItemWidths specifies the width of each wheel in the WheelPicker. Format: space separated string of specifiers, one per wheel. A specifier is either x, y* or Auto where x is a float number and y an optional float number. Example: '* Auto *' for WheelPicker with 3 wheels. The center wheel width is computed from the largest string length. The remaining wheels share the remaining space. Another valid format: '150 Auto 150'"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:textColor="#666" />-->
+
 </LinearLayout>

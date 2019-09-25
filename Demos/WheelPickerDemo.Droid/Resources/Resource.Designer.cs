@@ -78,20 +78,20 @@ namespace Vapolia.WheelPickerDemo
 		public partial class Array
 		{
 			
-			// aapt resource value: 0x7f040001
-			public const int days = 2130968577;
+			// aapt resource value: 0x7F010000
+			public const int days = 2130771968;
 			
-			// aapt resource value: 0x7f040002
-			public const int months = 2130968578;
+			// aapt resource value: 0x7F010001
+			public const int months = 2130771969;
 			
-			// aapt resource value: 0x7f040000
-			public const int wheelDefaultItems = 2130968576;
+			// aapt resource value: 0x7F010002
+			public const int wheelDefaultItems = 2130771970;
 			
-			// aapt resource value: 0x7f040004
-			public const int wheelDefaultItems2 = 2130968580;
+			// aapt resource value: 0x7F010003
+			public const int wheelDefaultItems2 = 2130771971;
 			
-			// aapt resource value: 0x7f040003
-			public const int years = 2130968579;
+			// aapt resource value: 0x7F010004
+			public const int years = 2130771972;
 			
 			static Array()
 			{
@@ -106,59 +106,59 @@ namespace Vapolia.WheelPickerDemo
 		public partial class Attribute
 		{
 			
-			// aapt resource value: 0x7f010000
-			public const int enableTrace = 2130771968;
+			// aapt resource value: 0x7F020000
+			public const int enableTrace = 2130837504;
 			
-			// aapt resource value: 0x7f01000b
-			public const int fadingItems = 2130771979;
+			// aapt resource value: 0x7F020001
+			public const int fadingItems = 2130837505;
 			
-			// aapt resource value: 0x7f010004
-			public const int horizontalSpaceBetweenWheels = 2130771972;
+			// aapt resource value: 0x7F020002
+			public const int horizontalSpaceBetweenWheels = 2130837506;
 			
-			// aapt resource value: 0x7f010006
-			public const int isCurved = 2130771974;
+			// aapt resource value: 0x7F020003
+			public const int isCurved = 2130837507;
 			
-			// aapt resource value: 0x7f01000a
-			public const int itemAlign = 2130771978;
+			// aapt resource value: 0x7F020004
+			public const int itemAlign = 2130837508;
 			
-			// aapt resource value: 0x7f010010
-			public const int itemAligns = 2130771984;
+			// aapt resource value: 0x7F020005
+			public const int itemAligns = 2130837509;
 			
-			// aapt resource value: 0x7f010011
-			public const int itemHeights = 2130771985;
+			// aapt resource value: 0x7F020006
+			public const int itemHeights = 2130837510;
 			
-			// aapt resource value: 0x7f010009
-			public const int itemTextSize = 2130771977;
+			// aapt resource value: 0x7F020009
+			public const int itemsSource = 2130837513;
 			
-			// aapt resource value: 0x7f01000f
-			public const int itemWidths = 2130771983;
+			// aapt resource value: 0x7F020007
+			public const int itemTextSize = 2130837511;
 			
-			// aapt resource value: 0x7f010001
-			public const int itemsSource = 2130771969;
+			// aapt resource value: 0x7F020008
+			public const int itemWidths = 2130837512;
 			
-			// aapt resource value: 0x7f010002
-			public const int selectedItem = 2130771970;
+			// aapt resource value: 0x7F02000A
+			public const int selectedItem = 2130837514;
 			
-			// aapt resource value: 0x7f010008
-			public const int selectedItemTextColor = 2130771976;
+			// aapt resource value: 0x7F02000B
+			public const int selectedItemTextColor = 2130837515;
 			
-			// aapt resource value: 0x7f01000d
-			public const int selectionLinesColor = 2130771981;
+			// aapt resource value: 0x7F02000C
+			public const int selectionLinesColor = 2130837516;
 			
-			// aapt resource value: 0x7f01000e
-			public const int selectionLinesThickness = 2130771982;
+			// aapt resource value: 0x7F02000D
+			public const int selectionLinesThickness = 2130837517;
 			
-			// aapt resource value: 0x7f01000c
-			public const int showSelectionLines = 2130771980;
+			// aapt resource value: 0x7F02000E
+			public const int showSelectionLines = 2130837518;
 			
-			// aapt resource value: 0x7f010005
-			public const int verticalSpaceBetweenItems = 2130771973;
+			// aapt resource value: 0x7F02000F
+			public const int verticalSpaceBetweenItems = 2130837519;
 			
-			// aapt resource value: 0x7f010003
-			public const int visibleItemCount = 2130771971;
+			// aapt resource value: 0x7F020010
+			public const int visibleItemCount = 2130837520;
 			
-			// aapt resource value: 0x7f010007
-			public const int wp_itemTextColor = 2130771975;
+			// aapt resource value: 0x7F020011
+			public const int wp_itemTextColor = 2130837521;
 			
 			static Attribute()
 			{
@@ -173,8 +173,8 @@ namespace Vapolia.WheelPickerDemo
 		public partial class Drawable
 		{
 			
-			// aapt resource value: 0x7f020000
-			public const int Icon = 2130837504;
+			// aapt resource value: 0x7F030000
+			public const int Icon = 2130903040;
 			
 			static Drawable()
 			{
@@ -189,23 +189,23 @@ namespace Vapolia.WheelPickerDemo
 		public partial class Id
 		{
 			
-			// aapt resource value: 0x7f070000
-			public const int center = 2131165184;
+			// aapt resource value: 0x7F040000
+			public const int center = 2130968576;
 			
-			// aapt resource value: 0x7f070001
-			public const int left = 2131165185;
+			// aapt resource value: 0x7F040001
+			public const int left = 2130968577;
 			
-			// aapt resource value: 0x7f070002
-			public const int right = 2131165186;
+			// aapt resource value: 0x7F040002
+			public const int right = 2130968578;
 			
-			// aapt resource value: 0x7f070004
-			public const int valueText = 2131165188;
+			// aapt resource value: 0x7F040003
+			public const int valueText = 2130968579;
 			
-			// aapt resource value: 0x7f070005
-			public const int valueText2 = 2131165189;
+			// aapt resource value: 0x7F040004
+			public const int valueText2 = 2130968580;
 			
-			// aapt resource value: 0x7f070003
-			public const int wheelView = 2131165187;
+			// aapt resource value: 0x7F040005
+			public const int wheelView = 2130968581;
 			
 			static Id()
 			{
@@ -220,8 +220,8 @@ namespace Vapolia.WheelPickerDemo
 		public partial class Layout
 		{
 			
-			// aapt resource value: 0x7f030000
-			public const int Main = 2130903040;
+			// aapt resource value: 0x7F050000
+			public const int Main = 2131034112;
 			
 			static Layout()
 			{
@@ -236,7 +236,7 @@ namespace Vapolia.WheelPickerDemo
 		public partial class String
 		{
 			
-			// aapt resource value: 0x7f060000
+			// aapt resource value: 0x7F060000
 			public const int ApplicationName = 2131099648;
 			
 			static String()
@@ -252,8 +252,8 @@ namespace Vapolia.WheelPickerDemo
 		public partial class Style
 		{
 			
-			// aapt resource value: 0x7f050000
-			public const int WheelPickerStyle = 2131034112;
+			// aapt resource value: 0x7F070000
+			public const int WheelPickerStyle = 2131165184;
 			
 			static Style()
 			{
@@ -268,83 +268,84 @@ namespace Vapolia.WheelPickerDemo
 		public partial class Styleable
 		{
 			
+			// aapt resource value: { 0x10100AF,0x7F020000,0x7F020001,0x7F020002,0x7F020003,0x7F020004,0x7F020005,0x7F020006,0x7F020007,0x7F020008,0x7F020009,0x7F02000A,0x7F02000B,0x7F02000C,0x7F02000D,0x7F02000E,0x7F02000F,0x7F020010,0x7F020011 }
 			public static int[] WheelPicker = new int[] {
 					16842927,
-					2130771968,
-					2130771969,
-					2130771970,
-					2130771971,
-					2130771972,
-					2130771973,
-					2130771974,
-					2130771975,
-					2130771976,
-					2130771977,
-					2130771978,
-					2130771979,
-					2130771980,
-					2130771981,
-					2130771982,
-					2130771983,
-					2130771984,
-					2130771985};
+					2130837504,
+					2130837505,
+					2130837506,
+					2130837507,
+					2130837508,
+					2130837509,
+					2130837510,
+					2130837511,
+					2130837512,
+					2130837513,
+					2130837514,
+					2130837515,
+					2130837516,
+					2130837517,
+					2130837518,
+					2130837519,
+					2130837520,
+					2130837521};
 			
-			// aapt resource value: 0
+			// aapt resource value: 0x0
 			public const int WheelPicker_android_gravity = 0;
 			
-			// aapt resource value: 1
+			// aapt resource value: 0x1
 			public const int WheelPicker_enableTrace = 1;
 			
-			// aapt resource value: 12
-			public const int WheelPicker_fadingItems = 12;
+			// aapt resource value: 0x2
+			public const int WheelPicker_fadingItems = 2;
 			
-			// aapt resource value: 5
-			public const int WheelPicker_horizontalSpaceBetweenWheels = 5;
+			// aapt resource value: 0x3
+			public const int WheelPicker_horizontalSpaceBetweenWheels = 3;
 			
-			// aapt resource value: 7
-			public const int WheelPicker_isCurved = 7;
+			// aapt resource value: 0x4
+			public const int WheelPicker_isCurved = 4;
 			
-			// aapt resource value: 11
-			public const int WheelPicker_itemAlign = 11;
+			// aapt resource value: 0x5
+			public const int WheelPicker_itemAlign = 5;
 			
-			// aapt resource value: 17
-			public const int WheelPicker_itemAligns = 17;
+			// aapt resource value: 0x6
+			public const int WheelPicker_itemAligns = 6;
 			
-			// aapt resource value: 18
-			public const int WheelPicker_itemHeights = 18;
+			// aapt resource value: 0x7
+			public const int WheelPicker_itemHeights = 7;
 			
-			// aapt resource value: 10
-			public const int WheelPicker_itemTextSize = 10;
+			// aapt resource value: 0x10
+			public const int WheelPicker_itemsSource = 16;
 			
-			// aapt resource value: 16
-			public const int WheelPicker_itemWidths = 16;
+			// aapt resource value: 0x8
+			public const int WheelPicker_itemTextSize = 8;
 			
-			// aapt resource value: 2
-			public const int WheelPicker_itemsSource = 2;
+			// aapt resource value: 0x9
+			public const int WheelPicker_itemWidths = 9;
 			
-			// aapt resource value: 3
-			public const int WheelPicker_selectedItem = 3;
+			// aapt resource value: 0x11
+			public const int WheelPicker_selectedItem = 17;
 			
-			// aapt resource value: 9
-			public const int WheelPicker_selectedItemTextColor = 9;
+			// aapt resource value: 0x12
+			public const int WheelPicker_selectedItemTextColor = 18;
 			
-			// aapt resource value: 14
-			public const int WheelPicker_selectionLinesColor = 14;
+			// aapt resource value: 0x13
+			public const int WheelPicker_selectionLinesColor = 19;
 			
-			// aapt resource value: 15
-			public const int WheelPicker_selectionLinesThickness = 15;
+			// aapt resource value: 0x14
+			public const int WheelPicker_selectionLinesThickness = 20;
 			
-			// aapt resource value: 13
-			public const int WheelPicker_showSelectionLines = 13;
+			// aapt resource value: 0x15
+			public const int WheelPicker_showSelectionLines = 21;
 			
-			// aapt resource value: 6
-			public const int WheelPicker_verticalSpaceBetweenItems = 6;
+			// aapt resource value: 0x16
+			public const int WheelPicker_verticalSpaceBetweenItems = 22;
 			
-			// aapt resource value: 4
-			public const int WheelPicker_visibleItemCount = 4;
+			// aapt resource value: 0x17
+			public const int WheelPicker_visibleItemCount = 23;
 			
-			// aapt resource value: 8
-			public const int WheelPicker_wp_itemTextColor = 8;
+			// aapt resource value: 0x18
+			public const int WheelPicker_wp_itemTextColor = 24;
 			
 			static Styleable()
 			{
