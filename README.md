@@ -16,7 +16,7 @@ Now braught to you by the team who created the best seller XamSvg control. This 
 [video-link]: https://vimeo.com/244170732
 [store-img]: https://img.shields.io/badge/xamarin-Component%20Store-00FF7F.svg
 [store-linkforms]: https://components.xamarin.com/view/XamSvgForms
-[nuget-img]: https://img.shields.io/badge/nuget-2.0.1-blue.svg
+[nuget-img]: https://img.shields.io/badge/nuget-3.0.4-blue.svg
 [nuget-link]: https://www.nuget.org/packages/Vapolia.WheelPicker.Free/
 [demo-img]: https://img.shields.io/badge/demo-source%20code-lightgrey.svg
 [demo-link]: https://github.com/softlion/WheelPicker-Samples/tree/master/Demos
