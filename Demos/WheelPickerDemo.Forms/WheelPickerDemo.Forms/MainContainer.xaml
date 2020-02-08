@@ -4,8 +4,9 @@
              xmlns:forms="clr-namespace:WheelPickerDemo.Forms;assembly=WheelPickerDemo.Forms"
              x:Class="WheelPickerDemo.Forms.MainContainer">
 
+    <forms:DayPickerPage Title="Simple" />
     <forms:MainPage Title="Circular Images" />
-    <forms:DatePickerPage Title="Date Picker" />
+    <forms:DatePickerPage Title="Date" />
     <forms:SlotPage Title="Slot Machine" />
     <forms:CustomPage Title="Custom" />
 

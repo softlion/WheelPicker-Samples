@@ -1,4 +1,5 @@
 ﻿using System;
+using WheelPickerDemo.Forms.Models;
 using Xamarin.Forms;
 
 namespace WheelPickerDemo.Forms
@@ -19,6 +20,6 @@ namespace WheelPickerDemo.Forms
 
     internal class MainPageModel
     {
-        public DayPickerModel DayPicker { get; } = new DayPickerModel();
+        public ImageWheelModel PickerModel { get; } = new ImageWheelModel();
     }
 }

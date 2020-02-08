@@ -8,7 +8,7 @@ using System.Runtime.CompilerServices;
 using Vapolia.WheelPickerForms;
 using Xamarin.Forms;
 
-namespace WheelPickerDemo.Forms
+namespace WheelPickerDemo.Forms.Models
 {
     public class DatePickerModel : INotifyPropertyChanged
     {

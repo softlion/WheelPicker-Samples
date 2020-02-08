@@ -30,40 +30,33 @@ A Wheel Picker is made of one or more wheels, bound to a single data source of t
 
 ### Easy to use
 
-<details><summary>(click to expand) A simple picker with one wheel</summary>
+A simple picker with one wheel
 
 ```xml
 <wp:WheelPicker ItemsSourceSimple="{Binding DayPicker.ItemsSource}">
-    <wp:WheelPicker.WheelDefinitions>
-        <wp:WheelDefinition Width="Auto" HorizontalOptions="Left" Alignment="Center" />
-    </wp:WheelPicker.WheelDefinitions>
+    <wp:WheelDefinition Width="Auto" HorizontalOptions="Left" Alignment="Center" />
 </wp:WheelPicker>
 ```
 
-</details>
-
-<details><summary>(click to expand) A templated picker with one wheel</summary>
+A templated picker with one wheel
 
 ```xml
 <wp:WheelPicker ItemsSourceSimple="{Binding DayPicker.ItemsSource}">
-    <wp:WheelPicker.WheelDefinitions>
-        <wp:WheelDefinition Width="*" HorizontalOptions="Left" Alignment="Center" IsCircular="True">
-            <wp:WheelDefinition.RowHeight>
-                <OnPlatform x:TypeArguments="x:Double" Android="48" iOS="48" />
-            </wp:WheelDefinition.RowHeight>
-            <wp:WheelDefinition.ItemTemplate>
-                <DataTemplate>
-                    <Image Source="{Binding .}" HeightRequest="48" Aspect="AspectFill" />
-                </DataTemplate>
-            </wp:WheelDefinition.ItemTemplate>
-        </wp:WheelDefinition>
-    </wp:WheelPicker.WheelDefinitions>
+    <wp:WheelDefinition Width="*" HorizontalOptions="Left" Alignment="Center" IsCircular="True">
+        <wp:WheelDefinition.RowHeight>
+            <OnPlatform x:TypeArguments="x:Double" Android="48" iOS="48" />
+        </wp:WheelDefinition.RowHeight>
+        <wp:WheelDefinition.ItemTemplate>
+            <DataTemplate>
+                <Image Source="{Binding .}" HeightRequest="48" Aspect="AspectFill" />
+            </DataTemplate>
+        </wp:WheelDefinition.ItemTemplate>
+    </wp:WheelDefinition>
 </wp:WheelPicker>
 ```
 
-</details>
 
-<details><summary>(click to expand) A picker with 3 wheels</summary>
+A picker with 3 wheels
 
 <br/>The center wheel's width is computed automatically. Items are aligned differently inside each wheel.
 
@@ -74,17 +67,13 @@ A Wheel Picker is made of one or more wheels, bound to a single data source of t
                 SelectedItemsIndex="0,0,0" 
                 Command="{Binding DatePicker.ItemSelectedCommand}"
                 HorizontalOptions="Fill">
-    <wp:WheelPicker.WheelDefinitions>
-        <wp:WheelDefinition Width="*" HorizontalOptions="Right" />
-        <wp:WheelDefinition Width="Auto" HorizontalOptions="Left"  />
-        <wp:WheelDefinition Width="*" HorizontalOptions="Left"  />
-    </wp:WheelPicker.WheelDefinitions>
+    <wp:WheelDefinition Width="*" HorizontalOptions="Right" />
+    <wp:WheelDefinition Width="Auto" HorizontalOptions="Left"  />
+    <wp:WheelDefinition Width="*" HorizontalOptions="Left"  />
 </wp:WheelPicker>
 ```
 
-</details>
-
-<details><summary>(click to expand) A templated picker with 3 wheels</summary>
+A templated picker with 3 wheels
 
 <br/>All properties are bindable and can be dynamically changed.
 
@@ -96,37 +85,33 @@ A Wheel Picker is made of one or more wheels, bound to a single data source of t
                 ItemTextFont="Italic"
                 HorizontalOptions="Fill"
                 SelectionLinesColor="Aquamarine">
-    <wp:WheelPicker.WheelDefinitions>
-        <wp:WheelDefinition Width="*" HorizontalOptions="Left" Alignment="Center" IsCircular="True" RowHeight="100">
-            <wp:WheelDefinition.ItemTemplate>
-                <DataTemplate>
-                    <Image Source="{Binding .}" HeightRequest="100" Aspect="AspectFit" />
-                </DataTemplate>
-            </wp:WheelDefinition.ItemTemplate>
-        </wp:WheelDefinition>
-        <wp:WheelDefinition Width="*" HorizontalOptions="Left" Alignment="Center" IsCircular="True" RowHeight="100">
-            <wp:WheelDefinition.ItemTemplate>
-                <DataTemplate>
-                    <Image Source="{Binding .}" HeightRequest="100" Aspect="AspectFit" />
-                </DataTemplate>
-            </wp:WheelDefinition.ItemTemplate>
-        </wp:WheelDefinition>
-        <wp:WheelDefinition Width="*" HorizontalOptions="Left" Alignment="Center" IsCircular="True" RowHeight="100">
-            <wp:WheelDefinition.ItemTemplate>
-                <DataTemplate>
-                    <Image Source="{Binding .}" HeightRequest="100" Aspect="AspectFit" />
-                </DataTemplate>
-            </wp:WheelDefinition.ItemTemplate>
-        </wp:WheelDefinition>
-    </wp:WheelPicker.WheelDefinitions>
+    <wp:WheelDefinition Width="*" HorizontalOptions="Left" Alignment="Center" IsCircular="True" RowHeight="100">
+        <wp:WheelDefinition.ItemTemplate>
+            <DataTemplate>
+                <Image Source="{Binding .}" HeightRequest="100" Aspect="AspectFit" />
+            </DataTemplate>
+        </wp:WheelDefinition.ItemTemplate>
+    </wp:WheelDefinition>
+    <wp:WheelDefinition Width="*" HorizontalOptions="Left" Alignment="Center" IsCircular="True" RowHeight="100">
+        <wp:WheelDefinition.ItemTemplate>
+            <DataTemplate>
+                <Image Source="{Binding .}" HeightRequest="100" Aspect="AspectFit" />
+            </DataTemplate>
+        </wp:WheelDefinition.ItemTemplate>
+    </wp:WheelDefinition>
+    <wp:WheelDefinition Width="*" HorizontalOptions="Left" Alignment="Center" IsCircular="True" RowHeight="100">
+        <wp:WheelDefinition.ItemTemplate>
+            <DataTemplate>
+                <Image Source="{Binding .}" HeightRequest="100" Aspect="AspectFit" />
+            </DataTemplate>
+        </wp:WheelDefinition.ItemTemplate>
+    </wp:WheelDefinition>
 </wp:WheelPicker>
 ```
 
-</details>
-
 ## Quick start
 
-<details><summary>Install the nuget package</summary>
+* Install the nuget package
 
 - In your Forms project (netstandard, shared or PCL)
   - Install the nuget package
@@ -134,20 +119,10 @@ A Wheel Picker is made of one or more wheels, bound to a single data source of t
   - Install the nuget package
   - Call `WheelPickerRenderer.InitializeForms();` before `global::Xamarin.Forms.Forms.Init`
 
-</details>    
-
-<details><summary>Add the WheelPicker control in any of your views</summary>
+* Add the WheelPicker control in any of your views
 
 - Add `xmlns:wp="clr-namespace:Vapolia.WheelPickerForms;assembly=Vapolia.WheelPickerForms"` to the root tag.   
 - Add `<wp:WheelPicker></wp:WheelPicker>`
-
-</details>
-
-<details><summary>Special considerations when using PCL</summary>
-
-Note that PCL are now obsoletes. If you are using a PCL, it needs a modern PCL profile, ie one with Silverlight unchecked. Read the *PCL Profile Change* chapter of [this article](https://xamsvg.uservoice.com/knowledgebase/articles/1085881-0900-201610-pcl-profile-change-new-svg-optimizing) for more informations.
-
-</details>
 
 ### Platforms
 - Android api level 15+ (Android 4.0.3+)  
@@ -222,9 +197,7 @@ Then add a `wp:WheelPicker` tag and set the properties you need.
         <wp:WheelPicker HorizontalOptions="Fill" SelectedItemsIndex="0"
                     ItemsSourceSimple="{Binding ItemsSource}" 
                     Command="{Binding ItemSelectedCommand}">
-            <wp:WheelPicker.WheelDefinitions>
                 <wp:WheelDefinition Width="Auto" HorizontalOptions="Left" Alignment="Center" />
-            </wp:WheelPicker.WheelDefinitions>
         </wp:WheelPicker>
 
     </StackLayout>
@@ -283,7 +256,7 @@ public class MainPageModel
 **WheelPicker**
 
 Definition  
-- `IList<WheelDefinition>` **`WheelDefinitions`**
+- `IList<WheelDefinition>` **`WheelDefinitions`** (default Content)
 - `IList<IList<object>>` **`ItemsSourceMulti`**
 - `IList<object>` **`ItemsSourceSimple`** (shortcut for ItemsSourceMulti with one wheel)
 

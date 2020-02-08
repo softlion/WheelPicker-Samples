@@ -38,9 +38,9 @@ namespace Vapolia.WheelPickerDemo
 			global::Vapolia.Resource.Attribute.itemAlign = global::Vapolia.WheelPickerDemo.Resource.Attribute.itemAlign;
 			global::Vapolia.Resource.Attribute.itemAligns = global::Vapolia.WheelPickerDemo.Resource.Attribute.itemAligns;
 			global::Vapolia.Resource.Attribute.itemHeights = global::Vapolia.WheelPickerDemo.Resource.Attribute.itemHeights;
+			global::Vapolia.Resource.Attribute.itemsSource = global::Vapolia.WheelPickerDemo.Resource.Attribute.itemsSource;
 			global::Vapolia.Resource.Attribute.itemTextSize = global::Vapolia.WheelPickerDemo.Resource.Attribute.itemTextSize;
 			global::Vapolia.Resource.Attribute.itemWidths = global::Vapolia.WheelPickerDemo.Resource.Attribute.itemWidths;
-			global::Vapolia.Resource.Attribute.itemsSource = global::Vapolia.WheelPickerDemo.Resource.Attribute.itemsSource;
 			global::Vapolia.Resource.Attribute.selectedItem = global::Vapolia.WheelPickerDemo.Resource.Attribute.selectedItem;
 			global::Vapolia.Resource.Attribute.selectedItemTextColor = global::Vapolia.WheelPickerDemo.Resource.Attribute.selectedItemTextColor;
 			global::Vapolia.Resource.Attribute.selectionLinesColor = global::Vapolia.WheelPickerDemo.Resource.Attribute.selectionLinesColor;
@@ -62,9 +62,9 @@ namespace Vapolia.WheelPickerDemo
 			global::Vapolia.Resource.Styleable.WheelPicker_itemAlign = global::Vapolia.WheelPickerDemo.Resource.Styleable.WheelPicker_itemAlign;
 			global::Vapolia.Resource.Styleable.WheelPicker_itemAligns = global::Vapolia.WheelPickerDemo.Resource.Styleable.WheelPicker_itemAligns;
 			global::Vapolia.Resource.Styleable.WheelPicker_itemHeights = global::Vapolia.WheelPickerDemo.Resource.Styleable.WheelPicker_itemHeights;
+			global::Vapolia.Resource.Styleable.WheelPicker_itemsSource = global::Vapolia.WheelPickerDemo.Resource.Styleable.WheelPicker_itemsSource;
 			global::Vapolia.Resource.Styleable.WheelPicker_itemTextSize = global::Vapolia.WheelPickerDemo.Resource.Styleable.WheelPicker_itemTextSize;
 			global::Vapolia.Resource.Styleable.WheelPicker_itemWidths = global::Vapolia.WheelPickerDemo.Resource.Styleable.WheelPicker_itemWidths;
-			global::Vapolia.Resource.Styleable.WheelPicker_itemsSource = global::Vapolia.WheelPickerDemo.Resource.Styleable.WheelPicker_itemsSource;
 			global::Vapolia.Resource.Styleable.WheelPicker_selectedItem = global::Vapolia.WheelPickerDemo.Resource.Styleable.WheelPicker_selectedItem;
 			global::Vapolia.Resource.Styleable.WheelPicker_selectedItemTextColor = global::Vapolia.WheelPickerDemo.Resource.Styleable.WheelPicker_selectedItemTextColor;
 			global::Vapolia.Resource.Styleable.WheelPicker_selectionLinesColor = global::Vapolia.WheelPickerDemo.Resource.Styleable.WheelPicker_selectionLinesColor;
@@ -290,62 +290,62 @@ namespace Vapolia.WheelPickerDemo
 					2130837520,
 					2130837521};
 			
-			// aapt resource value: 0x0
+			// aapt resource value: 0
 			public const int WheelPicker_android_gravity = 0;
 			
-			// aapt resource value: 0x1
+			// aapt resource value: 1
 			public const int WheelPicker_enableTrace = 1;
 			
-			// aapt resource value: 0x2
+			// aapt resource value: 2
 			public const int WheelPicker_fadingItems = 2;
 			
-			// aapt resource value: 0x3
+			// aapt resource value: 3
 			public const int WheelPicker_horizontalSpaceBetweenWheels = 3;
 			
-			// aapt resource value: 0x4
+			// aapt resource value: 4
 			public const int WheelPicker_isCurved = 4;
 			
-			// aapt resource value: 0x5
+			// aapt resource value: 5
 			public const int WheelPicker_itemAlign = 5;
 			
-			// aapt resource value: 0x6
+			// aapt resource value: 6
 			public const int WheelPicker_itemAligns = 6;
 			
-			// aapt resource value: 0x7
+			// aapt resource value: 7
 			public const int WheelPicker_itemHeights = 7;
 			
-			// aapt resource value: 0x10
-			public const int WheelPicker_itemsSource = 16;
+			// aapt resource value: 10
+			public const int WheelPicker_itemsSource = 10;
 			
-			// aapt resource value: 0x8
+			// aapt resource value: 8
 			public const int WheelPicker_itemTextSize = 8;
 			
-			// aapt resource value: 0x9
+			// aapt resource value: 9
 			public const int WheelPicker_itemWidths = 9;
 			
-			// aapt resource value: 0x11
-			public const int WheelPicker_selectedItem = 17;
+			// aapt resource value: 11
+			public const int WheelPicker_selectedItem = 11;
 			
-			// aapt resource value: 0x12
-			public const int WheelPicker_selectedItemTextColor = 18;
+			// aapt resource value: 12
+			public const int WheelPicker_selectedItemTextColor = 12;
 			
-			// aapt resource value: 0x13
-			public const int WheelPicker_selectionLinesColor = 19;
+			// aapt resource value: 13
+			public const int WheelPicker_selectionLinesColor = 13;
 			
-			// aapt resource value: 0x14
-			public const int WheelPicker_selectionLinesThickness = 20;
+			// aapt resource value: 14
+			public const int WheelPicker_selectionLinesThickness = 14;
 			
-			// aapt resource value: 0x15
-			public const int WheelPicker_showSelectionLines = 21;
+			// aapt resource value: 15
+			public const int WheelPicker_showSelectionLines = 15;
 			
-			// aapt resource value: 0x16
-			public const int WheelPicker_verticalSpaceBetweenItems = 22;
+			// aapt resource value: 16
+			public const int WheelPicker_verticalSpaceBetweenItems = 16;
 			
-			// aapt resource value: 0x17
-			public const int WheelPicker_visibleItemCount = 23;
+			// aapt resource value: 17
+			public const int WheelPicker_visibleItemCount = 17;
 			
-			// aapt resource value: 0x18
-			public const int WheelPicker_wp_itemTextColor = 24;
+			// aapt resource value: 18
+			public const int WheelPicker_wp_itemTextColor = 18;
 			
 			static Styleable()
 			{

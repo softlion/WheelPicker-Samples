@@ -7,7 +7,6 @@ using Android.Widget;
 using Android.OS;
 using Android.Util;
 using Android.Views;
-using Java.Nio.Channels;
 
 namespace Vapolia.WheelPickerDemo
 {

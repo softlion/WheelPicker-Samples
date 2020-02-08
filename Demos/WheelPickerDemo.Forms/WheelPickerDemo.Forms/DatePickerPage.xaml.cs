@@ -1,9 +1,9 @@
 ﻿using System;
+using WheelPickerDemo.Forms.Models;
 using Xamarin.Forms;
 
 namespace WheelPickerDemo.Forms
 {
-    //[XamlCompilation(XamlCompilationOptions.Compile)]
     public partial class DatePickerPage : ContentPage
     {
         public DatePickerPage()
@@ -13,7 +13,7 @@ namespace WheelPickerDemo.Forms
         }
     }
 
-    internal class DatePickerPageModel
+    public class DatePickerPageModel
     {
         public DatePickerModel DatePicker { get; } = new DatePickerModel();
 
