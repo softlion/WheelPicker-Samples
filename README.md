@@ -109,14 +109,14 @@ All properties are bindable and can be dynamically changed.
 
 ## Quick start
 
-####Install the nuget package
+#### Install the nuget package
 
 - In your Forms project
   - Install the nuget package
 - On each platform project (Android, iOS)
   - Call `WheelPickerRenderer.InitializeForms();` before `global::Xamarin.Forms.Forms.Init`
 
-####Add the WheelPicker control
+#### Add the WheelPicker control
 
 - Add `xmlns:wp="clr-namespace:Vapolia.WheelPickerForms;assembly=Vapolia.WheelPickerForms"` to the root tag of a view.   
 - Add a minimal wheel:
