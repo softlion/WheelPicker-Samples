@@ -56,9 +56,8 @@ A templated picker with one wheel
 ```
 
 
-A picker with 3 wheels
-
-<br/>The center wheel's width is computed automatically. Items are aligned differently inside each wheel.
+A picker with 3 wheels  
+The center wheel's width is computed automatically. Items are aligned differently inside each wheel.
 
 ```xml
 <wp:WheelPicker SelectionLinesColor="Navy" 
@@ -73,9 +72,8 @@ A picker with 3 wheels
 </wp:WheelPicker>
 ```
 
-A templated picker with 3 wheels
-
-<br/>All properties are bindable and can be dynamically changed.
+A templated picker with 3 wheels  
+All properties are bindable and can be dynamically changed.
 
 ```xml
 <wp:WheelPicker x:Name="SlotPicker" ItemsSourceMulti="{Binding Slot.ItemsSource}" 
@@ -113,16 +111,27 @@ A templated picker with 3 wheels
 
 * Install the nuget package
 
-- In your Forms project (netstandard, shared or PCL)
+- In your Forms project
   - Install the nuget package
 - On each platform project (Android, iOS)
-  - Install the nuget package
   - Call `WheelPickerRenderer.InitializeForms();` before `global::Xamarin.Forms.Forms.Init`
 
 * Add the WheelPicker control in any of your views
 
 - Add `xmlns:wp="clr-namespace:Vapolia.WheelPickerForms;assembly=Vapolia.WheelPickerForms"` to the root tag.   
-- Add `<wp:WheelPicker></wp:WheelPicker>`
+- Add a minimal wheel:
+
+```xml
+<wp:WheelPicker ItemsSourceSimple="{Binding MyListProperty}">
+    <wp:WheelDefinition Width="Auto" HorizontalOptions="Left" Alignment="Center" />
+</wp:WheelPicker>
+```
+
+where MyListProperty is an `IList<object>` containing strings on the model bound to your xaml page.
+
+If you have more than one WheelDefinition, use `ItemsSource` not `ItemsSourceSimple`.
+The MyListProperty must then be an `IList<IList<object>>` where the outer list must have a number of items equal to the count of WheelDefinitions.
+Each inner list contains the items for this WheelDefinition.
 
 ### Platforms
 - Android api level 15+ (Android 4.0.3+)  
