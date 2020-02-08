@@ -149,8 +149,7 @@ The component supports live preview in the Xamarin Forms Previewer and in the Xa
 
 ### Add the WheelPicker nuget
 
-- To your Forms project (netstandard, shared or PCL)
-- On each platform project (Android, iOS)
+- To your Forms project
 
 ### Initialize the library
 
@@ -204,9 +203,9 @@ Then add a `wp:WheelPicker` tag and set the properties you need.
     <StackLayout>
 
         <wp:WheelPicker HorizontalOptions="Fill" SelectedItemsIndex="0"
-                    ItemsSourceSimple="{Binding ItemsSource}" 
+                    ItemsSourceSimple="{Binding Days}" 
                     Command="{Binding ItemSelectedCommand}">
-                <wp:WheelDefinition Width="Auto" HorizontalOptions="Left" Alignment="Center" />
+            <wp:WheelDefinition Width="Auto" HorizontalOptions="Left" Alignment="Center" />
         </wp:WheelPicker>
 
     </StackLayout>
@@ -231,7 +230,7 @@ public partial class MainPage : ContentPage
 
 public class MainPageModel
 {
-    public IList<object> ItemsSource { get; } = new List<object>
+    public IList<object> Days { get; } = new List<object>
     {
         (object)"Monday",
         "Tuesday",
@@ -246,11 +245,11 @@ public class MainPageModel
 
     public MainPageModel() 
     {
-        ItemSelectedCommand = new Command<Tuple<int, int, IList<int>>>(tuple =>
+        ItemSelectedCommand = new Command<(int, int, IList<int>)>(tuple =>
         {
-            var selectedWheelIndex = tuple.Item1;
-            var selectedItemIndex = tuple.Item2;
-            var selectedValue = ItemsSource[selectedItemIndex];
+            var (selectedWheelIndex, selectedItemIndex, _) = tuple;
+            var selectedValue = Days[selectedItemIndex];
+            //...
         });
     }
 }
