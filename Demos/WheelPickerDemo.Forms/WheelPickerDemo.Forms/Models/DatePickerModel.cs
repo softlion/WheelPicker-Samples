@@ -40,7 +40,7 @@ namespace WheelPickerDemo.Forms.Models
         private DateTime selectedDate;
         private IntegerList selectedItemsIndex;
 
-        public Command<Tuple<int, int, IList<int>>> ItemSelectedCommand { get; }
+        public Command<(int, int, IList<int>)> ItemSelectedCommand { get; }
 
         public DatePickerModel()
         {
@@ -50,10 +50,11 @@ namespace WheelPickerDemo.Forms.Models
 
             ItemsSource = new List<IList<object>>(3) {wheel0, wheel1, wheel2};
 
-            ItemSelectedCommand = new Command<Tuple<int, int, IList<int>>>(tuple =>
+            ItemSelectedCommand = new Command<(int, int, IList<int>)>(tuple =>
             {
+                var (selectedWheelIndex, selectedItemIndex, selectedItemsIndexes) = tuple;
                 //When the selection changed, update the SelectedDate string 
-                UpdateWheelsFromSelection(tuple.Item1, tuple.Item3);
+                UpdateWheelsFromSelection(selectedWheelIndex, selectedItemsIndexes);
             });
 
             //Set the initial selection

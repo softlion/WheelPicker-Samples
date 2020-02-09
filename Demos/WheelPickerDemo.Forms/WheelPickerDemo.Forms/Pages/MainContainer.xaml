@@ -1,0 +1,15 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<TabbedPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:forms="clr-namespace:WheelPickerDemo.Forms;assembly=WheelPickerDemo.Forms"
+             x:Class="WheelPickerDemo.Forms.MainContainer"
+             >
+
+    <forms:DayPickerPage Title="Simple" Padding="0,50,0,0" />
+    <forms:DayMonthPickerPage Title="DayMonth" Padding="0,50,0,0" />
+    <forms:MainPage Title="Circular Images" Padding="0,50,0,0" />
+    <forms:DatePickerPage Title="Date" Padding="0,50,0,0" />
+    <forms:SlotPage Title="Slot Machine" Padding="0,50,0,0" />
+    <forms:CustomPage Title="Custom" Padding="0,50,0,0" />
+
+</TabbedPage>

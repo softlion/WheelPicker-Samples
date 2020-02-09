@@ -37,9 +37,9 @@
             </wp:WheelPicker.WheelDefinitions>
         </wp:WheelPicker>
 
-        <Label TextColor="DimGray" FontSize="12">
-            This wheel uses three definitions to implement a date picker. The day collection is dynamically adjusted by the model when the selection of the month wheel is changed, so the day wheel is always limited to the days available in the selected month. For example if the selected day is 31 and february is selected, the day wheel will spin to 28 automatically.
-            The middle wheel width is set to Auto: it is adjusted to the width of its largest item and won't take more space. The left and right wheel takes the full remaining space, and the left wheel content is aligned to its right.
+        <Label TextColor="DimGray" FontSize="Small">
+            This wheel uses 3 definitions. The day collection is dynamically adjusted when the month is changed: the day wheel displays only the days available in the selected month, so 31 of february can not be selected; the day wheel will spin back to 28 automatically.
+            The middle wheel's width is set to Auto: its width is set to the width of its largest item. The left and right wheel fill the remaining space. The left wheel's content is aligned to its right.
         </Label>
 
     </StackLayout>

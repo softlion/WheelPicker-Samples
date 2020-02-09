@@ -8,7 +8,6 @@ using Xamarin.Forms;
 
 namespace WheelPickerDemo.Forms
 {
-    //[XamlCompilation(XamlCompilationOptions.Compile)]
     public partial class SlotPage : ContentPage
     {
         public SlotPage()

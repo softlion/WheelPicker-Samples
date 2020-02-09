@@ -10,14 +10,10 @@
         <Label Text="Vapolia Wheel Picker for Xamarin Forms" HorizontalOptions="Center" TextColor="Green" />
         <Label Text="Circular image wheel, with spin button" HorizontalOptions="Center" />
         <BoxView BackgroundColor="GreenYellow" HeightRequest="1" />
-        
-        <StackLayout Orientation="Horizontal">
-            <Label Text="Selection: '" />
-            <Label Text="{Binding DayPicker.SelectedItem}" />
-            <Label Text="'" />
-        </StackLayout>
 
-        <wp:WheelPicker x:Name="WheelDayPicker" ItemsSourceSimple="{Binding PickerModel.ItemsSource}" 
+        <Label Text="{Binding DayPicker.SelectedItem,StringFormat='Selection: \'{0}\''}" />
+
+        <wp:WheelPicker x:Name="WheelImagePicker" ItemsSourceSimple="{Binding PickerModel.ItemsSource}" 
                     SelectedItemsIndex="0"
                     Command="{Binding DayPicker.ItemSelectedCommand}" 
                     ItemTextColor="Green"
@@ -25,7 +21,6 @@
                     ItemTextFont="Italic"
                     HorizontalOptions="Fill"
                     SelectionLinesColor="Aquamarine">
-            <wp:WheelPicker.WheelDefinitions>
                 <!--Simplest version
                     <wp:WheelDefinition Width="Auto" HorizontalOptions="Left" Alignment="Center" />-->
                 <!--Circular wheel
@@ -48,7 +43,6 @@
                         </DataTemplate>
                     </wp:WheelDefinition.ItemTemplate>
                 </wp:WheelDefinition>
-            </wp:WheelPicker.WheelDefinitions>
         </wp:WheelPicker>
 
         <Button Text="Spin wheel" Clicked="ButtonSpin_OnClicked" />

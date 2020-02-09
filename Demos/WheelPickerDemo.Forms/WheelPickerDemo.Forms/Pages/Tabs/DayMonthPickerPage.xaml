@@ -1,0 +1,47 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:wp="clr-namespace:Vapolia.WheelPickerForms;assembly=Vapolia.WheelPickerForms"
+             x:Class="WheelPickerDemo.Forms.DayMonthPickerPage">
+
+    <StackLayout Margin="20" Spacing="10">
+
+        <BoxView BackgroundColor="LightGray" HeightRequest="1" />
+        <Label Text="Vapolia Wheel Picker for Xamarin Forms" HorizontalOptions="Center" TextColor="DimGray" />
+        <Label Text="Basic Wheel" HorizontalOptions="Center" />
+        <BoxView BackgroundColor="LightGray" HeightRequest="1" />
+
+        <Label Text="{Binding DayMonth.SelectedDate,StringFormat='Selection: \'{0:D}\''}" />
+
+        <wp:WheelPicker 
+            x:Name="WheelDayPicker" 
+            ItemsSourceMulti="{Binding DayMonth.ItemsSource}" 
+            HorizontalOptions="Fill"
+            SelectedItemsIndex="{Binding DayMonth.SelectedItemsIndex}"
+            Command="{Binding DayMonth.ItemSelectedCommand}" 
+            ItemTextFont="Medium"
+            ItemTextSelectedColor="Blue"
+            SelectionLinesColor="DeepSkyBlue"
+            HorizontalSpaceBetweenWheels="50"
+            >
+            <!-- 
+            ItemTextSelectedColor: android only. Ios uses the ItemTextColor.
+            SelectionLinesColor: android only. Ios does not allow changing this color directly.
+            -->
+            <wp:WheelPicker.ItemTextColor>
+                <OnPlatform x:TypeArguments="Color">
+                    <On Platform="iOS" Value="Blue"/>
+                    <On Platform="Android" Value="LightBlue"/>
+                </OnPlatform>
+            </wp:WheelPicker.ItemTextColor>
+            <wp:WheelDefinition Width="*" HorizontalOptions="Right" Alignment="Right" />
+            <wp:WheelDefinition Width="2*" HorizontalOptions="Left" Alignment="Left" />
+        </wp:WheelPicker>
+
+        <Label TextColor="DimGray" FontSize="Body">
+            This wheel uses an ItemTemplate in its single WheelDefinition. The template is bound to a collection of labels.
+        </Label>
+
+    </StackLayout>
+
+</ContentPage>

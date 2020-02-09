@@ -14,7 +14,7 @@ namespace WheelPickerDemo.Forms
 
         private void ButtonSpin_OnClicked(object sender, EventArgs e)
         {
-            WheelDayPicker.Spin(-100,0);
+            WheelImagePicker.Spin(-100,0);
         }
     }
 
