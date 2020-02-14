@@ -1,19 +1,18 @@
 menuItems: 
-
-    insertDatePickerItem: 
-      namespaceTag: wp
-      namespaceUri: clr-namespace:Vapolia.WheelPickerForms;assembly=Vapolia.WheelPickerForms
-      nugetPackage: Vapolia.WheelPicker.Free
-      xamlTemplate: |
-        <{ns}:WheelPicker x:Name=""DatePicker"">
-          <!-- TODO -->
-        </{ns}:WheelPicker>
-
-    insertDayMonthPickerItem: 
-      namespaceTag: wp
-      namespaceUri: clr-namespace:Vapolia.WheelPickerForms;assembly=Vapolia.WheelPickerForms
-      nugetPackage: Vapolia.WheelPicker.Free
-      xamlTemplate: |
-        <{ns}:WheelPicker x:Name=""DayMonthPicker"">
-          <!-- TODO -->
-        </{ns}:WheelPicker>
+- id: insertDatePickerItem
+  namespaceTag: wp
+  namespaceUri: clr-namespace:Vapolia.WheelPickerForms;assembly=Vapolia.WheelPickerForms
+  nugetPackage: Vapolia.WheelPicker.Free
+  xamlTemplate: |
+    <{ns}:WheelPicker x:Name="DatePicker">
+        <!-- TODO -->
+    </{ns}:WheelPicker>
+  
+- id: insertDayMonthPickerItem
+  namespaceTag: wp
+  namespaceUri: clr-namespace:Vapolia.WheelPickerForms;assembly=Vapolia.WheelPickerForms
+  nugetPackage: Vapolia.WheelPicker.Free
+  xamlTemplate: |
+    <{ns}:WheelPicker x:Name="DayMonthPicker">
+        <!-- TODO -->
+    </{ns}:WheelPicker>
