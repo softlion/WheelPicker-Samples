@@ -1,5 +1,6 @@
 menuItems: 
 - id: insertDatePickerItem
+  text: Add a date picker
   namespaceTag: wp
   namespaceUri: clr-namespace:Vapolia.WheelPickerForms;assembly=Vapolia.WheelPickerForms
   nugetPackage: Vapolia.WheelPicker.Free
@@ -9,6 +10,7 @@ menuItems:
     </{ns}:WheelPicker>
   
 - id: insertDayMonthPickerItem
+  text: Add a day+month picker
   namespaceTag: wp
   namespaceUri: clr-namespace:Vapolia.WheelPickerForms;assembly=Vapolia.WheelPickerForms
   nugetPackage: Vapolia.WheelPicker.Free
