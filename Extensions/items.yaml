@@ -19,12 +19,11 @@ wheelPickerItems:
         <!-- TODO -->
     </{ns}:WheelPicker>
 
-#svgItems:
-#- id: insertSvgItem
-#  namespaceTag: svg
-#  namespaceUri: clr-namespace:Vapolia.WheelPickerForms;assembly=Vapolia.WheelPickerForms
-#  nugetPackage: Vapolia.WheelPicker.Free
-#  xamlTemplate: |
-#    <{ns}:Svg x:Name=""SvgItem"">
-#        <!-- TODO -->
-#    </{ns}:Svg>
+svgItems:
+- id: svgItem
+  text: Add an Svg vector image
+  namespaceTag: svg
+  namespaceUri: clr-namespace:Vapolia.WheelPickerForms;assembly=Vapolia.WheelPickerForms
+  nugetPackage: Vapolia.WheelPicker.Free
+  xamlTemplate: |
+    <{ns}:Svg Src="res:images.yourEmbeddedResourceName" />
