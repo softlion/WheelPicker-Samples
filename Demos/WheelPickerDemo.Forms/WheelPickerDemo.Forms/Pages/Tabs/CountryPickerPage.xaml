@@ -1,0 +1,42 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:wp="clr-namespace:Vapolia.WheelPickerForms;assembly=Vapolia.WheelPickerForms"
+             x:Class="WheelPickerDemo.Forms.CountryPickerPage">
+
+    <StackLayout Margin="20" Spacing="10">
+
+        <BoxView BackgroundColor="LightGray" HeightRequest="1" />
+        <Label Text="Vapolia Wheel Picker for Xamarin Forms" HorizontalOptions="Center" TextColor="DimGray" />
+        <Label Text="Basic Wheel" HorizontalOptions="Center" />
+        <BoxView BackgroundColor="LightGray" HeightRequest="1" />
+
+        <Label Text="{Binding PickerModel.SelectedItem,StringFormat='Selection: \'{0}\''}" />
+
+        <wp:WheelPicker 
+            ItemsSourceSimple="{Binding PickerModel.ItemsSource}" 
+            HorizontalOptions="Fill"
+            Command="{Binding PickerModel.ItemSelectedCommand}" 
+            ItemTextFont="Medium"
+            ItemTextSelectedColor="CornflowerBlue"
+            SelectionLinesColor="LightBlue">
+            <!-- 
+            ItemTextSelectedColor: android only. Ios uses the ItemTextColor.
+            SelectionLinesColor: android only. Ios does not allow changing this color directly.
+            -->
+            <wp:WheelPicker.ItemTextColor>
+                <OnPlatform x:TypeArguments="Color">
+                    <On Platform="iOS" Value="Blue"/>
+                    <On Platform="Android" Value="LightBlue"/>
+                </OnPlatform>
+            </wp:WheelPicker.ItemTextColor>
+            <wp:WheelDefinition Width="Auto" HorizontalOptions="Center" Alignment="Center" RowHeight="30" />
+        </wp:WheelPicker>
+
+        <Label TextColor="DimGray" FontSize="Body">
+            This wheel is bound to a collection of countries. It tries to automatically select the user's country.
+        </Label>
+
+    </StackLayout>
+
+</ContentPage>
