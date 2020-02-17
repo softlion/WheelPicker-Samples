@@ -11,14 +11,13 @@
         <Label Text="Basic Wheel" HorizontalOptions="Center" />
         <BoxView BackgroundColor="LightGray" HeightRequest="1" />
 
-        <Label Text="{Binding DayPicker.SelectedItem,StringFormat='Selection: \'{0}\''}" />
+        <Label Text="{Binding PickerModel.SelectedItem,StringFormat='Selection: \'{0}\''}" />
 
         <wp:WheelPicker 
-            x:Name="WheelDayPicker" 
-            ItemsSourceSimple="{Binding PickerModel.Days}" 
+            ItemsSourceMulti="{Binding PickerModel.ItemsSource}" 
             HorizontalOptions="Fill"
             SelectedItemsIndex="0"
-            Command="{Binding DayPicker.ItemSelectedCommand}" 
+            Command="{Binding PickerModel.ItemSelectedCommand}" 
             ItemTextFont="Medium"
             ItemTextSelectedColor="Blue"
             SelectionLinesColor="DeepSkyBlue">

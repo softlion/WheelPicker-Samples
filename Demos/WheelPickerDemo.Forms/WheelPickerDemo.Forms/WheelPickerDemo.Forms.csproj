@@ -5,8 +5,14 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <PackageReference Include="Vapolia.WheelPicker.Free" Version="4.4.3" />
+    <PackageReference Include="Vapolia.WheelPicker.Free" Version="4.4.4" />
     <PackageReference Include="Xamarin.Forms" Version="4.4.0.991640" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Compile Update="Pages\Tabs\ImageWheelPage.xaml.cs">
+      <DependentUpon>ImageWheelPage.xaml</DependentUpon>
+    </Compile>
   </ItemGroup>
 
 </Project>

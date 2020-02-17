@@ -4,6 +4,9 @@ using Xamarin.Forms;
 
 namespace WheelPickerDemo.Forms
 {
+    /// <summary>
+    /// Use case: input birthday without year
+    /// </summary>
     public partial class DayMonthPickerPage : ContentPage
     {
         public DayMonthPickerPage()
@@ -15,6 +18,6 @@ namespace WheelPickerDemo.Forms
 
     public class DateMonthPickerPageModel
     {
-        public DayMonthModel DayMonth { get; } = new DayMonthModel();
+        public DayMonthYearModel DayMonth { get; } = new DayMonthYearModel(PickerModelType.DayMonth);
     }
 }

@@ -4,9 +4,9 @@ using Xamarin.Forms;
 
 namespace WheelPickerDemo.Forms
 {
-    public partial class MainPage : ContentPage
+    public partial class ImageWheelPage : ContentPage
     {
-        public MainPage()
+        public ImageWheelPage()
         {
             InitializeComponent();
             BindingContext = new MainPageModel();

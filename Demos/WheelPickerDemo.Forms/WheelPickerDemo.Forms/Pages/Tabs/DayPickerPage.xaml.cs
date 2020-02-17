@@ -3,6 +3,9 @@ using Xamarin.Forms;
 
 namespace WheelPickerDemo.Forms
 {
+    /// <summary>
+    /// Use case: choose a day
+    /// </summary>
     public partial class DayPickerPage : ContentPage
     {
         public DayPickerPage()
@@ -14,6 +17,6 @@ namespace WheelPickerDemo.Forms
 
     internal class DayPickerPageModel
     {
-        public DayPickerModel PickerModel { get; } = new DayPickerModel();
+        public DayMonthYearModel PickerModel { get; } = new DayMonthYearModel(PickerModelType.Day);
     }
 }

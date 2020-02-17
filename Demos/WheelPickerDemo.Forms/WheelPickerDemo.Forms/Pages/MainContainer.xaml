@@ -7,7 +7,7 @@
 
     <forms:DayPickerPage Title="Simple" Padding="0,50,0,0" />
     <forms:DayMonthPickerPage Title="DayMonth" Padding="0,50,0,0" />
-    <forms:MainPage Title="Circular Images" Padding="0,50,0,0" />
+    <forms:ImageWheelPage Title="Circular Images" Padding="0,50,0,0" />
     <forms:DatePickerPage Title="Date" Padding="0,50,0,0" />
     <forms:SlotPage Title="Slot Machine" Padding="0,50,0,0" />
     <forms:CustomPage Title="Custom" Padding="0,50,0,0" />

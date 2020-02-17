@@ -21,7 +21,7 @@ namespace WheelPickerDemo.Forms.Models
     }
 
 
-    public class DayMonthModel : INotifyPropertyChanged
+    public class DayMonthYearModel : INotifyPropertyChanged
     {
         public event PropertyChangedEventHandler PropertyChanged;
         private readonly ObservableCollection<object> wheelDay, wheelMonth, wheelYear;
@@ -33,7 +33,7 @@ namespace WheelPickerDemo.Forms.Models
         private readonly DateTime MinDate = new DateTime(1900,1,1);
 
         public List<IList<object>> ItemsSource { get; }
-        public PickerModelType DisplayType { get; set; } = PickerModelType.DayMonth;
+        public PickerModelType DisplayType { get; }
         public Command<(int, int, IList<int>)> ItemSelectedCommand { get; }
 
         public IntegerList SelectedItemsIndex
@@ -45,18 +45,14 @@ namespace WheelPickerDemo.Forms.Models
         public DateTime SelectedDate
         {
             get => selectedDate;
-            private set  => SetSelectedDateExternal(value);
-        }
-
-        private void SetSelectedDate(DateTime value)
-        {
-            selectedDate = value;
-            OnPropertyChanged(nameof(SelectedDate));
+            set  => SetSelectedDateExternal(value);
         }
 
 
-        public DayMonthModel()
+        public DayMonthYearModel(PickerModelType displayType = PickerModelType.DayMonthYear)
         {
+            DisplayType = displayType;
+
             wheelYear = new ObservableCollection<object>(Enumerable.Range(MinDate.Year, MaxDate.Year - MinDate.Year + 1).Reverse().Select(year => year.ToString()));
             wheelMonth = new ObservableCollection<object>(Enumerable.Range(1, 12).Select(month => CultureInfo.CurrentCulture.DateTimeFormat.GetMonthName(month)));
             wheelDay = new ObservableCollection<object>(Enumerable.Range(1, 31).Select(day => day.ToString()));
@@ -68,6 +64,9 @@ namespace WheelPickerDemo.Forms.Models
                     break;
                 case PickerModelType.DayMonth:
                     ItemsSource = new List<IList<object>> { wheelDay, wheelMonth };
+                    break;
+                case PickerModelType.Day:
+                    ItemsSource = new List<IList<object>> { wheelDay };
                     break;
             }
 
@@ -101,10 +100,19 @@ namespace WheelPickerDemo.Forms.Models
                 case PickerModelType.DayMonth:
                     selection = fullSelection.Take(2).ToList();
                     break;
+                case PickerModelType.Day:
+                    selection = fullSelection.Take(1).ToList();
+                    break;
             }
 
             SelectedItemsIndex = new IntegerList(selection);
             UpdateDaysFromMonthYear(1, fullSelection);
+        }
+
+        private void SetSelectedDateInternal(DateTime value)
+        {
+            selectedDate = value;
+            OnPropertyChanged(nameof(SelectedDate));
         }
 
         /// <summary>
@@ -130,6 +138,9 @@ namespace WheelPickerDemo.Forms.Models
                     selectedMonth = 1 + selection[1];
                     selectedDay = 1 + selection[0];
                     break;
+                case PickerModelType.Day:
+                    selectedDay = 1 + selection[0];
+                    break;
             }
 
             var date = new DateTime(selectedYear, selectedMonth, 1);
@@ -151,7 +162,7 @@ namespace WheelPickerDemo.Forms.Models
                 }
             }
 
-            SetSelectedDate(date.AddDays(dayInMonth - 1));
+            SetSelectedDateInternal(date.AddDays(dayInMonth - 1));
         }
 
         protected virtual void OnPropertyChanged([CallerMemberName] string propertyName = null)
