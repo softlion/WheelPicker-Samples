@@ -78,6 +78,7 @@
     <MtouchEnableSGenConc>true</MtouchEnableSGenConc>
     <MtouchFloat32>true</MtouchFloat32>
     <MtouchFastDev>true</MtouchFastDev>
+    <MtouchLink>None</MtouchLink>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|iPhone' ">
     <DebugType>none</DebugType>
