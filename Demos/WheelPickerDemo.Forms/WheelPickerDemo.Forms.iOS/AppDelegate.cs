@@ -1,16 +1,7 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-
-using Foundation;
+﻿using Foundation;
 using UIKit;
-using Vapolia.WheelPickerForms;
-using Vapolia.WheelPickerForms.Ios;
 using WheelPickerDemo.Forms;
-using Xamarin.Forms;
 
-//Required by Xamarin Forms infrastructure (Xamarin Forms < 2.3.5)
-[assembly: ExportRenderer(typeof(WheelPicker), typeof(WheelPickerRenderer))]
 
 namespace Vapolia.WheelPickerDemo.Forms.iOS
 {
@@ -29,7 +20,7 @@ namespace Vapolia.WheelPickerDemo.Forms.iOS
         //
         public override bool FinishedLaunching(UIApplication app, NSDictionary options)
         {
-            WheelPickerRenderer.InitializeForms();
+            global::Vapolia.WheelPickerForms.Ios.WheelPickerRenderer.InitializeForms();
             global::Xamarin.Forms.Forms.Init();
             LoadApplication(new App());
 

@@ -30,7 +30,7 @@
                     <On Platform="Android" Value="LightBlue"/>
                 </OnPlatform>
             </wp:WheelPicker.ItemTextColor>
-            <wp:WheelDefinition Width="Auto" HorizontalOptions="Center" Alignment="Center" RowHeight="30" />
+            <wp:WheelDefinition Width="*" HorizontalOptions="Center" Alignment="Center" RowHeight="30" />
         </wp:WheelPicker>
 
         <Label TextColor="DimGray" FontSize="Body">

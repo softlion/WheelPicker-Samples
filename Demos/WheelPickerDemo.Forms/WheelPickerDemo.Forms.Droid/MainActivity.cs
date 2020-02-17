@@ -4,7 +4,6 @@ using Android.Content.PM;
 using Android.OS;
 using Android.Util;
 using Vapolia;
-using Vapolia.WheelPickerForms.Droid;
 
 namespace WheelPickerDemo.Forms.Droid
 {
@@ -23,7 +22,7 @@ namespace WheelPickerDemo.Forms.Droid
 
             base.OnCreate(bundle);
 
-            WheelPickerRenderer.InitializeForms();
+            global::Vapolia.WheelPickerForms.Droid.WheelPickerRenderer.InitializeForms();
             global::Xamarin.Forms.Forms.Init(this, bundle);
             LoadApplication(new App());
         }
