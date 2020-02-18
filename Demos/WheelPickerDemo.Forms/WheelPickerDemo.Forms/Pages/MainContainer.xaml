@@ -2,15 +2,32 @@
 <TabbedPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              xmlns:forms="clr-namespace:WheelPickerDemo.Forms;assembly=WheelPickerDemo.Forms"
+             xmlns:system="clr-namespace:System;assembly=netstandard"
              x:Class="WheelPickerDemo.Forms.MainContainer"
              >
+    <TabbedPage.Resources>
+        <StyleSheet>
+            <StyleSheetExtension.Style>
+                <OnPlatform x:TypeArguments="system:String">
+                    <On Platform="iOS">
+    <![CDATA[
+    ^contentpage {
+        padding: 50 0 0 0;
+    }
+    ]]>
+                    </On>
+                </OnPlatform>
+            </StyleSheetExtension.Style>
+        </StyleSheet>
+    </TabbedPage.Resources>
 
-    <forms:CountryPickerPage Title="Country" Padding="0,50,0,0" />
-    <forms:DayPickerPage Title="Simple" Padding="0,50,0,0"  />
-    <forms:DayMonthPickerPage Title="DayMonth" Padding="0,50,0,0"  />
-    <forms:ImageWheelPage Title="Circular Images" Padding="0,50,0,0"  />
-    <forms:DatePickerPage Title="Date" Padding="0,50,0,0"  />
-    <forms:SlotPage Title="Slot Machine" Padding="0,50,0,0"  />
-    <forms:CustomPage Title="Custom" Padding="0,50,0,0"  />
+    <forms:PhonePickerPage Title="Phone"  />
+    <forms:CountryPickerPage Title="Country"  />
+    <forms:DayPickerPage Title="Simple"   />
+    <forms:DayMonthPickerPage Title="DayMonth"   />
+    <forms:ImageWheelPage Title="Circular Images"   />
+    <forms:DatePickerPage Title="Date"   />
+    <forms:SlotPage Title="Slot Machine"   />
+    <forms:CustomPage Title="Custom"   />
 
 </TabbedPage>

@@ -15,8 +15,8 @@
 
         <wp:WheelPicker 
             ItemsSourceSimple="{Binding PickerModel.ItemsSource}" 
-            HorizontalOptions="Fill"
             Command="{Binding PickerModel.ItemSelectedCommand}" 
+            HorizontalOptions="Fill"
             ItemTextFont="Medium"
             ItemTextSelectedColor="CornflowerBlue"
             SelectionLinesColor="LightBlue">
