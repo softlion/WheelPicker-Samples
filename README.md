@@ -1,21 +1,21 @@
+| Xamarin.Forms (iOS, Android)| Xamarin.Android, Xamarin.iOS|
+|:---------------------------:|:---------------------------:|
+| [![NuGet][nuget-img]][nuget-link-forms] | [![NuGet][nuget-img]][nuget-link] |
+| [![][demo-img]][demo-link] | [![][demo-img]][demo-link] |
+
+
 # Wheel Picker for Xamarin Samples
 From Apple, _**Wheel Picker**: a view that uses a spinning-wheel or slot-machine metaphor to show one or more sets of values_.
 
-Now braught to you by the team who created the best seller XamSvg control. This repo contains the WheelPicker samples for the free WheelPicker Xamarin demo control.
+This repo contains the WheelPicker samples and documentation.
 
-## TL;DR: Video preview
-
-[![See WheelPicker for Android and iOS in action][video-img]][video-link]
-
-| Xamarin.Forms (iOS, Android) + Android native + iOS native
-|:----------------------------:|
-| [![NuGet][nuget-img]][nuget-link]
-| [![][demo-img]][demo-link]
+[![Preview][video-img]][video-link]
 
 [video-img]: https://i.vimeocdn.com/video/668500920.webp?mw=400&mh=540
 [video-link]: https://vimeo.com/244170732
 [nuget-img]: https://img.shields.io/nuget/v/Vapolia.WheelPicker.Free
 [nuget-link]: https://www.nuget.org/packages/Vapolia.WheelPicker.Free/
+[nuget-link-forms]: https://www.nuget.org/packages/Vapolia.WheelPicker.Forms.Free/
 [demo-img]: https://img.shields.io/badge/demo-source%20code-lightgrey.svg
 [demo-link]: https://github.com/softlion/WheelPicker-Samples/tree/master/Demos
 
@@ -23,8 +23,6 @@ Now braught to you by the team who created the best seller XamSvg control. This 
 
 This control brings the Wheel Picker view to Xamarin Forms on Android and iOS (it also supports native Xamarin Android and iOS).
 It mimics a slot-machine user interface on Android, while on iOS it makes easy to use multi wheel pickers.
-
-A Wheel Picker is made of one or more wheels, bound to a single data source of type `IList<IList<object>>`. If the picker has only one wheel, you can use `IList<object>` instead. `object` can either be an instance of any class, or a simple string.
 
 ### Easy to use
 
@@ -112,7 +110,7 @@ All properties are bindable and can be dynamically changed.
 - In your Forms project
   - Install the nuget package
 - On each platform project (Android, iOS)
-  - Call `WheelPickerRenderer.InitializeForms();` before `global::Xamarin.Forms.Forms.Init`
+  - Call `global::Vapolia.WheelPickers.Declare();` before `global::Xamarin.Forms.Forms.Init();`
 
 #### Add the WheelPicker control
 
@@ -125,22 +123,9 @@ All properties are bindable and can be dynamically changed.
 </wp:WheelPicker>
 ```
 
-where MyListProperty is an `IList<object>` containing strings on the model bound to your xaml page.
+A Wheel Picker is made of one or more wheels, and is bound to a single data source. Add more `wp:WheelDefinition` to add more wheels. In this tutorial, MyListProperty is an `IList<object>` containing strings.
 
-If you have more than one WheelDefinition, use `ItemsSource` not `ItemsSourceSimple`.
-The MyListProperty must then be an `IList<IList<object>>` where the outer list must have a number of items equal to the count of WheelDefinitions.
-Each inner list contains the items for this WheelDefinition.
-
-### Platforms
-- Android api level 15+ (Android 4.0.3+)  
-- iOS 8+
-- Xamarin Forms
-
-### Mvvm friendly
-The Weel Picker provides an event and a Command when the selection changes, making it easy to use with mvvm frameworks. It also implements INotifyPropertyChanged to notify change of its properties.
-
-### Live Preview
-The component supports live preview in the Xamarin Forms Previewer and in the Xamarin Android Designer (axml files).
+If you have more than one WheelDefinition, use `ItemsSourceMulti` instead of `ItemsSourceSimple`; MyListProperty must then be of type `IList<IList<object>>` where the outer list must have a number of items equal to the count of WheelDefinitions. Each inner list contains the items for this WheelDefinition.
 
 
 ## Full start
@@ -440,3 +425,14 @@ Examples of ItemWidths:
 - `"* * *"`: three wheels, each of the same width, exactly one third of the width of the Wheel Picker
 - `"100 2* *"`: three wheels, first has a `100` device pixel width, second is twice the size of the third, and `3*-100=width` of the WheelPicker, which resolves to `*=WheelPickerWidth-100`
 - `"* Auto *"`: three wheels, the middle wheel's width is computed from the largest string in its items source (if items source contains strings).
+
+### Supported Platforms
+- Android api level 15+ (Android 4.0.3+)  
+- iOS 8+
+- Xamarin Forms
+
+### Mvvm friendly
+The Weel Picker provides an event and a Command when the selection changes, making it easy to use with mvvm frameworks. It also implements INotifyPropertyChanged to notify change of its properties.
+
+### Live Preview
+The component supports live preview in the Xamarin Forms Previewer and in the Xamarin Android Designer (axml files). But Xaml Hot reload is prefered.

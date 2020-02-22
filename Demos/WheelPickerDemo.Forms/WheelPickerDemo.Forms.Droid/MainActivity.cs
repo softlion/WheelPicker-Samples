@@ -22,7 +22,7 @@ namespace WheelPickerDemo.Forms.Droid
 
             base.OnCreate(bundle);
 
-            global::Vapolia.WheelPickerForms.Droid.WheelPickerRenderer.InitializeForms();
+            global::Vapolia.WheelPickers.Declare();
             global::Xamarin.Forms.Forms.Init(this, bundle);
             LoadApplication(new App());
         }

@@ -20,7 +20,7 @@ namespace Vapolia.WheelPickerDemo.Forms.iOS
         //
         public override bool FinishedLaunching(UIApplication app, NSDictionary options)
         {
-            global::Vapolia.WheelPickerForms.Ios.WheelPickerRenderer.InitializeForms();
+            global::Vapolia.WheelPickers.Declare();
             global::Xamarin.Forms.Forms.Init();
             LoadApplication(new App());
 
