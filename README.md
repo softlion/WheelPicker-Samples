@@ -123,20 +123,17 @@ All properties are bindable and can be dynamically changed.
 </wp:WheelPicker>
 ```
 
-A Wheel Picker is made of one or more wheels, and is bound to a single data source. Add more `wp:WheelDefinition` to add more wheels. In this tutorial, MyListProperty is an `IList<object>` containing strings.
+A Wheel Picker is made of one or more wheels, and is bound to a single data source. Add more `wp:WheelDefinition` to add more wheels. In this example MyListProperty is an `IList<object>` containing strings.
 
 If you have more than one WheelDefinition, use `ItemsSourceMulti` instead of `ItemsSourceSimple`; MyListProperty must then be of type `IList<IList<object>>` where the outer list must have a number of items equal to the count of WheelDefinitions. Each inner list contains the items for this WheelDefinition.
 
 
 ## Full start
 
-### Add the WheelPicker nuget
-
-- To your Forms project
-
-### Initialize the library
-
-Add `WheelPickerRenderer.InitializeForms();` before `global::Xamarin.Forms.Forms.Init` on each platform.
+- In your Forms project
+  - Install the nuget package
+- On each platform project (Android, iOS)
+  - Call `global::Vapolia.WheelPickers.Declare();` before `global::Xamarin.Forms.Forms.Init();`
 
 <details><summary>(click to expand) Android code</summary>
 
@@ -147,7 +144,7 @@ public class MainActivity : global::Xamarin.Forms.Platform.Android.FormsApplicat
     protected override void OnCreate(Bundle bundle)
     {
         base.OnCreate(bundle);
-        Vapolia.WheelPickerForms.Droid.WheelPickerRenderer.InitializeForms();
+        global::Vapolia.WheelPickers.Declare();
         global::Xamarin.Forms.Forms.Init(this, bundle);
     ...
 ```
@@ -162,7 +159,7 @@ public class AppDelegate : global::Xamarin.Forms.Platform.iOS.FormsApplicationDe
 {
     public override bool FinishedLaunching(UIApplication app, NSDictionary options)
     {
-        Vapolia.WheelPickerForms.Ios.WheelPickerRenderer.InitializeForms();
+        global::Vapolia.WheelPickers.Declare();
         global::Xamarin.Forms.Forms.Init();
     ...
 ```
@@ -174,8 +171,6 @@ public class AppDelegate : global::Xamarin.Forms.Platform.iOS.FormsApplicationDe
 
 Add the namespace `xmlns:wp="clr-namespace:Vapolia.WheelPickerForms;assembly=Vapolia.WheelPickerForms"` to the root tag.   
 Then add a `wp:WheelPicker` tag and set the properties you need.
-
-<details><summary>(click to expand) xaml code</summary>
 
 ```xml
 <?xml version="1.0" encoding="utf-8" ?>
@@ -195,11 +190,7 @@ Then add a `wp:WheelPicker` tag and set the properties you need.
 </ContentPage>
 ```
 
-</details>
-
 <br/>In the code behind, set the binding context to your view model containing the items to display:
-
-<details><summary>(click to expand) C# code</summary>
 
 ```csharp
 public partial class MainPage : ContentPage
@@ -237,8 +228,6 @@ public class MainPageModel
     }
 }
 ```
-
-</details>
 
 <br/>In the above example, ```ItemsSourceSimple``` is bound to a list of objects. If you need more than one wheel, use the ```ItemsSourceMulti``` property and bind it to a ```List<IList<object>>``` where the outer list represents the wheels and the inner lists the items in each wheel.
 
