@@ -231,7 +231,9 @@ public class MainPageModel
 
 <br/>In the above example, ```ItemsSourceSimple``` is bound to a list of objects. If you need more than one wheel, use the ```ItemsSourceMulti``` property and bind it to a ```List<IList<object>>``` where the outer list represents the wheels and the inner lists the items in each wheel.
 
+
 ## Reference (Xamarin Forms)
+<details><summary>Click to expand</summary>
 
 **WheelPicker**
 
@@ -271,8 +273,10 @@ When a wheel's `Width` is set to `Auto`, the control computes the max width of a
 `HorizontalOptions` is used to align a wheel inside the available WheelPicker's width, if it is larger than the wheel's width.
 
 `Alignment` is used to align the items inside a wheel.
+</details>
 
-## Reference (Android)
+## Reference (Xamarin.Android)
+<details><summary>Click to expand</summary>
 
 Sample usage in axml:
 
@@ -352,7 +356,11 @@ Templating
 `Alignments` or `Gravities` is used to align a wheel inside the available WheelPicker's width, if it is larger than the wheel's width.  
 `ItemAligns` is used to align the items inside a wheel.
 
-## Reference (iOS)
+</details>
+
+## Reference (Xamarin.iOS)
+
+<details><summary>Click to expand</summary>
 
 On iOS, this library uses the native UIPickerView with a custom UIPickerViewModel to greatly simplify the use of this control.
 
@@ -398,7 +406,11 @@ Templating
 `Alignments` is used to align a wheel inside the available WheelPicker's width, if it is larger than the wheel's width.  
 `ItemAligns` is used to align the items inside a wheel.
 
-## ItemWidths (Xamarin native only; not Forms)
+</details>
+
+## ItemWidths (Xamarin.Android, Xamarin.iOS; excluding Forms)
+
+<details><summary>Click to expand</summary>
 
 `ItemWidths` is used to choose the width of each wheel. It is a space separated string consisting of a combination of float numbers, stars (optionally prepended with a float number), or the "Auto" string.
 The total WheelPicker width is distributed between the wheels by respecting either :
@@ -415,6 +427,8 @@ Examples of ItemWidths:
 - `"100 2* *"`: three wheels, first has a `100` device pixel width, second is twice the size of the third, and `3*-100=width` of the WheelPicker, which resolves to `*=WheelPickerWidth-100`
 - `"* Auto *"`: three wheels, the middle wheel's width is computed from the largest string in its items source (if items source contains strings).
 
+</details>
+
 ### Supported Platforms
 - Android api level 15+ (Android 4.0.3+)  
 - iOS 8+
@@ -424,4 +438,4 @@ Examples of ItemWidths:
 The Weel Picker provides an event and a Command when the selection changes, making it easy to use with mvvm frameworks. It also implements INotifyPropertyChanged to notify change of its properties.
 
 ### Live Preview
-The component supports live preview in the Xamarin Forms Previewer and in the Xamarin Android Designer (axml files). But Xaml Hot reload is prefered.
+The component supports live preview in the Xamarin Forms Previewer and in the Xamarin Android Designer (axml files). Xaml Hot reload is the prefered way though.
