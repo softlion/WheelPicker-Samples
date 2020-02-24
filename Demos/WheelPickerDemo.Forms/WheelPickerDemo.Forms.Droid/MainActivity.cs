@@ -3,7 +3,6 @@ using Android.App;
 using Android.Content.PM;
 using Android.OS;
 using Android.Util;
-using Vapolia;
 
 namespace WheelPickerDemo.Forms.Droid
 {
@@ -17,12 +16,11 @@ namespace WheelPickerDemo.Forms.Droid
 
             TaskScheduler.UnobservedTaskException += (sender, args) =>
             {
-                Log.Error(WheelPicker.LogTag, $"{args.Exception.Message}: {args.Exception.StackTrace}");
+                Log.Error("WPDemo", $"{args.Exception.Message}: {args.Exception.StackTrace}");
             };
 
             base.OnCreate(bundle);
 
-            global::Vapolia.WheelPickers.Declare();
             global::Xamarin.Forms.Forms.Init(this, bundle);
             LoadApplication(new App());
         }

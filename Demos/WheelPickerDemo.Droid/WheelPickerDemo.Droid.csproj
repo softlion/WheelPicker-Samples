@@ -77,7 +77,7 @@
   </ItemGroup>
   <ItemGroup>
     <PackageReference Include="Vapolia.WheelPicker.Free">
-      <Version>4.4.6-pre4</Version>
+      <Version>4.4.7</Version>
     </PackageReference>
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath)\Xamarin\Android\Xamarin.Android.CSharp.targets" />

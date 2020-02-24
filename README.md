@@ -109,8 +109,8 @@ All properties are bindable and can be dynamically changed.
 
 - In your Forms project
   - Install the nuget package
-- On each platform project (Android, iOS)
-  - Call `global::Vapolia.WheelPickers.Declare();` before `global::Xamarin.Forms.Forms.Init();`
+
+That's all!
 
 #### Add the WheelPicker control
 
@@ -132,39 +132,6 @@ If you have more than one WheelDefinition, use `ItemsSourceMulti` instead of `It
 
 - In your Forms project
   - Install the nuget package
-- On each platform project (Android, iOS)
-  - Call `global::Vapolia.WheelPickers.Declare();` before `global::Xamarin.Forms.Forms.Init();`
-
-<details><summary>(click to expand) Android code</summary>
-
-```csharp
-[Activity(Label = "XamSvg Demo", MainLauncher = true, Icon = "@drawable/icon", ConfigurationChanges = ConfigChanges.ScreenSize | ConfigChanges.Orientation)]
-public class MainActivity : global::Xamarin.Forms.Platform.Android.FormsApplicationActivity
-{
-    protected override void OnCreate(Bundle bundle)
-    {
-        base.OnCreate(bundle);
-        global::Vapolia.WheelPickers.Declare();
-        global::Xamarin.Forms.Forms.Init(this, bundle);
-    ...
-```
-
-</details>
-
-<details><summary>(click to expand) iOS code</summary>
-
-```csharp
-[Register("AppDelegate")]
-public class AppDelegate : global::Xamarin.Forms.Platform.iOS.FormsApplicationDelegate
-{
-    public override bool FinishedLaunching(UIApplication app, NSDictionary options)
-    {
-        global::Vapolia.WheelPickers.Declare();
-        global::Xamarin.Forms.Forms.Init();
-    ...
-```
-
-</details>
 
 
 ### Add the WheelPicker control to your views
