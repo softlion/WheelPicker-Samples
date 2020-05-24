@@ -13,9 +13,9 @@ This repo contains the WheelPicker samples and documentation.
 
 [video-img]: https://i.vimeocdn.com/video/668500920.webp?mw=400&mh=540
 [video-link]: https://vimeo.com/244170732
-[nuget-img]: https://img.shields.io/nuget/v/Vapolia.WheelPicker.Free
-[nuget-link]: https://www.nuget.org/packages/Vapolia.WheelPicker.Free/
-[nuget-link-forms]: https://www.nuget.org/packages/Vapolia.WheelPicker.Forms.Free/
+[nuget-img]: https://img.shields.io/nuget/v/Vapolia.WheelPicker
+[nuget-link]: https://www.nuget.org/packages/Vapolia.WheelPicker/
+[nuget-link-forms]: https://www.nuget.org/packages/Vapolia.WheelPicker.Forms/
 [demo-img]: https://img.shields.io/badge/demo-source%20code-lightgrey.svg
 [demo-link]: https://github.com/softlion/WheelPicker-Samples/tree/master/Demos
 
@@ -186,10 +186,9 @@ public class MainPageModel
 
     public MainPageModel() 
     {
-        ItemSelectedCommand = new Command<(int, int, IList<int>)>(tuple =>
+        ItemSelectedCommand = new Command<(int Component, int Row, IList<int> ItemIndexes)>(tuple =>
         {
-            var (selectedWheelIndex, selectedItemIndex, _) = tuple;
-            var selectedValue = Days[selectedItemIndex];
+            var selectedValue = Days[tuple.Row];
             //...
         });
     }
