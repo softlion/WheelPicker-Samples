@@ -16,6 +16,8 @@ Xamarin Android Control:
 Xamarin iOS Control:
 `UIPickerViewModel`
 
+[More infos](https://vapolia.eu)
+
 [![Preview][video-img]][video-link]
 
 [video-img]: https://i.vimeocdn.com/video/668500920.webp?mw=400&mh=540
