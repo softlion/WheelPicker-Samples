@@ -7,7 +7,14 @@
 # Wheel Picker for Xamarin Samples
 From Apple, _**Wheel Picker**: a view that uses a spinning-wheel or slot-machine metaphor to show one or more sets of values_.
 
-This repo contains the WheelPicker samples and documentation.
+Xamarin Forms Control:
+`WheelPicker`
+
+Xamarin Android Control:
+`vapolia.WheelPicker`
+
+Xamarin iOS Control:
+`UIPickerViewModel`
 
 [![Preview][video-img]][video-link]
 
