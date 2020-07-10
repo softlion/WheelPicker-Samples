@@ -5,9 +5,9 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <PackageReference Include="libphonenumber-csharp" Version="8.12.4" />
-    <PackageReference Include="Vapolia.WheelPicker.Forms" Version="4.6.0-pre1" />
-    <PackageReference Include="Xamarin.Forms" Version="4.6.0.800" />
+    <PackageReference Include="libphonenumber-csharp" Version="8.12.6" />
+    <PackageReference Include="Vapolia.WheelPicker.Forms" Version="4.6.2" />
+    <PackageReference Include="Xamarin.Forms" Version="4.7.0.1080" />
   </ItemGroup>
 
 </Project>

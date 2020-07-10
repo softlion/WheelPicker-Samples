@@ -1,8 +1,5 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-
 using Xamarin.Forms;
 
 namespace WheelPickerDemo.Forms
@@ -11,25 +8,45 @@ namespace WheelPickerDemo.Forms
     {
         public App()
         {
-            Vapolia.WheelPickerCore.Config.License = "eyJhbGciOiJSUzI1NiIsImtpZCI6InZhcG9saWFzaWciLCJ0eXAiOiJKV1QifQ.eyJ1bmlxdWVfbmFtZSI6ImQ0NjUzYWY0OTRlMDQyZWE5NTY5Y2U5N2I0ZjQ2NzFjIiwiaHR0cHM6Ly9zY2hlbWFzLnZhcG9saWEuZXUvMjAyMC8wNS9jbGFpbXMvTWF4QnVpbGREYXRlQ2xhaW0iOiIyMDIxLTA1LTI0VDE3OjA3OjMzLjQxODUzODcrMDI6MDAiLCJodHRwczovL3NjaGVtYXMudmFwb2xpYS5ldS8yMDIwLzA1L2NsYWltcy9Qcm9kdWN0Q29kZUNsYWltIjpbIndoZWVscGlja2VyIiwid2hlZWxwaWNrZXJmb3JtcyJdLCJodHRwczovL3NjaGVtYXMudmFwb2xpYS5ldS8yMDIwLzA1L2NsYWltcy9BcHBJZENsYWltIjpbImNvbS52YXBvbGlhLldoZWVsUGlja2VyRGVtb0Zvcm1zIiwiY29tLnZhcG9saWEud2hlZWxwaWNrZXJkZW1vIiwiY29tLnZhcG9saWEud2hlZWxwaWNrZXJkZW1vZm9ybXMiXSwiaHR0cHM6Ly9zY2hlbWFzLnZhcG9saWEuZXUvMjAyMC8wNS9jbGFpbXMvT3NDbGFpbSI6WyJpb3MiLCJhbmRyb2lkIiwidXdwIl0sIm5iZiI6MTU5MDMzMjg1MywiZXhwIjoxOTA1ODY1NjUzLCJpYXQiOjE1OTAzMzI4NTMsImlzcyI6Imh0dHBzOi8vdmFwb2xpYS5ldS9hdXRob3JpdHkiLCJhdWQiOiJodHRwczovL3ZhcG9saWEuZXUvYXV0aG9yaXR5L2xpY2Vuc2VzIn0.fdy9VcxKMp8Tki90x0fk5XaAKZEKitvV0hO_qhGlq8P5T-Zq5_y1yX0xWo1lrwS5iQ9xD0YtPbdBspM_s2M0jwVKJXyiTJb30GNOzyEOoSIjldkIJ1S9rlWtJebAcdPTyJAJmqgESDgmhKC-YV0Ecce7EpkZUY9OodG2lY2h4zLJme6DY3zNewZEBUIRUANsF2sn6OFz97iez0P-RMwfB_o5_Hbe-wLhOCx1letQXOcvMuhrId02ClH1oNcUlqUtJR_fzhnlfXXnsxbLaMglnJiuW5UhWP_0b-5wZHyizH72ndZxZaS2cRkFy1DCkzva81f1jutjbbXaSB311VaaFw";
+            Vapolia.WheelPickerCore.Config.License = "eyJhbGciOiJSUzI1NiIsImtpZCI6InZhcG9saWFzaWciLCJ0eXAiOiJKV1QifQ.eyJodHRwczovL3NjaGVtYXMudmFwb2xpYS5ldS8yMDIwLzA1L2NsYWltcy9MaWNlbnNlc0NsYWltIjoie1wiTGljZW5zZXNcIjpbe1wiUHJvZHVjdFwiOlwid2hlZWxwaWNrZXJcIixcIk9zXCI6XCJpb3NcIixcIkFwcElkXCI6XCJjb20udmFwb2xpYS5XaGVlbFBpY2tlckRlbW9Gb3Jtc1wiLFwiTWF4QnVpbGRcIjpcIjIwMjEtMDctMDlUMjA6MTM6MTYuODM1NTg5KzAyOjAwXCJ9LHtcIlByb2R1Y3RcIjpcIndoZWVscGlja2VyXCIsXCJPc1wiOlwiYW5kcm9pZFwiLFwiQXBwSWRcIjpcImNvbS52YXBvbGlhLldoZWVsUGlja2VyRGVtb0Zvcm1zXCIsXCJNYXhCdWlsZFwiOlwiMjAyMS0wNy0wOVQyMDoxMzoxNi44MzU1ODkrMDI6MDBcIn0se1wiUHJvZHVjdFwiOlwid2hlZWxwaWNrZXJcIixcIk9zXCI6XCJ1d3BcIixcIkFwcElkXCI6XCJjb20udmFwb2xpYS5XaGVlbFBpY2tlckRlbW9Gb3Jtc1wiLFwiTWF4QnVpbGRcIjpcIjIwMjEtMDctMDlUMjA6MTM6MTYuODM1NTg5KzAyOjAwXCJ9LHtcIlByb2R1Y3RcIjpcIndoZWVscGlja2VyZm9ybXNcIixcIk9zXCI6XCJpb3NcIixcIkFwcElkXCI6XCJjb20udmFwb2xpYS5XaGVlbFBpY2tlckRlbW9Gb3Jtc1wiLFwiTWF4QnVpbGRcIjpcIjIwMjEtMDctMDlUMjA6MTM6MTYuODM1NTg5KzAyOjAwXCJ9LHtcIlByb2R1Y3RcIjpcIndoZWVscGlja2VyZm9ybXNcIixcIk9zXCI6XCJhbmRyb2lkXCIsXCJBcHBJZFwiOlwiY29tLnZhcG9saWEuV2hlZWxQaWNrZXJEZW1vRm9ybXNcIixcIk1heEJ1aWxkXCI6XCIyMDIxLTA3LTA5VDIwOjEzOjE2LjgzNTU4OSswMjowMFwifSx7XCJQcm9kdWN0XCI6XCJ3aGVlbHBpY2tlcmZvcm1zXCIsXCJPc1wiOlwidXdwXCIsXCJBcHBJZFwiOlwiY29tLnZhcG9saWEuV2hlZWxQaWNrZXJEZW1vRm9ybXNcIixcIk1heEJ1aWxkXCI6XCIyMDIxLTA3LTA5VDIwOjEzOjE2LjgzNTU4OSswMjowMFwifSx7XCJQcm9kdWN0XCI6XCJ3aGVlbHBpY2tlclwiLFwiT3NcIjpcImlvc1wiLFwiQXBwSWRcIjpcImNvbS52YXBvbGlhLndoZWVscGlja2VyZGVtb1wiLFwiTWF4QnVpbGRcIjpcIjIwMjEtMDctMDlUMjA6MTM6MTYuODM1NTg5KzAyOjAwXCJ9LHtcIlByb2R1Y3RcIjpcIndoZWVscGlja2VyXCIsXCJPc1wiOlwiYW5kcm9pZFwiLFwiQXBwSWRcIjpcImNvbS52YXBvbGlhLndoZWVscGlja2VyZGVtb1wiLFwiTWF4QnVpbGRcIjpcIjIwMjEtMDctMDlUMjA6MTM6MTYuODM1NTg5KzAyOjAwXCJ9LHtcIlByb2R1Y3RcIjpcIndoZWVscGlja2VyXCIsXCJPc1wiOlwidXdwXCIsXCJBcHBJZFwiOlwiY29tLnZhcG9saWEud2hlZWxwaWNrZXJkZW1vXCIsXCJNYXhCdWlsZFwiOlwiMjAyMS0wNy0wOVQyMDoxMzoxNi44MzU1ODkrMDI6MDBcIn0se1wiUHJvZHVjdFwiOlwid2hlZWxwaWNrZXJmb3Jtc1wiLFwiT3NcIjpcImlvc1wiLFwiQXBwSWRcIjpcImNvbS52YXBvbGlhLndoZWVscGlja2VyZGVtb1wiLFwiTWF4QnVpbGRcIjpcIjIwMjEtMDctMDlUMjA6MTM6MTYuODM1NTg5KzAyOjAwXCJ9LHtcIlByb2R1Y3RcIjpcIndoZWVscGlja2VyZm9ybXNcIixcIk9zXCI6XCJhbmRyb2lkXCIsXCJBcHBJZFwiOlwiY29tLnZhcG9saWEud2hlZWxwaWNrZXJkZW1vXCIsXCJNYXhCdWlsZFwiOlwiMjAyMS0wNy0wOVQyMDoxMzoxNi44MzU1ODkrMDI6MDBcIn0se1wiUHJvZHVjdFwiOlwid2hlZWxwaWNrZXJmb3Jtc1wiLFwiT3NcIjpcInV3cFwiLFwiQXBwSWRcIjpcImNvbS52YXBvbGlhLndoZWVscGlja2VyZGVtb1wiLFwiTWF4QnVpbGRcIjpcIjIwMjEtMDctMDlUMjA6MTM6MTYuODM1NTg5KzAyOjAwXCJ9LHtcIlByb2R1Y3RcIjpcIndoZWVscGlja2VyXCIsXCJPc1wiOlwiaW9zXCIsXCJBcHBJZFwiOlwiY29tLnZhcG9saWEud2hlZWxwaWNrZXJkZW1vZm9ybXNcIixcIk1heEJ1aWxkXCI6XCIyMDIxLTA3LTA5VDIwOjEzOjE2LjgzNTU4OSswMjowMFwifSx7XCJQcm9kdWN0XCI6XCJ3aGVlbHBpY2tlclwiLFwiT3NcIjpcImFuZHJvaWRcIixcIkFwcElkXCI6XCJjb20udmFwb2xpYS53aGVlbHBpY2tlcmRlbW9mb3Jtc1wiLFwiTWF4QnVpbGRcIjpcIjIwMjEtMDctMDlUMjA6MTM6MTYuODM1NTg5KzAyOjAwXCJ9LHtcIlByb2R1Y3RcIjpcIndoZWVscGlja2VyXCIsXCJPc1wiOlwidXdwXCIsXCJBcHBJZFwiOlwiY29tLnZhcG9saWEud2hlZWxwaWNrZXJkZW1vZm9ybXNcIixcIk1heEJ1aWxkXCI6XCIyMDIxLTA3LTA5VDIwOjEzOjE2LjgzNTU4OSswMjowMFwifSx7XCJQcm9kdWN0XCI6XCJ3aGVlbHBpY2tlcmZvcm1zXCIsXCJPc1wiOlwiaW9zXCIsXCJBcHBJZFwiOlwiY29tLnZhcG9saWEud2hlZWxwaWNrZXJkZW1vZm9ybXNcIixcIk1heEJ1aWxkXCI6XCIyMDIxLTA3LTA5VDIwOjEzOjE2LjgzNTU4OSswMjowMFwifSx7XCJQcm9kdWN0XCI6XCJ3aGVlbHBpY2tlcmZvcm1zXCIsXCJPc1wiOlwiYW5kcm9pZFwiLFwiQXBwSWRcIjpcImNvbS52YXBvbGlhLndoZWVscGlja2VyZGVtb2Zvcm1zXCIsXCJNYXhCdWlsZFwiOlwiMjAyMS0wNy0wOVQyMDoxMzoxNi44MzU1ODkrMDI6MDBcIn0se1wiUHJvZHVjdFwiOlwid2hlZWxwaWNrZXJmb3Jtc1wiLFwiT3NcIjpcInV3cFwiLFwiQXBwSWRcIjpcImNvbS52YXBvbGlhLndoZWVscGlja2VyZGVtb2Zvcm1zXCIsXCJNYXhCdWlsZFwiOlwiMjAyMS0wNy0wOVQyMDoxMzoxNi44MzU1ODkrMDI6MDBcIn1dfSIsIm5iZiI6MTU5NDMxODM5NiwiZXhwIjoxOTA5ODUxMTk2LCJpYXQiOjE1OTQzMTgzOTYsImlzcyI6Imh0dHBzOi8vdmFwb2xpYS5ldS9hdXRob3JpdHkiLCJhdWQiOiJodHRwczovL3ZhcG9saWEuZXUvYXV0aG9yaXR5L2xpY2Vuc2VzIn0.qsktxo6OA0HNQU0TVnVxzQ0j6zoMw3CSbwTzhRfkQ3jmHnYk3N1pcnRobcP69h-9P8X3M9Ye-2iflq5Kkdv36unwp4B6X6HLpFlz1su9doMQmlHkea1HkNXip2o3BCgCOWFHDVdVLYV9D-AQtspiuiOTthgRezYvqt1kLtfM3qfrjKw7tTXv2TAX91T8-iNRb3OSc9TQeHESPBDTYYFDV6SHUECRSuOH8_-V5gUtxoIS7c1xMOJkdty-L8pYGn45BmtdaL3bMdXY_eYQwq7uYIxRHPcQ-KEioqtyU158Jzh4uX14OjcBkQ2Bz1Qhd6rFNz8Q0EpZ2roNfoNpqLX-XQ";
             InitializeComponent();
 
             MainPage = new MainContainer();
         }
+    }
 
-        protected override void OnStart()
-        {
-            // Handle when your app starts
-        }
+    class VapoliaLicense
+    {
+        /// <summary>
+        /// product targeted by this license
+        /// </summary>
+        /// <example>
+        /// xamsvg, wheelpicker, xamsvgforms, wheelpickerforms, ...
+        /// </example>
+        public string Product { get; set; }
 
-        protected override void OnSleep()
-        {
-            // Handle when your app sleeps
-        }
+        /// <summary>
+        /// OS on which this license can be used
+        /// </summary>
+        public string Os { get; set; }
 
-        protected override void OnResume()
-        {
-            // Handle when your app resumes
-        }
+        /// <summary>
+        /// Application id that can use this license
+        /// </summary>
+        /// <remarks>
+        /// android: Android.App.Application.Context.PackageName;
+        /// ios: NSBundle.MainBundle.BundleIdentifier;
+        /// </remarks>
+        public string AppId { get; set; }
+
+        /// <summary>
+        /// Max product build date with which this license can be used
+        /// </summary>
+        public DateTimeOffset MaxBuild { get; set; }
+    }
+
+    class VapoliaLicenses
+    {
+        public List<VapoliaLicense> Licenses { get; set; }
     }
 }

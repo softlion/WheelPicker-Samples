@@ -11,11 +11,11 @@
         <Label Text="Circular image wheel, with spin button" HorizontalOptions="Center" />
         <BoxView BackgroundColor="GreenYellow" HeightRequest="1" />
 
-        <Label Text="{Binding DayPicker.SelectedItem,StringFormat='Selection: \'{0}\''}" />
+        <Label Text="{Binding PickerModel.SelectedItem,StringFormat='Selection: \'{0}\''}" />
 
         <wp:WheelPicker x:Name="WheelImagePicker" ItemsSourceSimple="{Binding PickerModel.ItemsSource}" 
                     SelectedItemsIndex="0"
-                    Command="{Binding DayPicker.ItemSelectedCommand}" 
+                    Command="{Binding PickerModel.ItemSelectedCommand}" 
                     ItemTextColor="Green"
                     ItemTextSelectedColor="Lime"
                     ItemTextFont="Italic"

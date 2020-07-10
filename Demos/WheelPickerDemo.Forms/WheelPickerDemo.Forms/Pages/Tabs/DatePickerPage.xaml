@@ -13,7 +13,7 @@
 
         <StackLayout Orientation="Horizontal">
             <Label Text="Selected date:" />
-            <Label Text="{Binding DatePicker.SelectedItem}" FontAttributes="Bold" />
+            <Label Text="{Binding DatePicker.SelectedDate,StringFormat='{0:D}'}" FontAttributes="Bold" />
         </StackLayout>
 
         <Label Text="Set date programatically:" />
