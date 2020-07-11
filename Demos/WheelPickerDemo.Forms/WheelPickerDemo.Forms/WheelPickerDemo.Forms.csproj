@@ -6,7 +6,7 @@
 
   <ItemGroup>
     <PackageReference Include="libphonenumber-csharp" Version="8.12.6" />
-    <PackageReference Include="Vapolia.WheelPicker.Forms" Version="4.6.2" />
+    <PackageReference Include="Vapolia.WheelPicker.Forms" Version="4.6.3" />
     <PackageReference Include="Xamarin.Forms" Version="4.7.0.1080" />
   </ItemGroup>
 
