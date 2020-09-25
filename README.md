@@ -60,6 +60,8 @@ A templated picker with one wheel
 </wp:WheelPicker>
 ```
 
+Note that the tag `wp:WheelDefinition.ItemTemplate` is optional as it is the content property.
+
 
 A picker with 3 wheels  
 The center wheel's width is computed automatically. Items are aligned differently inside each wheel.
@@ -89,25 +91,19 @@ All properties are bindable and can be dynamically changed.
                 HorizontalOptions="Fill"
                 SelectionLinesColor="Aquamarine">
     <wp:WheelDefinition Width="*" HorizontalOptions="Left" Alignment="Center" IsCircular="True" RowHeight="100">
-        <wp:WheelDefinition.ItemTemplate>
-            <DataTemplate>
-                <Image Source="{Binding .}" HeightRequest="100" Aspect="AspectFit" />
-            </DataTemplate>
-        </wp:WheelDefinition.ItemTemplate>
+        <DataTemplate>
+            <Image Source="{Binding .}" HeightRequest="100" Aspect="AspectFit" />
+        </DataTemplate>
     </wp:WheelDefinition>
     <wp:WheelDefinition Width="*" HorizontalOptions="Left" Alignment="Center" IsCircular="True" RowHeight="100">
-        <wp:WheelDefinition.ItemTemplate>
-            <DataTemplate>
-                <Image Source="{Binding .}" HeightRequest="100" Aspect="AspectFit" />
-            </DataTemplate>
-        </wp:WheelDefinition.ItemTemplate>
+        <DataTemplate>
+            <Image Source="{Binding .}" HeightRequest="100" Aspect="AspectFit" />
+        </DataTemplate>
     </wp:WheelDefinition>
     <wp:WheelDefinition Width="*" HorizontalOptions="Left" Alignment="Center" IsCircular="True" RowHeight="100">
-        <wp:WheelDefinition.ItemTemplate>
-            <DataTemplate>
-                <Image Source="{Binding .}" HeightRequest="100" Aspect="AspectFit" />
-            </DataTemplate>
-        </wp:WheelDefinition.ItemTemplate>
+        <DataTemplate>
+            <Image Source="{Binding .}" HeightRequest="100" Aspect="AspectFit" />
+        </DataTemplate>
     </wp:WheelDefinition>
 </wp:WheelPicker>
 ```
@@ -227,7 +223,7 @@ Item appearance (when not using a templated item)
 - `Color` **`ItemTextSelectedColor`**
 
 Selection  
-- `List<int>` **`SelectedItemsIndex`**
+- `IList<int>` **`SelectedItemsIndex`**
 - `ICommand` **`Command`**
 - `EventHandler<WheelChangedEventArgs>` **`SelectedItemIndexChanged`**
 - `void` **`Spin`**`(int items, int wheelIndex = 0)` items: the number of item to spin
@@ -282,7 +278,7 @@ wheelView.SelectedItemIndexChanged += (sender, args) =>
     var text = $"Wheel {args.WheelIndex} selection changed to item index {args.SelectedItemIndex}";
 };
 wheelView.ItemsSource = new List<object> { (object)"Monday", "Tuesday", "Wednesday" };
-wheelView.SelectedItemsIndex = new List<int> { 0 };
+wheelView.SelectedItemsIndex = new [] { 0 };
 ```
 
 **vapolia.WheelPicker**
@@ -347,7 +343,7 @@ var pickerViewModel = new WheelPickerModel(picker);
 picker.Model = pickerViewModel;
 
 pickerViewModel.ItemsSource = new List<object> { (object)"Monday", "Tuesday", "Wednesday" };
-pickerViewModel.SelectedItemsIndex = new List<int> { 0 };
+pickerViewModel.SelectedItemsIndex = new [] { 0 };
 pickerViewModel.ItemAligns = new List<WheelItemAlign> { WheelItemAlign.Left };
 ```
 

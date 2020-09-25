@@ -26,7 +26,7 @@ namespace WheelPickerDemo.Forms.Models
         public event PropertyChangedEventHandler PropertyChanged;
         private readonly ObservableCollection<object> wheelDay, wheelMonth, wheelYear;
         private DateTime selectedDate;
-        private IntegerList selectedItemsIndex;
+        private IList<int> selectedItemsIndex;
 
         //TODO
         private readonly DateTime MaxDate = DateTime.Now.AddYears(2);
@@ -36,7 +36,7 @@ namespace WheelPickerDemo.Forms.Models
         public PickerModelType DisplayType { get; }
         public Command<(int, int, IList<int>)> ItemSelectedCommand { get; }
 
-        public IntegerList SelectedItemsIndex
+        public IList<int> SelectedItemsIndex
         {
             get => selectedItemsIndex;
             set { selectedItemsIndex = value; OnPropertyChanged(); }
@@ -61,12 +61,15 @@ namespace WheelPickerDemo.Forms.Models
             {
                 case PickerModelType.DayMonthYear:
                     ItemsSource = new List<IList<object>> { wheelDay, wheelMonth, wheelYear };
+                    selectedDate = DateTime.Today;
                     break;
                 case PickerModelType.DayMonth:
                     ItemsSource = new List<IList<object>> { wheelDay, wheelMonth };
+                    selectedDate = DateTime.Today;
                     break;
                 case PickerModelType.Day:
                     ItemsSource = new List<IList<object>> { wheelDay };
+                    selectedDate = new DateTime(2020, 8, 1, 12,0,0,0, DateTimeKind.Utc);
                     break;
             }
 
@@ -105,7 +108,7 @@ namespace WheelPickerDemo.Forms.Models
                     break;
             }
 
-            SelectedItemsIndex = new IntegerList(selection);
+            SelectedItemsIndex = selection;
             UpdateDaysFromMonthYear(1, fullSelection);
         }
 

@@ -2,7 +2,9 @@
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              xmlns:wp="clr-namespace:Vapolia.WheelPickerForms;assembly=Vapolia.WheelPickerForms"
-             x:Class="WheelPickerDemo.Forms.PhonePickerPage">
+             xmlns:forms="clr-namespace:WheelPickerDemo.Forms;assembly=WheelPickerDemo.Forms"
+             x:Class="WheelPickerDemo.Forms.PhonePickerPage"
+             x:DataType="forms:PhonePickerPageModel">
 
     <Grid>
         <StackLayout Margin="20,0" Spacing="10">
@@ -49,23 +51,21 @@
                 ItemTextSelectedColor="LightGoldenrodYellow"
                 SelectionLinesColor="White">
                 <wp:WheelDefinition Width="1100" RowHeight="35">
-                    <wp:WheelDefinition.ItemTemplate>
-                        <DataTemplate>
-                            <Frame BackgroundColor="OliveDrab" Padding="0" CornerRadius="2">
-                                <StackLayout Orientation="Horizontal" HeightRequest="35">
-                                    <Label FontSize="Medium" TextColor="Wheat" HorizontalTextAlignment="Center" VerticalTextAlignment="Center" WidthRequest="350">
-                                        <Label.FormattedText>
-                                            <FormattedString>
-                                                <Span Text="{Binding DisplayName}" />
-                                                <Span Text=" "/>
-                                                <Span Text="{Binding DisplayPrefix}" TextColor="White" />
-                                            </FormattedString>
-                                        </Label.FormattedText>
-                                    </Label>
-                                </StackLayout>
-                            </Frame>
-                        </DataTemplate>
-                    </wp:WheelDefinition.ItemTemplate>
+                    <DataTemplate x:DataType="forms:RegionViewModel">
+                        <Frame BackgroundColor="OliveDrab" Padding="0" CornerRadius="2">
+                            <StackLayout Orientation="Horizontal" HeightRequest="35">
+                                <Label FontSize="Medium" TextColor="Wheat" HorizontalTextAlignment="Center" VerticalTextAlignment="Center" WidthRequest="350">
+                                    <Label.FormattedText>
+                                        <FormattedString>
+                                            <Span Text="{Binding DisplayName}" />
+                                            <Span Text=" "/>
+                                            <Span Text="{Binding DisplayPrefix}" TextColor="White" />
+                                        </FormattedString>
+                                    </Label.FormattedText>
+                                </Label>
+                            </StackLayout>
+                        </Frame>
+                    </DataTemplate>
                 </wp:WheelDefinition>
             </wp:WheelPicker>
         </StackLayout>

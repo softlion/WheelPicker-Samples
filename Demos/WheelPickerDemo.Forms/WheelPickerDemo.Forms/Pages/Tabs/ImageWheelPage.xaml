@@ -2,7 +2,9 @@
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              xmlns:wp="clr-namespace:Vapolia.WheelPickerForms;assembly=Vapolia.WheelPickerForms"
-             x:Class="WheelPickerDemo.Forms.ImageWheelPage">
+             xmlns:forms="clr-namespace:WheelPickerDemo.Forms;assembly=WheelPickerDemo.Forms"
+             x:Class="WheelPickerDemo.Forms.ImageWheelPage"
+             x:DataType="forms:MainPageModel">
 
     <StackLayout Margin="20" Spacing="10">
 
@@ -31,11 +33,9 @@
                     <wp:WheelDefinition.RowHeight>
                         <OnPlatform x:TypeArguments="x:Double" Android="48" iOS="48" />
                     </wp:WheelDefinition.RowHeight>
-                    <wp:WheelDefinition.ItemTemplate>
-                        <DataTemplate>
-                            <Image Source="{Binding .}" HeightRequest="48" Aspect="AspectFill" />
-                        </DataTemplate>
-                    </wp:WheelDefinition.ItemTemplate>
+                    <DataTemplate>
+                        <Image Source="{Binding .}" HeightRequest="48" Aspect="AspectFill" />
+                    </DataTemplate>
                 </wp:WheelDefinition>
         </wp:WheelPicker>
 

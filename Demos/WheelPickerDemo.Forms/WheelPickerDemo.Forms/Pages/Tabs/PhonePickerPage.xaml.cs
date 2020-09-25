@@ -114,14 +114,14 @@ namespace WheelPickerDemo.Forms
 
     public class PhonePickerWheelModel : INotifyPropertyChanged
     {
-        private IntegerList selectedItemsIndex;
-        private readonly Lazy<PhoneNumberUtil> pnuLazy = new Lazy<PhoneNumberUtil>(PhoneNumberUtil.GetInstance());
+        private IList<int> selectedItemsIndex;
+        private readonly Lazy<PhoneNumberUtil> pnuLazy = new Lazy<PhoneNumberUtil>(PhoneNumberUtil.GetInstance);
         private PhoneNumberUtil pnu => pnuLazy.Value;
         private readonly List<RegionViewModel> regions;
 
         public List<object> ItemsSource { get; }
 
-        public IntegerList SelectedItemsIndex
+        public IList<int> SelectedItemsIndex
         {
             get => selectedItemsIndex;
             set { selectedItemsIndex = value; OnPropertyChanged(); OnPropertyChanged(nameof(SelectedPhoneRegion)); }
@@ -150,7 +150,7 @@ namespace WheelPickerDemo.Forms
             var newIndex = regions.FindIndex(0, r => r.Code == regionCode);
             if (newIndex < 0)
                 newIndex = 0;
-            SelectedItemsIndex = new IntegerList(new[] { newIndex });
+            SelectedItemsIndex = new[] { newIndex };
         }
 
         private Dictionary<string, int> GetRegions()

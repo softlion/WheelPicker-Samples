@@ -2,7 +2,9 @@
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              xmlns:wp="clr-namespace:Vapolia.WheelPickerForms;assembly=Vapolia.WheelPickerForms"
-             x:Class="WheelPickerDemo.Forms.SlotPage">
+             xmlns:forms="clr-namespace:WheelPickerDemo.Forms;assembly=WheelPickerDemo.Forms"
+             x:Class="WheelPickerDemo.Forms.SlotPage"
+             x:DataType="forms:SlotPageModel">
 
     <StackLayout Margin="20" Spacing="10">
 
@@ -20,29 +22,21 @@
                         ItemTextFont="Italic"
                         HorizontalOptions="Fill"
                         SelectionLinesColor="Aquamarine">
-            <wp:WheelPicker.WheelDefinitions>
-                <wp:WheelDefinition Width="*" HorizontalOptions="Left" Alignment="Center" IsCircular="True" RowHeight="100">
-                    <wp:WheelDefinition.ItemTemplate>
-                        <DataTemplate>
-                            <Image Source="{Binding .}" HeightRequest="100" Aspect="AspectFit" />
-                        </DataTemplate>
-                    </wp:WheelDefinition.ItemTemplate>
-                </wp:WheelDefinition>
-                <wp:WheelDefinition Width="*" HorizontalOptions="Left" Alignment="Center" IsCircular="True" RowHeight="100">
-                    <wp:WheelDefinition.ItemTemplate>
-                        <DataTemplate>
-                            <Image Source="{Binding .}" HeightRequest="100" Aspect="AspectFit" />
-                        </DataTemplate>
-                    </wp:WheelDefinition.ItemTemplate>
-                </wp:WheelDefinition>
-                <wp:WheelDefinition Width="*" HorizontalOptions="Left" Alignment="Center" IsCircular="True" RowHeight="100">
-                    <wp:WheelDefinition.ItemTemplate>
-                        <DataTemplate>
-                            <Image Source="{Binding .}" HeightRequest="100" Aspect="AspectFit" />
-                        </DataTemplate>
-                    </wp:WheelDefinition.ItemTemplate>
-                </wp:WheelDefinition>
-            </wp:WheelPicker.WheelDefinitions>
+            <wp:WheelDefinition Width="*" HorizontalOptions="Left" Alignment="Center" IsCircular="True" RowHeight="100">
+                <DataTemplate x:DataType="x:String">
+                    <Image Source="{Binding .}" HeightRequest="100" Aspect="AspectFit" />
+                </DataTemplate>
+            </wp:WheelDefinition>
+            <wp:WheelDefinition Width="*" HorizontalOptions="Left" Alignment="Center" IsCircular="True" RowHeight="100">
+                <DataTemplate x:DataType="x:String">
+                    <Image Source="{Binding .}" HeightRequest="100" Aspect="AspectFit" />
+                </DataTemplate>
+            </wp:WheelDefinition>
+            <wp:WheelDefinition Width="*" HorizontalOptions="Left" Alignment="Center" IsCircular="True" RowHeight="100">
+                <DataTemplate x:DataType="x:String">
+                    <Image Source="{Binding .}" HeightRequest="100" Aspect="AspectFit" />
+                </DataTemplate>
+            </wp:WheelDefinition>
         </wp:WheelPicker>
 
     </StackLayout>

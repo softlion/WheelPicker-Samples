@@ -4,6 +4,7 @@ using System.ComponentModel;
 using System.Globalization;
 using System.Linq;
 using System.Runtime.CompilerServices;
+using System.Windows.Input;
 using Vapolia.WheelPickerForms;
 using Xamarin.Forms;
 
@@ -24,17 +25,25 @@ namespace WheelPickerDemo.Forms
     internal class CountryPickerPageModel
     {
         public CountryPickerModel PickerModel { get; } = new CountryPickerModel();
+
+        public ICommand SelectItemByIndexCommand => new Command<string>(sIndex =>
+        {
+            if (Int32.TryParse(sIndex, out var index) && index>=0 && index < PickerModel.ItemsSource.Count)
+            {
+                PickerModel.SelectedItemsIndex = new[] {index};
+            }
+        });
     }
 
     public class CountryPickerModel : INotifyPropertyChanged
     {
         public event PropertyChangedEventHandler PropertyChanged;
-        private IntegerList selectedItemsIndex;
+        private IList<int> selectedItemsIndex;
 
         public List<object> ItemsSource { get; }
         public Command<(int, int, IList<int>)> ItemSelectedCommand { get; }
 
-        public IntegerList SelectedItemsIndex
+        public IList<int> SelectedItemsIndex
         {
             get => selectedItemsIndex;
             set { selectedItemsIndex = value; OnPropertyChanged(); }
@@ -47,7 +56,7 @@ namespace WheelPickerDemo.Forms
             {
                 var newIndex = ItemsSource.FindIndex(0, o => o.Equals(value));
                 if(newIndex>=0)
-                    SelectedItemsIndex = new IntegerList(new[] { newIndex });
+                    SelectedItemsIndex = new[] { newIndex };
             }
         }
 

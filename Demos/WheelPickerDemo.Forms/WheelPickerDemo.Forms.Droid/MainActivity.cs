@@ -16,7 +16,7 @@ namespace WheelPickerDemo.Forms.Droid
 
             TaskScheduler.UnobservedTaskException += (sender, args) =>
             {
-                Log.Error("WPDemo", $"{args.Exception.Message}: {args.Exception.StackTrace}");
+                Log.Error("WHEEL", $"{args.Exception.Message}: {args.Exception.StackTrace}");
             };
 
             base.OnCreate(bundle);

@@ -2,7 +2,6 @@
 using UIKit;
 using WheelPickerDemo.Forms;
 
-
 namespace Vapolia.WheelPickerDemo.Forms.iOS
 {
     // The UIApplicationDelegate for the application. This class is responsible for launching the 

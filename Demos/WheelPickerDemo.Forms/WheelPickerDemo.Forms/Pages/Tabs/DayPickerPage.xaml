@@ -2,7 +2,9 @@
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              xmlns:wp="clr-namespace:Vapolia.WheelPickerForms;assembly=Vapolia.WheelPickerForms"
-             x:Class="WheelPickerDemo.Forms.DayPickerPage">
+             xmlns:forms="clr-namespace:WheelPickerDemo.Forms;assembly=WheelPickerDemo.Forms"
+             x:Class="WheelPickerDemo.Forms.DayPickerPage"
+             x:DataType="forms:DayPickerPageModel">
 
     <StackLayout Margin="20" Spacing="10">
 
@@ -11,7 +13,7 @@
         <Label Text="Basic Wheel" HorizontalOptions="Center" />
         <BoxView BackgroundColor="LightGray" HeightRequest="1" />
 
-        <Label Text="{Binding PickerModel.SelectedItem,StringFormat='Selection: \'{0}\''}" />
+        <!--<Label Text="{Binding PickerModel.SelectedDate,StringFormat='Selection: \'{0:dd}\''}" />-->
 
         <wp:WheelPicker 
             ItemsSourceMulti="{Binding PickerModel.ItemsSource}" 
@@ -34,9 +36,7 @@
             <wp:WheelDefinition Width="Auto" HorizontalOptions="Left" Alignment="Center" />
         </wp:WheelPicker>
 
-        <Label TextColor="DimGray" FontSize="Body">
-            This wheel uses an ItemTemplate in its single WheelDefinition. The template is bound to a collection of labels.
-        </Label>
+        <Label TextColor="DimGray" FontSize="Body" Text="This wheel uses one collection of labels." />
 
     </StackLayout>
 

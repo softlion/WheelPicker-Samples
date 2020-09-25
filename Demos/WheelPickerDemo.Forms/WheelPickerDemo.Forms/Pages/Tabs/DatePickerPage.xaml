@@ -2,7 +2,10 @@
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              xmlns:wp="clr-namespace:Vapolia.WheelPickerForms;assembly=Vapolia.WheelPickerForms"
-             x:Class="WheelPickerDemo.Forms.DatePickerPage">
+             xmlns:forms="clr-namespace:WheelPickerDemo.Forms;assembly=WheelPickerDemo.Forms"
+             x:Class="WheelPickerDemo.Forms.DatePickerPage"
+             x:DataType="forms:DatePickerPageModel"
+             >
 
     <StackLayout Margin="20" Spacing="10">
 
@@ -30,11 +33,9 @@
                         SelectedItemsIndex="{Binding DatePicker.SelectedItemsIndex,Mode=TwoWay}" 
                         Command="{Binding DatePicker.ItemSelectedCommand}"
                         HorizontalOptions="Fill">
-            <wp:WheelPicker.WheelDefinitions>
-                <wp:WheelDefinition Width="*" HorizontalOptions="Right" />
-                <wp:WheelDefinition Width="Auto" HorizontalOptions="Left"  />
-                <wp:WheelDefinition Width="*" HorizontalOptions="Left"  />
-            </wp:WheelPicker.WheelDefinitions>
+            <wp:WheelDefinition Width="*" HorizontalOptions="Right" />
+            <wp:WheelDefinition Width="Auto" HorizontalOptions="Left"  />
+            <wp:WheelDefinition Width="*" HorizontalOptions="Left"  />
         </wp:WheelPicker>
 
         <Label TextColor="DimGray" FontSize="Small">

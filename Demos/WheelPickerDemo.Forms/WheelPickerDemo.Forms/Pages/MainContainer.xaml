@@ -3,12 +3,12 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              xmlns:forms="clr-namespace:WheelPickerDemo.Forms;assembly=WheelPickerDemo.Forms"
              xmlns:system="clr-namespace:System;assembly=netstandard"
+             xmlns:xamForms="clr-namespace:XamSvg.XamForms;assembly=XamSvg.XamForms"
              x:Class="WheelPickerDemo.Forms.MainContainer"
              >
     <TabbedPage.Resources>
         <StyleSheet>
-            <StyleSheetExtension.Style>
-                <OnPlatform x:TypeArguments="system:String">
+                <OnPlatform x:TypeArguments="system:String" Default=".dummy {}">
                     <On Platform="iOS">
     <![CDATA[
     ^contentpage {
@@ -17,17 +17,48 @@
     ]]>
                     </On>
                 </OnPlatform>
-            </StyleSheetExtension.Style>
         </StyleSheet>
     </TabbedPage.Resources>
 
-    <forms:PhonePickerPage Title="Phone"  />
-    <forms:CountryPickerPage Title="Country"  />
-    <forms:DayPickerPage Title="Simple"   />
-    <forms:DayMonthPickerPage Title="DayMonth"   />
-    <forms:ImageWheelPage Title="Circular Images"   />
-    <forms:DatePickerPage Title="Date"   />
-    <forms:SlotPage Title="Slot Machine"   />
-    <forms:CustomPage Title="Custom"   />
+    <forms:PhonePickerPage Title="Phone">
+        <forms:PhonePickerPage.IconImageSource>
+            <xamForms:SvgImageSource Svg="res:images.person" Height="50"/>
+        </forms:PhonePickerPage.IconImageSource>
+    </forms:PhonePickerPage>
+    <forms:CountryPickerPage Title="Country">
+        <Page.IconImageSource>
+            <xamForms:SvgImageSource Svg="res:images.person" Height="50" />
+        </Page.IconImageSource>
+    </forms:CountryPickerPage>
+    <forms:DayPickerPage Title="Day">
+        <Page.IconImageSource>
+            <xamForms:SvgImageSource Svg="res:images.person" Height="50" />
+        </Page.IconImageSource>
+    </forms:DayPickerPage>
+    <forms:DayMonthPickerPage Title="DayMonth">
+        <Page.IconImageSource>
+            <xamForms:SvgImageSource Svg="res:images.person" Height="50" />
+        </Page.IconImageSource>
+    </forms:DayMonthPickerPage>
+    <forms:ImageWheelPage Title="Circular Images">
+        <Page.IconImageSource>
+            <xamForms:SvgImageSource Svg="res:images.person" Height="50" />
+        </Page.IconImageSource>
+    </forms:ImageWheelPage>
+    <forms:DatePickerPage Title="Date">
+        <Page.IconImageSource>
+            <xamForms:SvgImageSource Svg="res:images.person" Height="50" />
+        </Page.IconImageSource>
+    </forms:DatePickerPage>
+    <forms:SlotPage Title="Slot Machine">
+        <Page.IconImageSource>
+            <xamForms:SvgImageSource Svg="res:images.person" Height="50" />
+        </Page.IconImageSource>
+    </forms:SlotPage>
+    <forms:CustomPage Title="Custom">
+        <Page.IconImageSource>
+            <xamForms:SvgImageSource Svg="res:images.person" Height="50" />
+        </Page.IconImageSource>
+    </forms:CustomPage>
 
 </TabbedPage>
