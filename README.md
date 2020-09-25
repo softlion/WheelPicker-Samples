@@ -47,15 +47,10 @@ A templated picker with one wheel
 
 ```xml
 <wp:WheelPicker ItemsSourceSimple="{Binding DayPicker.ItemsSource}">
-    <wp:WheelDefinition Width="*" HorizontalOptions="Left" Alignment="Center" IsCircular="True">
-        <wp:WheelDefinition.RowHeight>
-            <OnPlatform x:TypeArguments="x:Double" Android="48" iOS="48" />
-        </wp:WheelDefinition.RowHeight>
-        <wp:WheelDefinition.ItemTemplate>
-            <DataTemplate>
-                <Image Source="{Binding .}" HeightRequest="48" Aspect="AspectFill" />
-            </DataTemplate>
-        </wp:WheelDefinition.ItemTemplate>
+    <wp:WheelDefinition Width="*" HorizontalOptions="Left" Alignment="Center" IsCircular="True" RowHeight="48">
+        <DataTemplate>
+            <Image Source="{Binding .}" HeightRequest="48" Aspect="AspectFill" />
+        </DataTemplate>
     </wp:WheelDefinition>
 </wp:WheelPicker>
 ```
