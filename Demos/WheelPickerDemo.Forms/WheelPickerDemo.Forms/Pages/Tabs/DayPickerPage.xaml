@@ -13,7 +13,7 @@
         <Label Text="Basic Wheel" HorizontalOptions="Center" />
         <BoxView BackgroundColor="LightGray" HeightRequest="1" />
 
-        <!--<Label Text="{Binding PickerModel.SelectedDate,StringFormat='Selection: \'{0:dd}\''}" />-->
+        <Label Text="{Binding PickerModel.SelectedDate.Day}" />
 
         <wp:WheelPicker 
             ItemsSourceMulti="{Binding PickerModel.ItemsSource}" 

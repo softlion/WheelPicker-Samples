@@ -20,16 +20,6 @@
         </StyleSheet>
     </TabbedPage.Resources>
 
-    <forms:PhonePickerPage Title="Phone">
-        <forms:PhonePickerPage.IconImageSource>
-            <xamForms:SvgImageSource Svg="res:images.person" Height="50"/>
-        </forms:PhonePickerPage.IconImageSource>
-    </forms:PhonePickerPage>
-    <forms:CountryPickerPage Title="Country">
-        <Page.IconImageSource>
-            <xamForms:SvgImageSource Svg="res:images.person" Height="50" />
-        </Page.IconImageSource>
-    </forms:CountryPickerPage>
     <forms:DayPickerPage Title="Day">
         <Page.IconImageSource>
             <xamForms:SvgImageSource Svg="res:images.person" Height="50" />
@@ -40,6 +30,11 @@
             <xamForms:SvgImageSource Svg="res:images.person" Height="50" />
         </Page.IconImageSource>
     </forms:DayMonthPickerPage>
+    <forms:CountryPickerPage Title="Country">
+        <Page.IconImageSource>
+            <xamForms:SvgImageSource Svg="res:images.person" Height="50" />
+        </Page.IconImageSource>
+    </forms:CountryPickerPage>
     <forms:ImageWheelPage Title="Circular Images">
         <Page.IconImageSource>
             <xamForms:SvgImageSource Svg="res:images.person" Height="50" />
@@ -50,6 +45,11 @@
             <xamForms:SvgImageSource Svg="res:images.person" Height="50" />
         </Page.IconImageSource>
     </forms:DatePickerPage>
+    <forms:PhonePickerPage Title="Phone">
+        <forms:PhonePickerPage.IconImageSource>
+            <xamForms:SvgImageSource Svg="res:images.person" Height="50"/>
+        </forms:PhonePickerPage.IconImageSource>
+    </forms:PhonePickerPage>
     <forms:SlotPage Title="Slot Machine">
         <Page.IconImageSource>
             <xamForms:SvgImageSource Svg="res:images.person" Height="50" />

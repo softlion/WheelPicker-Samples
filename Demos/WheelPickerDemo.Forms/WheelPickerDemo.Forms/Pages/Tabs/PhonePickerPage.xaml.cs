@@ -119,7 +119,7 @@ namespace WheelPickerDemo.Forms
         private PhoneNumberUtil pnu => pnuLazy.Value;
         private readonly List<RegionViewModel> regions;
 
-        public List<object> ItemsSource { get; }
+        public List<RegionViewModel> ItemsSource { get; }
 
         public IList<int> SelectedItemsIndex
         {
@@ -141,7 +141,7 @@ namespace WheelPickerDemo.Forms
                 .OrderBy(ct => ct.DisplayName)
                 .ToList();
 
-            ItemsSource = regions.Cast<object>().ToList();
+            ItemsSource = regions;
             SetSelectedPhoneRegion(RegionInfo.CurrentRegion.TwoLetterISORegionName);
         }
 

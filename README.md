@@ -16,7 +16,7 @@ Xamarin Android Control:
 Xamarin iOS Control:
 `UIPickerViewModel`
 
-[More infos](https://vapolia.eu)
+[Enterprise support available. More infos.](https://vapolia.eu)
 
 [![Preview][video-img]][video-link]
 
@@ -123,9 +123,9 @@ That's all!
 </wp:WheelPicker>
 ```
 
-A Wheel Picker is made of one or more wheels, and is bound to a single data source. Add more `wp:WheelDefinition` to add more wheels. In this example MyListProperty is an `IList<object>` containing strings.
+A Wheel Picker is made of one or more wheels, and is bound to a single data source. Add more `wp:WheelDefinition` to add more wheels. In this example MyListProperty is a `List<string>`
 
-If you have more than one WheelDefinition, use `ItemsSourceMulti` instead of `ItemsSourceSimple`; MyListProperty must then be of type `IList<IList<object>>` where the outer list must have a number of items equal to the count of WheelDefinitions. Each inner list contains the items for this WheelDefinition.
+If you have more than one WheelDefinition, use `ItemsSourceMulti` instead of `ItemsSourceSimple`; MyListProperty must then be of type `IReadOnlyCollection<IReadOnlyCollection<T>>` (Ex: List<List<string>>) where the outer list must have a number of items equal to the count of WheelDefinitions. Each inner list contains the items for this WheelDefinition.
 
 
 ## Full start
@@ -171,15 +171,9 @@ public partial class MainPage : ContentPage
 
 public class MainPageModel
 {
-    public IList<object> Days { get; } = new List<object>
+    public List<string> Days { get; } = new List<string>
     {
-        (object)"Monday",
-        "Tuesday",
-        "Wednesday",
-        "Thursday",
-        "Friday",
-        "Saturday",
-        "Sunday",
+        "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday",
     };
 
     public Command ItemSelectedCommand { get; }
@@ -195,7 +189,7 @@ public class MainPageModel
 }
 ```
 
-<br/>In the above example, ```ItemsSourceSimple``` is bound to a list of objects. If you need more than one wheel, use the ```ItemsSourceMulti``` property and bind it to a ```List<IList<object>>``` where the outer list represents the wheels and the inner lists the items in each wheel.
+<br/>In the above example, ```ItemsSourceSimple``` is bound to a list of objects. If you need more than one wheel, use the ```ItemsSourceMulti``` property and bind it to a ```List<List<string>>``` where the outer list represents the wheels and the inner lists the items in each wheel.
 
 
 ## Reference (Xamarin Forms)
@@ -204,9 +198,9 @@ public class MainPageModel
 **WheelPicker**
 
 Definition  
-- `IList<WheelDefinition>` **`WheelDefinitions`** (default Content)
-- `IList<IList<object>>` **`ItemsSourceMulti`**
-- `IList<object>` **`ItemsSourceSimple`** (shortcut for ItemsSourceMulti with one wheel)
+- `IList<WheelDefinition>` **`WheelDefinitions`** Default Content
+- `IReadOnlyCollection<IReadOnlyCollection<T>>` **`ItemsSourceMulti`** Ex: `List<ObservableCollection<string>>`.
+- `IReadOnlyCollection<T>` **`ItemsSourceSimple`** Shortcut for ItemsSourceMulti with one wheel. Ex: `List<string>`.
 
 Appearance  
 - `double` **`HorizontalSpaceBetweenWheels`**
@@ -234,7 +228,7 @@ Selection
 - `DataTemplate` **`ImageItemTemplate`**
 - `double` **`RowHeight`**
 
-When a wheel's `Width` is set to `Auto`, the control computes the max width of all strings in the data source (of object are strings).  When set to `*` (star), the wheel's width will be proportional to the remaining space. See the Xamarin Forms `Grid` control for more information about `GridLength`.
+When a wheel's `Width` is set to `Auto`, the control computes the max width of all strings in the data source (if object are strings).  When set to `*` (star), the wheel's width will be proportional to the remaining space. See the Xamarin Forms `Grid` control for more information about `GridLength`.
 
 `HorizontalOptions` is used to align a wheel inside the available WheelPicker's width, if it is larger than the wheel's width.
 
@@ -272,16 +266,16 @@ wheelView.SelectedItemIndexChanged += (sender, args) =>
 {
     var text = $"Wheel {args.WheelIndex} selection changed to item index {args.SelectedItemIndex}";
 };
-wheelView.ItemsSource = new List<object> { (object)"Monday", "Tuesday", "Wednesday" };
+wheelView.ItemsSource = new List<string> { "Monday", "Tuesday", "Wednesday" };
 wheelView.SelectedItemsIndex = new [] { 0 };
 ```
 
 **vapolia.WheelPicker**
 
 Definition  
-- object ItemsSource (either IList&lt;object&gt; or IList&lt;IList&lt;object&gt;&gt;)  
-- IList&lt;object&gt; ItemsSourceSimple (shortcut for ItemsSourceMulti with one wheel)
-- IList&lt;IList&lt;object&gt;&gt; ItemsSourceMulti
+- object ItemsSource (either IReadOnlyCollection&lt;T&gt; or IReadOnlyCollection&lt;IReadOnlyCollection&lt;T&gt;&gt;)  
+- IReadOnlyCollection&lt;T&gt; ItemsSourceSimple (shortcut for ItemsSourceMulti with one wheel)
+- IReadOnlyCollection&lt;IReadOnlyCollection&lt;T&gt;&gt; ItemsSourceMulti
 - int VisibleItemCount
 
 WheelPicker Appearance  
@@ -345,9 +339,9 @@ pickerViewModel.ItemAligns = new List<WheelItemAlign> { WheelItemAlign.Left };
 **Vapolia.WheelPickerIos.WheelPickerModel**
 
 Definition  
-- object ItemsSource (either IList&lt;object&gt; or IList&lt;IList&lt;object&gt;&gt;)  
-- IList&lt;object&gt; ItemsSourceSimple (shortcut for ItemsSourceMulti with one wheel)  
-- IList&lt;IList&lt;object&gt;&gt; ItemsSourceMulti
+- object ItemsSource (either IReadOnlyCollection&lt;T&gt; or IReadOnlyCollection&lt;IReadOnlyCollection&lt;T&gt;&gt;)  
+- IReadOnlyCollection&lt;T&gt; ItemsSourceSimple (shortcut for ItemsSourceMulti with one wheel)  
+- IReadOnlyCollection&lt;IReadOnlyCollection&lt;T&gt;&gt; ItemsSourceMulti
 
 Appearance  
 - nfloat HorizontalSpaceBetweenWheels

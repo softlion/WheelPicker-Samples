@@ -53,11 +53,11 @@ namespace WheelPickerDemo.Forms
         /// <summary>
         /// Data source for wheel picker
         /// </summary>
-        public List<IList<object>> ItemsSource { get; set; }
+        public List<List<CustomItemModel>> ItemsSource { get; set; }
 
         public CustomModel()
         {
-            ItemsSource = new List<IList<object>> {GetValues().Cast<object>().ToList()}; //, GetValues(), GetValues()
+            ItemsSource = new List<List<CustomItemModel>> {GetValues()}; //, GetValues(), GetValues()
 
             //Subscribe to the selection changed command
             ItemSelectedCommand = new Command<Tuple<int, int, IList<int>>>(tuple =>
@@ -76,7 +76,7 @@ namespace WheelPickerDemo.Forms
             PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propertyName));
         }
 
-        private static IList<CustomItemModel> GetValues()
+        private static List<CustomItemModel> GetValues()
         {
             return new[] { new CustomItemModel(),new CustomItemModel(),new CustomItemModel(),new CustomItemModel(),new CustomItemModel(),new CustomItemModel(),new CustomItemModel(),new CustomItemModel() }.ToList();
         }

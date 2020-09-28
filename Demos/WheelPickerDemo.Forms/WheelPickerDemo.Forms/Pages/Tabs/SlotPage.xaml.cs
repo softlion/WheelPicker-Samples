@@ -49,11 +49,11 @@ namespace WheelPickerDemo.Forms
         /// <summary>
         /// Data source for wheel picker
         /// </summary>
-        public List<IList<object>> ItemsSource { get; set; }
+        public IReadOnlyList<IReadOnlyList<string>> ItemsSource { get; set; }
 
         public SlotModel()
         {
-            ItemsSource = new List<IList<object>> {GetValues(), GetValues(), GetValues()};
+            ItemsSource = new [] {GetValues(), GetValues(), GetValues()};
 
             //Subscribe to the selection changed command
             ItemSelectedCommand = new Command<Tuple<int, int, IList<int>>>(tuple =>
@@ -72,9 +72,9 @@ namespace WheelPickerDemo.Forms
             PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propertyName));
         }
 
-        private static object[] GetValues()
+        private static string[] GetValues()
         {
-            return new[] { (object)"seven", "seven", "seven", "seven", "seven", "seven", "seven" };
+            return new[] { "seven", "seven", "seven", "seven", "seven", "seven", "seven" };
         }
         #endregion
     }

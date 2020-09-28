@@ -40,7 +40,7 @@ namespace WheelPickerDemo.Forms
         public event PropertyChangedEventHandler PropertyChanged;
         private IList<int> selectedItemsIndex;
 
-        public List<object> ItemsSource { get; }
+        public List<string> ItemsSource { get; }
         public Command<(int, int, IList<int>)> ItemSelectedCommand { get; }
 
         public IList<int> SelectedItemsIndex
@@ -63,7 +63,7 @@ namespace WheelPickerDemo.Forms
         public CountryPickerModel()
         {
             var countries = GetCountries();
-            ItemsSource = new List<object>(countries.Values.OrderBy(c => c));
+            ItemsSource = countries.Values.OrderBy(c => c).ToList();
 
             if (countries.TryGetValue(RegionInfo.CurrentRegion.TwoLetterISORegionName, out var currentCountry))
                 SelectedCountry = currentCountry;

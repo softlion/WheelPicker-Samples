@@ -27,11 +27,11 @@ namespace WheelPickerDemo.Forms.Models
         /// <summary>
         /// Data source for wheel picker
         /// </summary>
-        public IList<object> ItemsSource { get; }
+        public IReadOnlyList<string> ItemsSource { get; }
 
         public ImageWheelModel()
         {
-            ItemsSource = GetDayNames().Cast<object>().ToList();
+            ItemsSource = GetDayNames();
             selectedItem = (string)ItemsSource[0];
 
             //Subscribe to the selection changed command

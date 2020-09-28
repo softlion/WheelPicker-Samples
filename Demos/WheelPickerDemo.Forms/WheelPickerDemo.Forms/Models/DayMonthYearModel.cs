@@ -24,7 +24,7 @@ namespace WheelPickerDemo.Forms.Models
     public class DayMonthYearModel : INotifyPropertyChanged
     {
         public event PropertyChangedEventHandler PropertyChanged;
-        private readonly ObservableCollection<object> wheelDay, wheelMonth, wheelYear;
+        private readonly ObservableCollection<string> wheelDay, wheelMonth, wheelYear;
         private DateTime selectedDate;
         private IList<int> selectedItemsIndex;
 
@@ -32,7 +32,7 @@ namespace WheelPickerDemo.Forms.Models
         private readonly DateTime MaxDate = DateTime.Now.AddYears(2);
         private readonly DateTime MinDate = new DateTime(1900,1,1);
 
-        public List<IList<object>> ItemsSource { get; }
+        public IReadOnlyCollection<ObservableCollection<string>> ItemsSource { get; }
         public PickerModelType DisplayType { get; }
         public Command<(int, int, IList<int>)> ItemSelectedCommand { get; }
 
@@ -53,22 +53,22 @@ namespace WheelPickerDemo.Forms.Models
         {
             DisplayType = displayType;
 
-            wheelYear = new ObservableCollection<object>(Enumerable.Range(MinDate.Year, MaxDate.Year - MinDate.Year + 1).Reverse().Select(year => year.ToString()));
-            wheelMonth = new ObservableCollection<object>(Enumerable.Range(1, 12).Select(month => CultureInfo.CurrentCulture.DateTimeFormat.GetMonthName(month)));
-            wheelDay = new ObservableCollection<object>(Enumerable.Range(1, 31).Select(day => day.ToString()));
+            wheelYear = new ObservableCollection<string>(Enumerable.Range(MinDate.Year, MaxDate.Year - MinDate.Year + 1).Reverse().Select(year => year.ToString()));
+            wheelMonth = new ObservableCollection<string>(Enumerable.Range(1, 12).Select(month => CultureInfo.CurrentCulture.DateTimeFormat.GetMonthName(month)));
+            wheelDay = new ObservableCollection<string>(Enumerable.Range(1, 31).Select(day => day.ToString()));
 
             switch (DisplayType)
             {
                 case PickerModelType.DayMonthYear:
-                    ItemsSource = new List<IList<object>> { wheelDay, wheelMonth, wheelYear };
+                    ItemsSource = new [] { wheelDay, wheelMonth, wheelYear };
                     selectedDate = DateTime.Today;
                     break;
                 case PickerModelType.DayMonth:
-                    ItemsSource = new List<IList<object>> { wheelDay, wheelMonth };
+                    ItemsSource = new []  { wheelDay, wheelMonth };
                     selectedDate = DateTime.Today;
                     break;
                 case PickerModelType.Day:
-                    ItemsSource = new List<IList<object>> { wheelDay };
+                    ItemsSource = new [] { wheelDay };
                     selectedDate = new DateTime(2020, 8, 1, 12,0,0,0, DateTimeKind.Utc);
                     break;
             }
