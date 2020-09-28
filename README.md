@@ -189,7 +189,7 @@ public class MainPageModel
 }
 ```
 
-<br/>In the above example, ```ItemsSourceSimple``` is bound to a list of objects. If you need more than one wheel, use the ```ItemsSourceMulti``` property and bind it to a ```List<List<string>>``` where the outer list represents the wheels and the inner lists the items in each wheel.
+<br/>In the above example, ```ItemsSourceSimple``` is bound to a list of strings. If you need more than one wheel, use the ```ItemsSourceMulti``` property and bind it to a ```List<List<string>>``` where the outer list represents the wheels and the inner lists the items in each wheel.
 
 
 ## Reference (Xamarin Forms)
@@ -331,7 +331,7 @@ var picker = new UIPickerView {ShowSelectionIndicator = true, BackgroundColor = 
 var pickerViewModel = new WheelPickerModel(picker);
 picker.Model = pickerViewModel;
 
-pickerViewModel.ItemsSource = new List<object> { (object)"Monday", "Tuesday", "Wednesday" };
+pickerViewModel.ItemsSource = new [] { "Monday", "Tuesday", "Wednesday" };
 pickerViewModel.SelectedItemsIndex = new [] { 0 };
 pickerViewModel.ItemAligns = new List<WheelItemAlign> { WheelItemAlign.Left };
 ```
