@@ -1,6 +1,6 @@
 | Xamarin.Forms (iOS, Android)| Xamarin.Android, Xamarin.iOS|
 |:---------------------------:|:---------------------------:|
-| [![NuGet][nuget-img]][nuget-link-forms] | [![NuGet][nuget-img]][nuget-link] |
+| [![NuGet][nuget-img]][nuget-link-forms]  ![Nuget](https://img.shields.io/nuget/dt/Vapolia.WheelPicker.Forms) | [![NuGet][nuget-img]][nuget-link]  ![Nuget](https://img.shields.io/nuget/dt/Vapolia.WheelPicker) |
 | [![][demo-img]][demo-link] | [![][demo-img]][demo-link] |
 
 
