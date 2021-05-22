@@ -1,6 +1,6 @@
 | Xamarin.Forms (iOS, Android)| Xamarin.Android, Xamarin.iOS|
 |:---------------------------:|:---------------------------:|
-| [![NuGet][nuget-img]][nuget-link-forms] | [![NuGet][nuget-img]][nuget-link] |
+| [![NuGet][nuget-img]][nuget-link-forms]  ![Nuget](https://img.shields.io/nuget/dt/Vapolia.WheelPicker.Forms) | [![NuGet][nuget-img]][nuget-link]  ![Nuget](https://img.shields.io/nuget/dt/Vapolia.WheelPicker) |
 | [![][demo-img]][demo-link] | [![][demo-img]][demo-link] |
 
 
@@ -19,6 +19,7 @@ Xamarin iOS Control:
 [Enterprise support available. More infos.](https://vapolia.eu)
 
 [![Preview][video-img]][video-link]
+[![Preview][video-img2]][video-link2]
 
 [video-img]: https://i.vimeocdn.com/video/668500920.webp?mw=400&mh=540
 [video-link]: https://vimeo.com/244170732
@@ -27,6 +28,8 @@ Xamarin iOS Control:
 [nuget-link-forms]: https://www.nuget.org/packages/Vapolia.WheelPicker.Forms/
 [demo-img]: https://img.shields.io/badge/demo-source%20code-lightgrey.svg
 [demo-link]: https://github.com/softlion/WheelPicker-Samples/tree/master/Demos
+[video-img2]: https://i.imgur.com/BKTYa8G.png
+[video-link2]: https://vimeo.com/488497139
 
 ## Overview
 
