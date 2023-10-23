@@ -1,0 +1,50 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:page="clr-namespace:WheelPickerDemo.Forms"
+             xmlns:wp="clr-namespace:Vapolia.WheelPickers;assembly=Vapolia.WheelPicker"
+             x:Class="WheelPickerMauiDemo.Views.CountryPickerPage"
+             x:DataType="page:CountryPickerPageModel"
+             >
+    <ContentPage.BindingContext>
+        <page:CountryPickerPageModel />
+    </ContentPage.BindingContext>
+
+    <VerticalStackLayout Margin="20" Spacing="10">
+
+        <Line BackgroundColor="LightGray" HeightRequest="1" />
+        <Label Text="Vapolia Wheel Picker for Maui, Xamarin, Forms" HorizontalOptions="Center" TextColor="DimGray" />
+        <Label Text="Basic Wheel" HorizontalOptions="Center" />
+        <Line BackgroundColor="LightGray" HeightRequest="1" />
+
+        <!-- <Label Text="{Binding PickerModel.SelectedItemsIndex,StringFormat='Selection: \'{0}\''}" /> -->
+        <wp:WheelPicker 
+            ItemsSourceSimple="{Binding PickerModel.ItemsSource}" 
+            Command="{Binding PickerModel.ItemSelectedCommand}"
+            SelectedItemsIndex="{Binding PickerModel.SelectedItemsIndex}"
+            HorizontalOptions="Fill"
+            ItemTextFontSize="Medium"
+            ItemTextSelectedColor="CornflowerBlue"
+            SelectionLinesColor="LightBlue"
+            ItemTextColor="{OnPlatform Default=Blue,Android=LightBlue}">
+            <!-- 
+            ItemTextSelectedColor: android only. Ios uses the ItemTextColor.
+            SelectionLinesColor: android only. Ios does not allow changing this color directly.
+            -->
+            <wp:WheelDefinition Width="*" HorizontalOptions="Center" Alignment="Center" RowHeight="30" />
+        </wp:WheelPicker>
+
+        <Label TextColor="DimGray" FontSize="Body">
+            This wheel is bound to a collection of countries. It tries to automatically select the user's country.
+        </Label>
+        <HorizontalStackLayout>
+            <Entry x:Name="EntryValue" Placeholder="Select an item by index" Keyboard="Numeric" HorizontalOptions="FillAndExpand" />
+            <Button Text="Go" Command="{Binding SelectItemByIndexCommand}"
+                    CommandParameter="{Binding Text,Source={x:Reference EntryValue}}" />
+        </HorizontalStackLayout>
+
+    </VerticalStackLayout>
+
+    
+</ContentPage>

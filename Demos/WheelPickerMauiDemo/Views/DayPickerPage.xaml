@@ -1,0 +1,41 @@
+﻿<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:viewModels="clr-namespace:WheelPickerMauiDemo.ViewModels"
+             xmlns:wp="clr-namespace:Vapolia.WheelPickers;assembly=Vapolia.WheelPicker"
+             x:Class="WheelPickerMauiDemo.Views.DayPickerPage"
+             x:DataType="viewModels:DayPickerPageModel">
+    <ContentPage.BindingContext>
+        <viewModels:DayPickerPageModel />
+    </ContentPage.BindingContext>
+    
+    <VerticalStackLayout Margin="20" Spacing="10">
+
+        <Line BackgroundColor="LightGray" HeightRequest="1" />
+        <Label Text="Vapolia Wheel Picker for Maui, Xamarin, Forms" HorizontalOptions="Center" TextColor="DimGray" />
+        <Label Text="Basic Wheel" HorizontalOptions="Center" />
+        <Line BackgroundColor="LightGray" HeightRequest="1" />
+
+        <!-- 
+            ItemTextSelectedColor: android only. Ios uses the ItemTextColor.
+            SelectionLinesColor: android only. Ios does not allow changing this color directly.
+            -->
+        <wp:WheelPicker 
+            ItemsSourceMulti="{Binding PickerModel.ItemsSource}" 
+            HorizontalOptions="Fill"
+            SelectedItemsIndex="0"
+            Command="{Binding PickerModel.ItemSelectedCommand}" 
+            ItemTextFontSize="Medium"
+            ItemTextSelectedColor="Blue"
+            SelectionLinesColor="DeepSkyBlue"
+            ItemTextColor="{OnPlatform iOS='Blue',Android='LightBlue'}"
+        >
+            <wp:WheelDefinition Width="*" HorizontalOptions="Center" Alignment="Center" />
+        </wp:WheelPicker>
+        
+        
+
+        <Label TextColor="DimGray" FontSize="Body" Text="This wheel uses one collection of labels." />
+
+    </VerticalStackLayout>   
+    
+</ContentPage>

@@ -1,0 +1,52 @@
+﻿<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:wp="clr-namespace:Vapolia.WheelPickers;assembly=Vapolia.WheelPicker"
+             xmlns:viewModels="clr-namespace:WheelPickerMauiDemo.ViewModels"
+             x:Class="WheelPickerMauiDemo.Views.DayMonthPickerPage"
+             x:DataType="viewModels:DayMonthPickerPageModel"
+             >
+    <ContentPage.BindingContext>
+        <viewModels:DayMonthPickerPageModel />
+    </ContentPage.BindingContext>
+    
+    <VerticalStackLayout Margin="20" Spacing="10">
+
+        <BoxView BackgroundColor="LightGray" HeightRequest="1" />
+        <Label Text="Vapolia Wheel Picker for Maui, Xamarin, Forms" HorizontalOptions="Center" TextColor="DimGray" />
+        <Label Text="Basic Wheel" HorizontalOptions="Center" />
+        <BoxView BackgroundColor="LightGray" HeightRequest="1" />
+
+        <Label Text="{Binding DayMonth.SelectedDate,StringFormat='Selection: \'{0:D}\''}" />
+
+        <wp:WheelPicker 
+            ItemsSourceMulti="{Binding DayMonth.ItemsSource}" 
+            HorizontalOptions="Fill"
+            SelectedItemsIndex="{Binding DayMonth.SelectedItemsIndex}"
+            Command="{Binding DayMonth.ItemSelectedCommand}" 
+            ItemTextFontSize="Medium"
+            ItemTextSelectedColor="Blue"
+            SelectionLinesColor="DeepSkyBlue"
+            HorizontalSpaceBetweenWheels="50"
+        >
+            <!-- 
+            ItemTextSelectedColor: android only. Ios uses the ItemTextColor.
+            SelectionLinesColor: android only. Ios does not allow changing this color directly.
+            -->
+            <wp:WheelPicker.ItemTextColor>
+                <OnPlatform x:TypeArguments="Color">
+                    <On Platform="iOS" Value="Blue"/>
+                    <On Platform="Android" Value="LightBlue"/>
+                </OnPlatform>
+            </wp:WheelPicker.ItemTextColor>
+            <wp:WheelDefinition Width="*" HorizontalOptions="Right" Alignment="Right" />
+            <wp:WheelDefinition Width="2*" HorizontalOptions="Left" Alignment="Left" />
+        </wp:WheelPicker>
+
+        <Label TextColor="DimGray" FontSize="Body">
+            This wheel uses 2 collections of labels.
+        </Label>
+
+    </VerticalStackLayout>
+    
+    
+</ContentPage>

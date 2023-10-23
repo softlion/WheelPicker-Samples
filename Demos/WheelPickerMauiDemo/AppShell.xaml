@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<Shell
+    x:Class="WheelPickerMauiDemo.AppShell"
+    xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:views="clr-namespace:WheelPickerMauiDemo.Views"
+    Shell.FlyoutBehavior="Disabled">
+
+    <TabBar>
+        <!-- Icon="{svgs:Svg beacon.svg,Height=30,ColorMapping='000=FFF'}" -->
+        <ShellContent Route="DayPickerPage" ContentTemplate="{DataTemplate views:DayPickerPage}" Title="Day" />
+        <ShellContent Route="DayMonthPickerPage" ContentTemplate="{DataTemplate views:DayMonthPickerPage}" Title="DayMonth" />
+        <ShellContent Route="CountryPickerPage" ContentTemplate="{DataTemplate views:CountryPickerPage}" Title="Country" />
+    </TabBar>
+
+</Shell>
