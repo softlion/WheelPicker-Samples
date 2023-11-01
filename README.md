@@ -4,19 +4,17 @@
 | [![][demo-img]][demo-link] | [![][demo-img]][demo-link] |
 
 
-# Wheel Picker for Xamarin Samples
-From Apple, _**Wheel Picker**: a view that uses a spinning-wheel or slot-machine metaphor to show one or more sets of values_.
+# Wheel Picker
+From Apple:    
+_**Wheel Picker**: a view that uses a spinning-wheel or slot-machine metaphor to show one or more sets of values_.
 
-Xamarin Forms Control:
-`WheelPicker`
+[Enterprise support available: contact](https://vapolia.eu)  
+[Source code available: contact](https://vapolia.eu)
 
-Xamarin Android Control:
-`vapolia.WheelPicker`
 
-Xamarin iOS Control:
-`UIPickerViewModel`
+Maui .NET8+ & Xamarin Forms (Android,iOS): `WheelPicker`  
+Native Android: `vapolia.WheelPicker` & iOS: `UIPickerViewModel`
 
-[Enterprise support available. More infos.](https://vapolia.eu)
 
 [![Preview][video-img]][video-link]
 [![Preview][video-img2]][video-link2]
@@ -36,20 +34,151 @@ Xamarin iOS Control:
 This control brings the Wheel Picker view to Xamarin Forms on Android and iOS (it also supports native Xamarin Android and iOS).
 It mimics a slot-machine user interface on Android, while on iOS it makes easy to use multi wheel pickers.
 
-### Easy to use
 
-A simple picker with one wheel
+
+## Quick start
+
+#### Install the nuget package
+
+`dotnet add package Vapolia.WheelPicker`
+
+#### Add the WheelPicker control
+
+- Add `xmlns:wp="clr-namespace:Vapolia.WheelPickerForms;assembly=Vapolia.WheelPicker"` to the root tag of a view.   
+- Add a minimal wheel:
 
 ```xml
-<wp:WheelPicker ItemsSourceSimple="{Binding DayPicker.ItemsSource}">
+<wp:WheelPicker ItemsSourceSimple="{Binding MyListProperty}">
     <wp:WheelDefinition Width="Auto" HorizontalOptions="Left" Alignment="Center" />
 </wp:WheelPicker>
 ```
 
-A templated picker with one wheel
+## Anatomy of the control
+
+The WheelPicker is made of 2 parts: 
+- the outside container `<wp:WheelPicker> ... </wp:WheelPicker>`
+- a list of one or more `wp:WheelDefinition`, each representing a vertical wheel. You can have 1 or more wheels in the same container.  
+Important note: `wp:WheelDefinition` contains a customizable template to display its content.
+
+The WheelPicker is bound to a single data source through `ItemsSource="{Binding SomeProperty}"`. The type of `SomeProperty` can be:
+- when there is only 1 wheel: 
+  - a list of items `IReadOnlyCollection<T>`. 
+  - Ex: `List<string>`
+
+
+- when there are more than 1 wheel: 
+  - a list of list of items `IReadOnlyCollection<IReadOnlyCollection<T>>`. 
+  - Ex: `List<List<string>>`. 
+  - Each inner list is bound to a wheel.
+The outer list must have a number of items equal to the number of `wp:WheelDefinition`.
+
+## Full page example
 
 ```xml
-<wp:WheelPicker ItemsSourceSimple="{Binding DayPicker.ItemsSource}">
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+                xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+                xmlns:wp="clr-namespace:Vapolia.WheelPickerForms;assembly=Vapolia.WheelPicker"
+                x:Class="WheelPickerDemo.Forms.MainPage">
+    <VerticalStackLayout>
+
+        <wp:WheelPicker HorizontalOptions="Fill" SelectedItemsIndex="0"
+                        ItemsSource="{Binding Days}" 
+                        Command="{Binding ItemSelectedCommand}">
+            <wp:WheelDefinition Width="Auto" HorizontalOptions="Left" Alignment="Center" />
+        </wp:WheelPicker>
+
+    </VerticalStackLayout>
+</ContentPage>
+```
+
+<br/>In the code behind, set the binding context to your view model containing the items to display.
+<br/>In the code below, `ItemsSource` is bound to a list of strings.
+
+
+```csharp
+public partial class MainPage : ContentPage
+{
+    public MainPage()
+    {
+        InitializeComponent();
+        BindingContext = new MainPageModel();
+    }
+}
+
+public class MainPageModel
+{
+    public List<string> Days { get; } = new () { "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday" };
+
+    public Command ItemSelectedCommand { get; }
+
+    public MainPageModel() 
+    {
+        //Component is the index of the wheel triggering the command. 
+        //Row is the index of the currently displayed item at the center of the wheel for this Component.
+        //ItemIndexes are the current indexes of all wheels of the WheelPicker control
+        ItemSelectedCommand = new Command<(int Component, int Row, IList<int> ItemIndexes)>(tuple =>
+        {
+            var selectedValue = Days[tuple.Row];
+            //...
+        });
+    }
+}
+```
+
+## Using custom templates
+
+You can customize how each item is rendered by using custom templates.    
+By default the control converts all items to strings and render those strings with the specified style.
+
+But you can fully customize the style and content of the items with one constraint: there is only one template per wheel, which renders all items of that wheel. 
+If you have multiple wheels in the same WheelPicker, you can set one template per wheel.
+
+Example below: a templated picker with 3 wheels. All properties are bindable and can be dynamically changed.
+
+Note how `SelectedItemsIndex` is used to initialize the position of the 3 wheels to the specified item indexes.
+
+```xml
+<wp:WheelPicker x:Name="SlotPicker" ItemsSource="{Binding Slot.ItemsSource}" 
+                SelectedItemsIndex="1 10 7"
+                Command="{Binding Slot.ItemSelectedCommand}" 
+                ItemTextSelectedColor="Lime"
+                ItemTextFont="Italic"
+                HorizontalOptions="Fill"
+                SelectionLinesColor="Aquamarine">
+    <wp:WheelDefinition Width="*" HorizontalOptions="Left" Alignment="Center" IsCircular="True">
+        <DataTemplate>
+            <Label Text="{Binding .}" TextColor="Black" FontSize="30" />
+        </DataTemplate>
+    </wp:WheelDefinition>
+    <wp:WheelDefinition Width="*" HorizontalOptions="Left" Alignment="Center" IsCircular="True" RowHeight="100">
+        <DataTemplate>
+            <Image Source="{Binding .}" HeightRequest="100" Aspect="AspectFit" />
+        </DataTemplate>
+    </wp:WheelDefinition>
+    <wp:WheelDefinition Width="*" HorizontalOptions="Left" Alignment="Center" IsCircular="True" RowHeight="100">
+        <DataTemplate>
+            <Image Source="{Binding .}" HeightRequest="100" Aspect="AspectFit" />
+        </DataTemplate>
+    </wp:WheelDefinition>
+</wp:WheelPicker>
+```
+
+## Some examples
+
+Those examples are extracted from the demo projects in this repository.
+
+A simple picker with one wheel:
+
+```xml
+<wp:WheelPicker ItemsSource="{Binding DayPicker.ItemsSource}">
+    <wp:WheelDefinition Width="Auto" HorizontalOptions="Left" Alignment="Center" />
+</wp:WheelPicker>
+```
+
+A templated picker with one wheel:
+
+```xml
+<wp:WheelPicker ItemsSource="{Binding DayPicker.ItemsSource}">
     <wp:WheelDefinition Width="*" HorizontalOptions="Left" Alignment="Center" IsCircular="True" RowHeight="48">
         <DataTemplate>
             <Image Source="{Binding .}" HeightRequest="48" Aspect="AspectFill" />
@@ -61,13 +190,13 @@ A templated picker with one wheel
 Note that the tag `wp:WheelDefinition.ItemTemplate` is optional as it is the content property.
 
 
-A picker with 3 wheels  
+A picker with 3 wheels:  
 The center wheel's width is computed automatically. Items are aligned differently inside each wheel.
 
 ```xml
 <wp:WheelPicker SelectionLinesColor="Navy" 
                 HorizontalSpaceBetweenWheels="40" 
-                ItemsSourceMulti="{Binding DatePicker.ItemsSource}"  
+                ItemsSource="{Binding DatePicker.ItemsSource}"  
                 SelectedItemsIndex="0,0,0" 
                 Command="{Binding DatePicker.ItemSelectedCommand}"
                 HorizontalOptions="Fill">
@@ -77,11 +206,11 @@ The center wheel's width is computed automatically. Items are aligned differentl
 </wp:WheelPicker>
 ```
 
-A templated picker with 3 wheels  
+A templated picker with 3 wheels:  
 All properties are bindable and can be dynamically changed.
 
 ```xml
-<wp:WheelPicker x:Name="SlotPicker" ItemsSourceMulti="{Binding Slot.ItemsSource}" 
+<wp:WheelPicker x:Name="SlotPicker" ItemsSource="{Binding Slot.ItemsSource}" 
                 SelectedItemsIndex="0 0 0"
                 Command="{Binding Slot.ItemSelectedCommand}" 
                 ItemTextSelectedColor="Lime"
@@ -106,118 +235,29 @@ All properties are bindable and can be dynamically changed.
 </wp:WheelPicker>
 ```
 
-## Quick start
 
-#### Install the nuget package
-
-- In your Forms project
-  - Install the nuget package
-
-That's all!
-
-#### Add the WheelPicker control
-
-- Add `xmlns:wp="clr-namespace:Vapolia.WheelPickerForms;assembly=Vapolia.WheelPickerForms"` to the root tag of a view.   
-- Add a minimal wheel:
-
-```xml
-<wp:WheelPicker ItemsSourceSimple="{Binding MyListProperty}">
-    <wp:WheelDefinition Width="Auto" HorizontalOptions="Left" Alignment="Center" />
-</wp:WheelPicker>
-```
-
-A Wheel Picker is made of one or more wheels, and is bound to a single data source. Add more `wp:WheelDefinition` to add more wheels. In this example MyListProperty is a `List<string>`
-
-If you have more than one WheelDefinition, use `ItemsSourceMulti` instead of `ItemsSourceSimple`; MyListProperty must then be of type `IReadOnlyCollection<IReadOnlyCollection<T>>` (Ex: List<List<string>>) where the outer list must have a number of items equal to the count of WheelDefinitions. Each inner list contains the items for this WheelDefinition.
-
-
-## Full start
-
-- In your Forms project
-  - Install the nuget package
-
-
-### Add the WheelPicker control to your views
-
-Add the namespace `xmlns:wp="clr-namespace:Vapolia.WheelPickerForms;assembly=Vapolia.WheelPickerForms"` to the root tag.   
-Then add a `wp:WheelPicker` tag and set the properties you need.
-
-```xml
-<?xml version="1.0" encoding="utf-8" ?>
-<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
-                xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-                xmlns:wp="clr-namespace:Vapolia.WheelPickerForms;assembly=Vapolia.WheelPickerForms"
-                x:Class="WheelPickerDemo.Forms.MainPage">
-    <StackLayout>
-
-        <wp:WheelPicker HorizontalOptions="Fill" SelectedItemsIndex="0"
-                    ItemsSourceSimple="{Binding Days}" 
-                    Command="{Binding ItemSelectedCommand}">
-            <wp:WheelDefinition Width="Auto" HorizontalOptions="Left" Alignment="Center" />
-        </wp:WheelPicker>
-
-    </StackLayout>
-</ContentPage>
-```
-
-<br/>In the code behind, set the binding context to your view model containing the items to display:
-
-```csharp
-public partial class MainPage : ContentPage
-{
-    public MainPage()
-    {
-        InitializeComponent();
-        BindingContext = new MainPageModel();
-    }
-}
-
-public class MainPageModel
-{
-    public List<string> Days { get; } = new List<string>
-    {
-        "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday",
-    };
-
-    public Command ItemSelectedCommand { get; }
-
-    public MainPageModel() 
-    {
-        ItemSelectedCommand = new Command<(int, int, IList<int>)>(tuple =>
-        {
-            var (selectedWheelIndex, indexOfItemChangedInSelectedWheel, selectedItemsIndexes) = tuple;
-            //...
-        });
-    }
-}
-```
-
-<br/>In the above example, ```ItemsSourceSimple``` is bound to a list of strings. If you need more than one wheel, use the ```ItemsSourceMulti``` property and bind it to a ```List<List<string>>``` where the outer list represents the wheels and the inner lists the items in each wheel.
-
-
-## Reference (Xamarin Forms)
+## Reference (Maui & Xamarin Forms)
 <details><summary>Click to expand</summary>
 
 **WheelPicker**
 
 Definition  
 - `IList<WheelDefinition>` **`WheelDefinitions`** Default Content
-- `IReadOnlyCollection<IReadOnlyCollection<T>>` **`ItemsSourceMulti`** Ex: `List<ObservableCollection<string>>`.
-- `IReadOnlyCollection<T>` **`ItemsSourceSimple`** Shortcut for ItemsSourceMulti with one wheel. Ex: `List<string>`.
+- `object` **`ItemsSource`** Accepts both `IReadOnlyCollection<T>` and `IReadOnlyCollection<IReadOnlyCollection<T>>` 
 
 Appearance  
 - `double` **`HorizontalSpaceBetweenWheels`**
 - `Color` **`SelectionLinesColor`**
 
-Item appearance (when not using a templated item)  
+Item appearance (used by the default item template, when no custom item template is specified)  
 - `Font` **`ItemTextFont`**
 - `Color` **`ItemTextColor`**
 - `Color` **`ItemTextSelectedColor`**
 
 Selection  
-- `IList<int>` **`SelectedItemsIndex`**
-- `ICommand` **`Command`**
-- `EventHandler<WheelChangedEventArgs>` **`SelectedItemIndexChanged`**
+- `IList<int>` **`SelectedItemsIndex`** One index per wheel.
+- `ICommand` **`Command`** Triggered when any of the wheel's index has changed
+- `EventHandler<WheelChangedEventArgs>` **`SelectedItemIndexChanged`** Triggered when any of the wheel's index has changed
 - `void` **`Spin`**`(int items, int wheelIndex = 0)` items: the number of item to spin
 
 `SelectedItemsIndex` is a list of integer. Each integer represents the selected index inside a wheel. In XAML, you can use a space or comma separated string of integers.
@@ -238,7 +278,7 @@ When a wheel's `Width` is set to `Auto`, the control computes the max width of a
 `Alignment` is used to align the items inside a wheel.
 </details>
 
-## Reference (Xamarin.Android)
+## Reference (net8-android & Xamarin.Android)
 <details><summary>Click to expand</summary>
 
 Sample usage in axml:
@@ -321,7 +361,7 @@ Templating
 
 </details>
 
-## Reference (Xamarin.iOS)
+## Reference (net8-ios & Xamarin.iOS)
 
 <details><summary>Click to expand</summary>
 
@@ -371,7 +411,7 @@ Templating
 
 </details>
 
-## ItemWidths (Xamarin.Android, Xamarin.iOS; excluding Forms)
+## ItemWidths (net8-android and net8-ios only, excluding Maui & Xamarn Forms)
 
 <details><summary>Click to expand</summary>
 
@@ -393,12 +433,19 @@ Examples of ItemWidths:
 </details>
 
 ### Supported Platforms
+- Maui, net8-iOS, net8-Android, Xamarin Forms
 - Android api level 15+ (Android 4.0.3+)  
 - iOS 8+
-- Xamarin Forms
 
 ### Mvvm friendly
-The Weel Picker provides an event and a Command when the selection changes, making it easy to use with mvvm frameworks. It also implements INotifyPropertyChanged to notify change of its properties.
+The Wheel Picker provides an event and a Command when the selection changes, making it easy to use with or without mvvm frameworks.    
+It also implements `INotifyPropertyChanged`.
 
 ### Live Preview
-The component supports live preview in the Xamarin Forms Previewer and in the Xamarin Android Designer (axml files). Xaml Hot reload is the prefered way though.
+This control supports hot reload and live preview.
+
+
+### Commercial Support
+
+[Enterprise support is available: contact sales](https://vapolia.eu)  
+[Source code is available: contact sales](https://vapolia.eu)
