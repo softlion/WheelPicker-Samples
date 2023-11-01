@@ -27,7 +27,9 @@
         </Grid>
 
         <!--SelectedItemsIndex="0,0,0"-->
-        <wp:WheelPicker SelectionLinesColor="Navy" 
+        <wp:WheelPicker SelectionLinesColor="Navy"
+                        ItemTextColor="Black"
+                        ItemTextSelectedColor="DarkGoldenrod"
                         HorizontalSpaceBetweenWheels="40" 
                         ItemsSourceMulti="{Binding DatePicker.ItemsSource}"  
                         SelectedItemsIndex="{Binding DatePicker.SelectedItemsIndex,Mode=TwoWay}" 
