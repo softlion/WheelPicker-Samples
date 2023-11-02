@@ -17,7 +17,7 @@
   </ItemGroup>
 
   <ItemGroup>
-	<PackageReference Include="Vapolia.WheelPicker" Version="5.0.0" Condition="$(WPUseProjectReference) != 'true'" />
+	<PackageReference Include="Vapolia.WheelPicker" Version="5.0.1-pre7" Condition="$(WPUseProjectReference) != 'true'" />
 	<ProjectReference Include="$(SolutionDir)Vapolia.WheelPicker\Vapolia.WheelPicker.csproj" Condition="$(WPUseProjectReference) == 'true'"  />
   </ItemGroup>
 
