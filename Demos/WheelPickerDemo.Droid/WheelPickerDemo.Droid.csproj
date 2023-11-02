@@ -85,7 +85,7 @@
     <None Include="Properties\AndroidManifest.xml" />
   </ItemGroup>
   <ItemGroup>
-    <PackageReference Include="Vapolia.WheelPicker" Version="4.8.0" Condition="$(WPUseProjectReference) != 'true'" />
+    <PackageReference Include="Vapolia.WheelPicker" Version="5.0.1-pre7" Condition="$(WPUseProjectReference) != 'true'" />
     <ProjectReference Include="D:\repos\0libs\Vapolia.WheelPicker\Vapolia.WheelPicker\Vapolia.WheelPicker.csproj" />
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath)\Xamarin\Android\Xamarin.Android.CSharp.targets" />

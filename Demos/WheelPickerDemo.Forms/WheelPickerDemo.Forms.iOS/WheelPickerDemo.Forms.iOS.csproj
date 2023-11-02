@@ -213,10 +213,10 @@
   </ItemGroup>
   <ItemGroup>
     <PackageReference Include="libphonenumber-csharp">
-      <Version>8.12.23</Version>
+      <Version>8.13.24</Version>
     </PackageReference>
     <PackageReference Include="Xamarin.Forms">
-      <Version>5.0.0.2012</Version>
+      <Version>5.0.0.2612</Version>
     </PackageReference>
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath)\Xamarin\iOS\Xamarin.iOS.CSharp.targets" />
