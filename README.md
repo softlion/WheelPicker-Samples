@@ -42,6 +42,20 @@ It mimics a slot-machine user interface on Android, while on iOS it makes easy t
 
 `dotnet add package Vapolia.WheelPicker`
 
+#### MAUI Specific
+
+If you are using Maui, you need to add this line to your `CreateMauiApp()`:
+```
+...
+using Vapolia.WheelPickers;
+
+...
+builder
+    .UseMauiApp<App>()
+    .AddWheelPicker();
+```
+
+
 #### Add the WheelPicker control
 
 - Add `xmlns:wp="clr-namespace:Vapolia.WheelPickerForms;assembly=Vapolia.WheelPicker"` to the root tag of a view.   
