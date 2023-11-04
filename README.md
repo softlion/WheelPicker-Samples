@@ -58,7 +58,7 @@ builder
 
 #### Add the WheelPicker control
 
-- Add `xmlns:wp="clr-namespace:Vapolia.WheelPickerForms;assembly=Vapolia.WheelPicker"` to the root tag of a view.   
+- Add `xmlns:wp="clr-namespace:Vapolia.WheelPickers;assembly=Vapolia.WheelPicker"` to the root tag of a view.   
 - Add a minimal wheel:
 
 ```xml
@@ -91,7 +91,7 @@ The outer list must have a number of items equal to the number of `wp:WheelDefin
 ```xml
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
                 xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-                xmlns:wp="clr-namespace:Vapolia.WheelPickerForms;assembly=Vapolia.WheelPicker"
+                xmlns:wp="clr-namespace:Vapolia.WheelPickers;assembly=Vapolia.WheelPicker"
                 x:Class="WheelPickerDemo.Forms.MainPage">
     <VerticalStackLayout>
 

@@ -5,7 +5,7 @@ using System.Globalization;
 using System.Linq;
 using System.Runtime.CompilerServices;
 using System.Windows.Input;
-using Vapolia.WheelPickerForms;
+using Vapolia.WheelPickers;
 using Xamarin.Forms;
 
 namespace WheelPickerDemo.Forms
