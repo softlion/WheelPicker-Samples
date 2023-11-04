@@ -5,7 +5,7 @@ using System.ComponentModel;
 using System.Globalization;
 using System.Linq;
 using System.Runtime.CompilerServices;
-using Vapolia.WheelPickerForms;
+using Vapolia.WheelPickers;
 using Xamarin.Forms;
 
 namespace WheelPickerDemo.Forms.Models

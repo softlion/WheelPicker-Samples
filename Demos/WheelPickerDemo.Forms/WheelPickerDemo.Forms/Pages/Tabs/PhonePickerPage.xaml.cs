@@ -6,7 +6,7 @@ using System.Linq;
 using System.Runtime.CompilerServices;
 using System.Threading.Tasks;
 using PhoneNumbers;
-using Vapolia.WheelPickerForms;
+using Vapolia.WheelPickers;
 using Xamarin.Forms;
 
 namespace WheelPickerDemo.Forms
