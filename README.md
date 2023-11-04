@@ -1,20 +1,25 @@
-| Xamarin.Forms (iOS, Android)| Xamarin.Android, Xamarin.iOS|
-|:---------------------------:|:---------------------------:|
-| [![NuGet][nuget-img]][nuget-link-forms]  ![Nuget](https://img.shields.io/nuget/dt/Vapolia.WheelPicker.Forms) | [![NuGet][nuget-img]][nuget-link]  ![Nuget](https://img.shields.io/nuget/dt/Vapolia.WheelPicker) |
-| [![][demo-img]][demo-link] | [![][demo-img]][demo-link] |
+|               Maui (net8), Xamarin Forms, Native (xamarin & .net8) - iOS + Android               |
+|:------------------------------------------------------------------------------------------------:|
+| [![NuGet][nuget-img]][nuget-link]  ![Nuget](https://img.shields.io/nuget/dt/Vapolia.WheelPicker) |
+|                                    [![][demo-img]][demo-link]                                    |
 
 
 # Wheel Picker
-From Apple:    
-_**Wheel Picker**: a view that uses a spinning-wheel or slot-machine metaphor to show one or more sets of values_.
+Definition from Apple 🍏 :  
+A **Wheel Picker** is a **view** that uses a **spinning-wheel** or slot-machine **metaphor** to **display** one or more **sets of values**.
 
-[Enterprise support available: contact](https://vapolia.eu)  
-[Source code available: contact](https://vapolia.eu)
+This interactive UI control mimics a slot machine user interface on Android, while on iOS, it makes it easy to use multi-wheel pickers.
+
+Enterprise support available: [contact sales](https://vapolia.eu)  
+Source code available: [contact sales](https://vapolia.eu)
 
 
-Maui .NET8+ & Xamarin Forms (Android,iOS): `WheelPicker`  
-Native Android: `vapolia.WheelPicker` & iOS: `UIPickerViewModel`
+## UI controls
+* Maui net8 / Xamarin Forms / Android+iOS: `WheelPicker` (hot reload & trimming enabled)
+* net8-android & Xamarin Android: `vapolia.WheelPicker` (can be used in layout .xml files)  
+* net8-ios & Xamarin iOS: `UIPickerViewModel` (can be used in storyboards)
 
+## Video presentations
 
 [![Preview][video-img]][video-link]
 [![Preview][video-img2]][video-link2]
@@ -29,12 +34,6 @@ Native Android: `vapolia.WheelPicker` & iOS: `UIPickerViewModel`
 [video-img2]: https://i.imgur.com/BKTYa8G.png
 [video-link2]: https://vimeo.com/488497139
 
-## Overview
-
-This control brings the Wheel Picker view to Xamarin Forms on Android and iOS (it also supports native Xamarin Android and iOS).
-It mimics a slot-machine user interface on Android, while on iOS it makes easy to use multi wheel pickers.
-
-
 
 ## Quick start
 
@@ -45,7 +44,7 @@ It mimics a slot-machine user interface on Android, while on iOS it makes easy t
 #### MAUI Specific
 
 If you are using Maui, you need to add this line to your `CreateMauiApp()`:
-```
+```C#
 ...
 using Vapolia.WheelPickers;
 
@@ -56,9 +55,9 @@ builder
 ```
 
 
-#### Add the WheelPicker control
+#### Add a WheelPicker to your xaml UI
 
-- Add `xmlns:wp="clr-namespace:Vapolia.WheelPickers;assembly=Vapolia.WheelPicker"` to the root tag of a view.   
+- Add `xmlns:wp="clr-namespace:Vapolia.WheelPickers;assembly=Vapolia.WheelPicker"` to the root tag
 - Add a minimal wheel:
 
 ```xml
@@ -70,23 +69,22 @@ builder
 ## Anatomy of the control
 
 The WheelPicker is made of 2 parts: 
-- the outside container `<wp:WheelPicker> ... </wp:WheelPicker>`
-- a list of one or more `wp:WheelDefinition`, each representing a vertical wheel. You can have 1 or more wheels in the same container.  
-Important note: `wp:WheelDefinition` contains a customizable template to display its content.
+- the container `<wp:WheelPicker> ... </wp:WheelPicker>` which contains 1 or more wheels and present them like a Horizontal StackLayout does.
+- a list of 1 or more `wp:WheelDefinition`, each representing a vertical interactive wheel.  
+Trick: `wp:WheelDefinition` has a customizable template to display each item of the wheel.
 
-The WheelPicker is bound to a single data source through `ItemsSource="{Binding SomeProperty}"`. The type of `SomeProperty` can be:
-- when there is only 1 wheel: 
-  - a list of items `IReadOnlyCollection<T>`. 
-  - Ex: `List<string>`
+The WheelPicker is bound to a single data source through `ItemsSource="{Binding SomeProperty}"`.  
+The type of `SomeProperty` can be:
+- For 1 wheel: 
+  - a list of items `IReadOnlyCollection<T>`. Ex: `List<string>`
 
 
-- when there are more than 1 wheel: 
-  - a list of list of items `IReadOnlyCollection<IReadOnlyCollection<T>>`. 
-  - Ex: `List<List<string>>`. 
-  - Each inner list is bound to a wheel.
-The outer list must have a number of items equal to the number of `wp:WheelDefinition`.
+- For more than 1 wheel: 
+  - a list of list of items `IReadOnlyCollection<IReadOnlyCollection<T>>`. Ex: `List<List<MyItemModel>>` 
+  - Each inner list is bound to a wheel.  
+    The outer list must have a number of items equal to the number of `wp:WheelDefinition`.
 
-## Full page example
+## Full example
 
 ```xml
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
@@ -105,8 +103,8 @@ The outer list must have a number of items equal to the number of `wp:WheelDefin
 </ContentPage>
 ```
 
-<br/>In the code behind, set the binding context to your view model containing the items to display.
-<br/>In the code below, `ItemsSource` is bound to a list of strings.
+In the code behind, set the binding context to your view model containing the items to display.  
+For the example below `ItemsSource` is bound to a list of strings.
 
 
 ```csharp
@@ -142,12 +140,12 @@ public class MainPageModel
 ## Using custom templates
 
 You can customize how each item is rendered by using custom templates.    
-By default the control converts all items to strings and render those strings with the specified style.
+By default, the control converts all items to strings and renders those strings with the specified style.
 
-But you can fully customize the style and content of the items with one constraint: there is only one template per wheel, which renders all items of that wheel. 
+You can fully customize the style and content of the items. However, there is a constraint: there is only one template per wheel, which renders all items of that wheel. 
 If you have multiple wheels in the same WheelPicker, you can set one template per wheel.
 
-Example below: a templated picker with 3 wheels. All properties are bindable and can be dynamically changed.
+For example, below is a templated picker with 3 wheels. All properties are bindable and can be dynamically changed.
 
 Note how `SelectedItemsIndex` is used to initialize the position of the 3 wheels to the specified item indexes.
 
@@ -201,11 +199,8 @@ A templated picker with one wheel:
 </wp:WheelPicker>
 ```
 
-Note that the tag `wp:WheelDefinition.ItemTemplate` is optional as it is the content property.
-
-
 A picker with 3 wheels:  
-The center wheel's width is computed automatically. Items are aligned differently inside each wheel.
+The width of the center wheel is computed automatically, and items are aligned differently inside each wheel.
 
 ```xml
 <wp:WheelPicker SelectionLinesColor="Navy" 
@@ -274,7 +269,7 @@ Selection
 - `EventHandler<WheelChangedEventArgs>` **`SelectedItemIndexChanged`** Triggered when any of the wheel's index has changed
 - `void` **`Spin`**`(int items, int wheelIndex = 0)` items: the number of item to spin
 
-`SelectedItemsIndex` is a list of integer. Each integer represents the selected index inside a wheel. In XAML, you can use a space or comma separated string of integers.
+`SelectedItemsIndex` is a list of integers, where each integer represents the selected index within a wheel. In XAML, you can use a space- or comma-separated string of integers.
 
 **WheelDefinition**
 
@@ -285,11 +280,11 @@ Selection
 - `DataTemplate` **`ImageItemTemplate`**
 - `double` **`RowHeight`**
 
-When a wheel's `Width` is set to `Auto`, the control computes the max width of all strings in the data source (if object are strings).  When set to `*` (star), the wheel's width will be proportional to the remaining space. See the Xamarin Forms `Grid` control for more information about `GridLength`.
+When a wheel's `Width` is set to `Auto`, the control computes the max width of all strings in the data source (if object are strings).  When set to `*` (star), the width of the wheel will be proportional to the remaining space. See the `Grid` control for more information about `GridLength`.
 
-`HorizontalOptions` is used to align a wheel inside the available WheelPicker's width, if it is larger than the wheel's width.
+`HorizontalOptions` is used to align a wheel inside the available width of the WheelPicker, if it is larger than the width of the wheel.
 
-`Alignment` is used to align the items inside a wheel.
+`Alignment` is used to align the items within a wheel.
 </details>
 
 ## Reference (net8-android & Xamarin.Android)
@@ -366,12 +361,12 @@ Selection
 - IList&lt;int&gt; SelectedItemsIndex
 
 Templating  
-- ItemsSimpleTemplates (currently reserved, used by the xamarin forms renderer)
+- ItemsSimpleTemplates (currently reserved, used by the renderer)
 
-`SelectedItemsIndex` is a list of integer. Each integer represents the selected index inside a wheel.  
+`SelectedItemsIndex` is a list of integers. Each integer represents the selected index within a wheel.  
 `ItemWidths`: see chapter below  
-`Alignments` or `Gravities` is used to align a wheel inside the available WheelPicker's width, if it is larger than the wheel's width.  
-`ItemAligns` is used to align the items inside a wheel.
+`Alignments` or `Gravities` is used to align a wheel inside the available WheelPicker's width, if it is larger than the width of the wheel.  
+`ItemAligns` is used to align the items within a wheel.
 
 </details>
 
@@ -379,7 +374,7 @@ Templating
 
 <details><summary>Click to expand</summary>
 
-On iOS, this library uses the native UIPickerView with a custom UIPickerViewModel to greatly simplify the use of this control.
+On iOS, this library utilizes the native UIPickerView along with a custom UIPickerViewModel to significantly simplify the use of this control.
 
 Sample usage:
 
@@ -416,7 +411,7 @@ Selection
 - IEnumerable<int> SelectedItemsIndex
 
 Templating  
-- ItemsSimpleTemplates (currently reserved, used by the xamarin forms renderer)
+- ItemsSimpleTemplates (currently reserved, used by the renderer)
 
 `SelectedItemsIndex` is a list of integer. Each integer represents the selected index inside a wheel.  
 `ItemWidths`: see chapter below  
@@ -430,7 +425,7 @@ Templating
 <details><summary>Click to expand</summary>
 
 `ItemWidths` is used to choose the width of each wheel. It is a space separated string consisting of a combination of float numbers, stars (optionally prepended with a float number), or the "Auto" string.
-The total WheelPicker width is distributed between the wheels by respecting either :
+The total width of the WheelPicker is distributed between the wheels by respecting either :
 
 - float number: the exact width
 - Auto: the width of the largest string in ItemsSource for a given wheel (if ItemsSource contains strings)
