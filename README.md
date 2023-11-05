@@ -183,9 +183,9 @@ public class MainPageModel
 
     public MainPageModel() 
     {
-        ItemSelectedCommand = new Command<(int Component, int Row, IList<int> ItemIndexes)>(tuple =>
+        ItemSelectedCommand = new Command<(int, int, IList<int>)>(tuple =>
         {
-            var selectedValue = Days[tuple.Row];
+            var (selectedWheelIndex, indexOfItemChangedInSelectedWheel, selectedItemsIndexes) = tuple;
             //...
         });
     }
