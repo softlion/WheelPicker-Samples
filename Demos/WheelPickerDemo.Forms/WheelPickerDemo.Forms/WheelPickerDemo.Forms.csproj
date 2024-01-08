@@ -11,14 +11,14 @@
   </ItemGroup>
 
   <ItemGroup>
-    <PackageReference Include="libphonenumber-csharp" Version="8.13.24" />
+    <PackageReference Include="libphonenumber-csharp" Version="8.13.27" />
     <PackageReference Include="Vapolia.Xamarin.Svg.Forms" Version="4.1.0" />
-    <PackageReference Include="Xamarin.Forms" Version="5.0.0.2612" />
+    <PackageReference Include="Xamarin.Forms" Version="5.0.0.2622" />
   </ItemGroup>
 
   <ItemGroup>
 	<PackageReference Include="Vapolia.WheelPicker" Version="5.0.1-pre7" Condition="$(WPUseProjectReference) != 'true'" />
-	<ProjectReference Include="$(SolutionDir)Vapolia.WheelPicker\Vapolia.WheelPicker.csproj" Condition="$(WPUseProjectReference) == 'true'"  />
+	<ProjectReference Include="$(SolutionDir)Vapolia.WheelPicker\Vapolia.WheelPicker.csproj" Condition="$(WPUseProjectReference) == 'true'" />
   </ItemGroup>
 
 

@@ -1,0 +1,43 @@
+﻿<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:views="clr-namespace:WheelPickerMauiDemo.Views"
+             xmlns:wp="https://vapolia.eu/WheelPicker"
+             x:Class="WheelPickerMauiDemo.Views.SlotPage"
+             x:DataType="views:SlotPageModel">
+
+    <StackLayout Margin="20" Spacing="10">
+
+        <BoxView BackgroundColor="GreenYellow" HeightRequest="1" />
+        <Label Text="Vapolia Wheel Picker for Xamarin Forms" HorizontalOptions="Center" TextColor="Green" />
+        <Label Text="Multi slot machine" HorizontalOptions="Center" />
+        <BoxView BackgroundColor="GreenYellow" HeightRequest="1" />
+
+        <Button Text="Spin wheel" Clicked="ButtonSpin_OnClicked" />
+
+        <wp:WheelPicker x:Name="SlotPicker" ItemsSourceMulti="{Binding Slot.ItemsSource}" 
+                        SelectedItemsIndex="0 0 0"
+                        Command="{Binding Slot.ItemSelectedCommand}" 
+                        ItemTextSelectedColor="Lime"
+                        ItemTextFontAttributes="Italic"
+                        HorizontalOptions="Fill"
+                        SelectionLinesColor="Aquamarine">
+            <wp:WheelDefinition Width="*" HorizontalOptions="Left" Alignment="Center" IsCircular="True" RowHeight="100">
+                <DataTemplate x:DataType="x:String">
+                    <Image Source="{Binding .}" HeightRequest="100" Aspect="AspectFit" />
+                </DataTemplate>
+            </wp:WheelDefinition>
+            <wp:WheelDefinition Width="*" HorizontalOptions="Left" Alignment="Center" IsCircular="True" RowHeight="100">
+                <DataTemplate x:DataType="x:String">
+                    <Image Source="{Binding .}" HeightRequest="100" Aspect="AspectFit" />
+                </DataTemplate>
+            </wp:WheelDefinition>
+            <wp:WheelDefinition Width="*" HorizontalOptions="Left" Alignment="Center" IsCircular="True" RowHeight="100">
+                <DataTemplate x:DataType="x:String">
+                    <Image Source="{Binding .}" HeightRequest="100" Aspect="AspectFit" />
+                </DataTemplate>
+            </wp:WheelDefinition>
+        </wp:WheelPicker>
+
+    </StackLayout>
+
+</ContentPage>

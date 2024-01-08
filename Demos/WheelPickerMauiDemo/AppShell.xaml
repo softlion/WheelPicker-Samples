@@ -11,6 +11,8 @@
         <ShellContent Route="DayPickerPage" ContentTemplate="{DataTemplate views:DayPickerPage}" Title="Day" />
         <ShellContent Route="DayMonthPickerPage" ContentTemplate="{DataTemplate views:DayMonthPickerPage}" Title="DayMonth" />
         <ShellContent Route="CountryPickerPage" ContentTemplate="{DataTemplate views:CountryPickerPage}" Title="Country" />
+        <ShellContent Route="SlotPage" ContentTemplate="{DataTemplate views:SlotPage}" Title="Slots" />
+        <ShellContent Route="SeparatorLinePage" ContentTemplate="{DataTemplate views:SeparatorLine}" Title="Sep" />
     </TabBar>
 
 </Shell>
