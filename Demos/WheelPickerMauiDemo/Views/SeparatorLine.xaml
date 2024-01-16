@@ -11,30 +11,30 @@
         </ResourceDictionary>
     </ContentPage.Resources>
 
-    <Grid>
+    <Grid BackgroundColor="LightGoldenrodYellow">
 
         <wp:WheelPicker HorizontalOptions="Fill" HeightRequest="400"
             HorizontalSpaceBetweenWheels="50"
-            ItemsSourceMulti="{Binding MetricWeightItems}"
-            SelectionLinesColor="{DynamicResource BaseSeparatorColor}">
+            ItemsSource="{Binding MetricWeightItems}"
+            SelectionLinesColor="{StaticResource BaseSeparatorColor}"
+            BackgroundColor="LightCyan">
             
             <wp:WheelDefinition
-                Width="*" IsCircular="True" RowHeight="20"
+                Width="*" IsCircular="True" RowHeight="30"
                 Alignment="Center" HorizontalOptions="Center">
                 <wp:WheelDefinition.ItemTemplate>
                     <DataTemplate>
-                        <Label HeightRequest="20" Text="{Binding .}" VerticalOptions="Center" />
+                        <Label BackgroundColor="MediumSpringGreen" HeightRequest="20" Text="{Binding .}" VerticalOptions="Center" />
                     </DataTemplate>
                 </wp:WheelDefinition.ItemTemplate>
             </wp:WheelDefinition>
             
             <wp:WheelDefinition
-                Width="*" IsCircular="True" RowHeight="20"
-                Alignment="Center"
-                HorizontalOptions="Center">
+                Width="*" IsCircular="True" RowHeight="30"
+                Alignment="Center" HorizontalOptions="Center">
                 <wp:WheelDefinition.ItemTemplate>
                     <DataTemplate>
-                        <Label HeightRequest="20" Text="{Binding .}" VerticalOptions="Center" />
+                        <Label BackgroundColor="Orange" HeightRequest="20" Text="{Binding .}" VerticalOptions="Center" />
                     </DataTemplate>
                 </wp:WheelDefinition.ItemTemplate>
             </wp:WheelDefinition>

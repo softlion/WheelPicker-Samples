@@ -19,7 +19,7 @@ namespace Vapolia.WheelPickerDemo
             base.OnCreate(bundle);
             SetContentView(Resource.Layout.Main);
 
-            var wheelView = FindViewById<WheelPicker>(Resource.Id.wheelView);
+            var wheelView = FindViewById<WheelPickr>(Resource.Id.wheelView);
             var text1 = FindViewById<TextView>(Resource.Id.valueText);
             var text2 = FindViewById<TextView>(Resource.Id.valueText2);
 

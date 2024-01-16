@@ -6,7 +6,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent">
 <!--app:enableTrace="true"-->
-    <vapolia.WheelPicker
+    <vapolia.WheelPickr
         android:id="@+id/wheelView"
         app:itemWidths="* Auto *"
         app:itemAligns="Right Left Left"
