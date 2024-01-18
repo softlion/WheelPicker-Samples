@@ -44,7 +44,7 @@ Source code available: [contact sales](https://vapolia.eu)
 #### MAUI Specific
 
 If you are using Maui, you need to add this line to your `CreateMauiApp()`:
-```C#
+```cs
 ...
 using Vapolia.WheelPickers;
 
@@ -107,7 +107,7 @@ In the code behind, set the binding context to your view model containing the it
 For the example below `ItemsSource` is bound to a list of strings.
 
 
-```csharp
+```cs
 public partial class MainPage : ContentPage
 {
     public MainPage()
