@@ -4,8 +4,8 @@ public partial class SeparatorLine : ContentPage
 {
     public string[][] MetricWeightItems { get; } =
     [
-        ["1", "2", "3", "4", "5", "6", "7", "8", "9"],
-        ["a", "b", "c", "d", "e", "f", "g", "h"]
+        ["01", "02", "03", "04", "05", "06", "07", "08", "09", "10"],
+        ["AA", "BB", "CC", "DD", "EE", "FF", "GG"]
     ];
 
     public SeparatorLine()

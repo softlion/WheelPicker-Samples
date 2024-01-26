@@ -51,7 +51,7 @@ using Vapolia.WheelPickers;
 ...
 builder
     .UseMauiApp<App>()
-    .AddWheelPicker();
+    .UseWheelPicker();
 ```
 
 
