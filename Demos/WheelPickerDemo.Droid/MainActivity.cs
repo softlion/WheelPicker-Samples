@@ -34,7 +34,7 @@ namespace Vapolia.WheelPickerDemo
             };
 
             //Use wheelView.SelectedItemIndexChangedCommand for Mvvm bindings
-            wheelView.SelectedItemIndexChanged += (sender, args) =>
+            wheelView.SelectedItemIndexChanged += (sender, args) =>  
             {
                 text2.Text = $"Wheel {args.WheelIndex} selection changed to item index {args.SelectedItemIndex} ('{model.GetWheel(args.WheelIndex)[args.SelectedItemIndex]}')";
                 model.UpdateWheelsFromSelection(args.WheelIndex, wheelView.SelectedItemsIndex);
