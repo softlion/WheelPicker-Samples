@@ -43,7 +43,7 @@ Source code available: [contact sales](https://vapolia.eu)
 
 #### MAUI Specific
 
-If you are using Maui, you need to add this line to your `CreateMauiApp()`:
+If using Maui, register the control in the `CreateMauiApp()` function:
 ```cs
 ...
 using Vapolia.WheelPickers;
@@ -57,7 +57,7 @@ builder
 
 #### Add a WheelPicker to your xaml UI
 
-- Add `xmlns:wp="clr-namespace:Vapolia.WheelPickers;assembly=Vapolia.WheelPicker"` to the root tag
+- Add `xmlns:wp="https://vapolia.eu/WheelPicker"` to the root tag
 - Add a minimal wheel:
 
 ```xml
