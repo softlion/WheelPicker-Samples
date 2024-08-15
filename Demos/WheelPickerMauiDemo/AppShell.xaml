@@ -4,15 +4,15 @@
     xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
     xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
     xmlns:views="clr-namespace:WheelPickerMauiDemo.Views"
+    xmlns:svg="https://vapolia.eu/svg"
     Shell.FlyoutBehavior="Disabled">
 
     <TabBar>
-        <!-- Icon="{svgs:Svg beacon.svg,Height=30,ColorMapping='000=FFF'}" -->
-        <ShellContent Route="DayPickerPage" ContentTemplate="{DataTemplate views:DayPickerPage}" Title="Day" />
-        <ShellContent Route="DayMonthPickerPage" ContentTemplate="{DataTemplate views:DayMonthPickerPage}" Title="DayMonth" />
-        <ShellContent Route="CountryPickerPage" ContentTemplate="{DataTemplate views:CountryPickerPage}" Title="Country" />
-        <ShellContent Route="SlotPage" ContentTemplate="{DataTemplate views:SlotPage}" Title="Slots" />
-        <ShellContent Route="SeparatorLinePage" ContentTemplate="{DataTemplate views:SeparatorLine}" Title="Sep" />
+        <ShellContent Route="DayPickerPage" ContentTemplate="{DataTemplate views:DayPickerPage}" Title="Day" Icon="{svg:Svg Source=day.svg, Height=26}" />
+        <ShellContent Route="DayMonthPickerPage" ContentTemplate="{DataTemplate views:DayMonthPickerPage}" Title="DayMonth" Icon="{svg:Svg Source=day-month.svg, Height=26}" />
+        <ShellContent Route="CountryPickerPage" ContentTemplate="{DataTemplate views:CountryPickerPage}" Title="Country" Icon="{svg:Svg Source=country.svg, Height=26}" />
+        <ShellContent Route="SlotPage" ContentTemplate="{DataTemplate views:SlotPage}" Title="Slots" Icon="{svg:Svg Source=carnival.svg, Height=26}" />
+        <ShellContent Route="SeparatorLinePage" ContentTemplate="{DataTemplate views:SeparatorLine}" Title="Sep" Icon="{svg:Svg Source=separator.svg, Height=26}" />
     </TabBar>
 
 </Shell>
