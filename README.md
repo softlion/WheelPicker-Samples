@@ -1,28 +1,44 @@
-|               Maui (net8), Xamarin Forms, Native (xamarin & .net8) - iOS + Android               |
+|               Maui and Native iOS + Android on net8/9               |
 |:------------------------------------------------------------------------------------------------:|
 | [![NuGet][nuget-img]][nuget-link]  ![Nuget](https://img.shields.io/nuget/dt/Vapolia.WheelPicker) |
 |                                    [![][demo-img]][demo-link]                                    |
 
 
 # Wheel Picker
-Definition from Apple 🍏 :  
+Definition by Apple 🍏 :  
 A **Wheel Picker** is a **view** that uses a **spinning-wheel** or slot-machine **metaphor** to **display** one or more **sets of values**.
 
-This interactive UI control mimics a slot machine user interface on Android, while on iOS, it makes it easy to use multi-wheel pickers.
+This interactive UI control mimics a slot machine user interface:
+- Modern replacement for drop downs and lists
+- Gesture based selection
+- Cascading selection (multi wheel dependency)
+- Dynamic Content Loading
+- Accessibility Enhancements
 
-Enterprise support available: [contact sales](https://vapolia.eu)  
-Source code available: [contact sales](https://vapolia.eu)
+Use Cases:  
+- Date and time selection
+- Country Code Selection
+- E-Commerce Product Customization: Car Brand & Model Selection ...
+- Medical Appointment Scheduling
+- Food Recipe Ingredient Selector
+- Survey & Poll Answer Selection
+- Stock Trading App Price Asset Selector
+- Travel App Destination Picker
+- Elderly-Friendly UI for Large Number Selection
 
+
+Enterprise support available: contact [Vapolia](https://vapolia.eu)
 
 ## UI controls
-* Maui net8 / Xamarin Forms / Android+iOS: `WheelPicker` (hot reload & trimming enabled)
-* net8-android & Xamarin Android: `vapolia.WheelPicker` (can be used in layout .xml files)  
-* net8-ios & Xamarin iOS: `UIPickerViewModel` (can be used in storyboards)
+* `WheelPicker` for Maui net8/9 / Android+iOS: supports hot reload & trimming
+* `vapolia.WheelPicker` for native android on net8/9: supports code and native layout .xml files
+* `UIPickerViewModel` for native iOS on net8/9: supports code and storyboard files
 
-## Video presentations
+## Presentations
 
-[![Preview][video-img]][video-link]
-[![Preview][video-img2]][video-link2]
+| Features  | Design Sample  |
+|----|----|
+| [![Preview][video-img]][video-link] | [![Preview][video-img2]][video-link2] |
 
 [video-img]: https://i.vimeocdn.com/video/668500920.webp?mw=400&mh=540
 [video-link]: https://vimeo.com/244170732
@@ -36,8 +52,6 @@ Source code available: [contact sales](https://vapolia.eu)
 
 
 ## Quick start
-
-#### Install the nuget package
 
 `dotnet add package Vapolia.WheelPicker`
 
@@ -71,7 +85,7 @@ builder
 The WheelPicker is made of 2 parts: 
 - the container `<wp:WheelPicker> ... </wp:WheelPicker>` which contains 1 or more wheels and present them like a Horizontal StackLayout does.
 - a list of 1 or more `wp:WheelDefinition`, each representing a vertical interactive wheel.  
-Trick: `wp:WheelDefinition` has a customizable template to display each item of the wheel.
+Tip: `wp:WheelDefinition` supports a customizable template for displaying each item in the wheel.
 
 The WheelPicker is bound to a single data source through `ItemsSource="{Binding SomeProperty}"`.  
 The type of `SomeProperty` can be:
@@ -147,7 +161,7 @@ If you have multiple wheels in the same WheelPicker, you can set one template pe
 
 For example, below is a templated picker with 3 wheels. All properties are bindable and can be dynamically changed.
 
-Note how `SelectedItemsIndex` is used to initialize the position of the 3 wheels to the specified item indexes.
+Note that `SelectedItemsIndex` initializes the position of the three wheels to the specified item indexes.
 
 ```xml
 <wp:WheelPicker x:Name="SlotPicker" ItemsSource="{Binding Slot.ItemsSource}" 
@@ -175,7 +189,7 @@ Note how `SelectedItemsIndex` is used to initialize the position of the 3 wheels
 </wp:WheelPicker>
 ```
 
-## Some examples
+## Examples
 
 Those examples are extracted from the demo projects in this repository.
 
