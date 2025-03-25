@@ -40,8 +40,6 @@ Enterprise support available: contact [Vapolia](https://vapolia.eu)
 |-----------|---------------|
 | [![Preview][video-img]][video-link] <br> *Click to watch the video* | [![Preview][video-img2]][video-link2] <br> *Click to watch the video* |
 
-![Wheel Picker Use Cases et 44 pages de plus - Personnel  Microsoft Edge]()
-
 [video-img]: https://github.com/user-attachments/assets/6a8a3f8d-ccde-4f34-9ede-4a04846ae6ca
 [video-link]: https://vimeo.com/244170732
 [nuget-img]: https://img.shields.io/nuget/v/Vapolia.WheelPicker
