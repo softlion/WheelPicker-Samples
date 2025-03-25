@@ -37,8 +37,9 @@ Enterprise support available: contact [Vapolia](https://vapolia.eu)
 ## Presentations
 
 | Features  | Design Sample  |
-|----|----|
-| [![Preview][video-img]][video-link] | [![Preview][video-img2]][video-link2] |
+|-----------|---------------|
+| [![Preview][video-img]][video-link] <br> *Click to watch the video* | [![Preview][video-img2]][video-link2] <br> *Click to watch the video* |
+
 
 [video-img]: https://i.vimeocdn.com/video/668500920.webp?mw=400&mh=540
 [video-link]: https://vimeo.com/244170732
