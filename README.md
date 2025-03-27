@@ -456,7 +456,7 @@ Examples of ItemWidths:
 </details>
 
 ### Supported Platforms
-- Maui, net8-iOS, net8-Android, Xamarin Forms
+- Maui, net-iOS, net-Android, Xamarin Forms
 - Android api level 15+ (Android 4.0.3+)  
 - iOS 8+
 
@@ -468,7 +468,7 @@ It also implements `INotifyPropertyChanged`.
 This control supports hot reload and live preview.
 
 
-### Commercial Support
+### Enterprise Support
 
 [Enterprise support is available: contact sales](https://vapolia.eu)  
 [Source code is available: contact sales](https://vapolia.eu)
