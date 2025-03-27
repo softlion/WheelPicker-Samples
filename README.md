@@ -470,5 +470,5 @@ This control supports hot reload and live preview.
 
 ### Enterprise Support
 
-[Enterprise support is available: contact sales](https://vapolia.eu)  
-[Source code is available: contact sales](https://vapolia.eu)
+[Enterprise support is available](https://vapolia.eu)  
+[Source code is available](https://vapolia.eu)
