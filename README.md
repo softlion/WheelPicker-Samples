@@ -5,7 +5,24 @@
 
 
 # Wheel Picker
-Definition by Apple 🍏 :  
+
+| Features  | Design Sample  |
+|-----------|---------------|
+| [![Preview][video-img]][video-link] <br> *Click to watch the video* | [![Preview][video-img2]][video-link2] <br> *Click to watch the video* |
+
+[video-img]: https://github.com/user-attachments/assets/6a8a3f8d-ccde-4f34-9ede-4a04846ae6ca
+[video-link]: https://vimeo.com/244170732
+[nuget-img]: https://img.shields.io/nuget/v/Vapolia.WheelPicker
+[nuget-link]: https://www.nuget.org/packages/Vapolia.WheelPicker/
+[nuget-link-forms]: https://www.nuget.org/packages/Vapolia.WheelPicker.Forms/
+[demo-img]: https://img.shields.io/badge/demo-source%20code-lightgrey.svg
+[demo-link]: https://github.com/softlion/WheelPicker-Samples/tree/main/Demos
+[video-img2]: https://i.imgur.com/BKTYa8G.png
+[video-link2]: https://vimeo.com/488497139
+
+## Definition 
+
+By Apple 🍏:  
 A **Wheel Picker** is a **view** that uses a **spinning-wheel** or slot-machine **metaphor** to **display** one or more **sets of values**.
 
 This interactive UI control mimics a slot machine user interface:
@@ -34,21 +51,6 @@ Enterprise support available: contact [Vapolia](https://vapolia.eu)
 * `vapolia.WheelPicker` for native android on net8/9: supports code and native layout .xml files
 * `UIPickerViewModel` for native iOS on net8/9: supports code and storyboard files
 
-## Presentations
-
-| Features  | Design Sample  |
-|-----------|---------------|
-| [![Preview][video-img]][video-link] <br> *Click to watch the video* | [![Preview][video-img2]][video-link2] <br> *Click to watch the video* |
-
-[video-img]: https://github.com/user-attachments/assets/6a8a3f8d-ccde-4f34-9ede-4a04846ae6ca
-[video-link]: https://vimeo.com/244170732
-[nuget-img]: https://img.shields.io/nuget/v/Vapolia.WheelPicker
-[nuget-link]: https://www.nuget.org/packages/Vapolia.WheelPicker/
-[nuget-link-forms]: https://www.nuget.org/packages/Vapolia.WheelPicker.Forms/
-[demo-img]: https://img.shields.io/badge/demo-source%20code-lightgrey.svg
-[demo-link]: https://github.com/softlion/WheelPicker-Samples/tree/main/Demos
-[video-img2]: https://i.imgur.com/BKTYa8G.png
-[video-link2]: https://vimeo.com/488497139
 
 
 ## Quick start
