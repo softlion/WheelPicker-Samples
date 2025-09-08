@@ -1,10 +1,6 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
     <PropertyGroup>
-        <TargetFrameworks>net8.0-android;net8.0-ios</TargetFrameworks>
-        <!-- <TargetFrameworks>net8.0-android;net8.0-ios;net8.0-maccatalyst</TargetFrameworks>-->
-        <!-- <TargetFrameworks Condition="$([MSBuild]::IsOSPlatform('windows'))">$(TargetFrameworks);net8.0-windows10.0.19041.0</TargetFrameworks>-->
-        <!-- Uncomment to also build the tizen app. You will need to install tizen by following this: https://github.com/Samsung/Tizen.NET -->
-        <!-- <TargetFrameworks>$(TargetFrameworks);net8.0-tizen</TargetFrameworks> -->
+        <TargetFrameworks>net9.0-android;net9.0-ios</TargetFrameworks>
         <OutputType>Exe</OutputType>
         <RootNamespace>WheelPickerMauiDemo</RootNamespace>
         <UseMaui>true</UseMaui>
@@ -31,7 +27,7 @@
         <SupportedOSPlatformVersion Condition="$([MSBuild]::GetTargetPlatformIdentifier('$(TargetFramework)')) == 'tizen'">6.5</SupportedOSPlatformVersion>
     </PropertyGroup>
 
-    <PropertyGroup Condition="'$(TargetFramework)'=='net8.0-ios' And '$(Configuration)' == 'Debug'">
+    <PropertyGroup Condition="'$(TargetFramework)'=='net9.0-ios' And '$(Configuration)' == 'Debug'">
       <CodesignKey>Apple Development: Benjamin Mayrargue (4FX9X5DS74)</CodesignKey>
       <CodesignProvision>VS: WildCard Development</CodesignProvision>
     </PropertyGroup>
@@ -58,13 +54,13 @@
     </ItemGroup>
     
     <ItemGroup>
-        <PackageReference Include="Microsoft.Extensions.Logging.Debug" Version="8.0.0" />
-        <PackageReference Include="Nager.Country.Translation" Version="3.1.0" />
-        <PackageReference Include="Microsoft.Maui.Controls" Version="8.0.80" />
+        <PackageReference Include="Microsoft.Extensions.Logging.Debug" Version="9.0.8" />
+        <PackageReference Include="Nager.Country.Translation" Version="4.2.0" />
+        <PackageReference Include="Microsoft.Maui.Controls" Version="9.0.100" />
     </ItemGroup>
 
     <ItemGroup>
-        <PackageReference Include="Vapolia.Svg" Version="1.0.4" />
+        <PackageReference Include="Vapolia.Svg" Version="1.0.8-preT" />
         <PackageReference Include="Vapolia.WheelPicker" Version="5.0.1-pre9" Condition="$(WPUseProjectReference) != 'true'" />
         <ProjectReference Include="$(SolutionDir)Vapolia.WheelPicker\Vapolia.WheelPicker.csproj" Condition="$(WPUseProjectReference) == 'true'"  />
     </ItemGroup>

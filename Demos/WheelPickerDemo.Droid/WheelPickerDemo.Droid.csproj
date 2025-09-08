@@ -1,7 +1,9 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
   <PropertyGroup>
-    <TargetFramework>net8.0-android</TargetFramework>
-    <ImplicitUsings>disable</ImplicitUsings>
+    <TargetFramework>net9.0-android</TargetFramework>
+	  <OutputType>Exe</OutputType>
+  
+	  <ImplicitUsings>disable</ImplicitUsings>
     <Nullable>enable</Nullable>
     <RootNamespace>Vapolia.WheelPickerDemo</RootNamespace>
     <SupportedOSPlatformVersion Condition="$([MSBuild]::GetTargetPlatformIdentifier('$(TargetFramework)')) == 'android'">21.0</SupportedOSPlatformVersion>
@@ -10,7 +12,7 @@
 
   <ItemGroup>
     <PackageReference Include="Vapolia.WheelPicker" Version="5.0.1-pre7" Condition="$(WPUseProjectReference) != 'true'" />
-    <ProjectReference Include="D:\repos\0libs\Vapolia.WheelPicker\Vapolia.WheelPicker\Vapolia.WheelPicker.csproj" />
+    <ProjectReference Include="D:\repos\0libs\Vapolia.WheelPicker\Vapolia.WheelPicker\Vapolia.WheelPicker.csproj" Condition="$(WPUseProjectReference) == 'true'" />
   </ItemGroup>
   
 </Project>
