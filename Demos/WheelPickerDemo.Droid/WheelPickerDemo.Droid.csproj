@@ -7,7 +7,7 @@
     <Nullable>enable</Nullable>
     <RootNamespace>Vapolia.WheelPickerDemo</RootNamespace>
     <SupportedOSPlatformVersion Condition="$([MSBuild]::GetTargetPlatformIdentifier('$(TargetFramework)')) == 'android'">21.0</SupportedOSPlatformVersion>
-    <WPUseProjectReference Condition="$(SolutionFileName) == 'Vapolia.WheelPicker.sln'">true</WPUseProjectReference>
+    <WPUseProjectReference Condition="$(SolutionFileName) == 'Vapolia.WheelPicker.slnx'">true</WPUseProjectReference>
   </PropertyGroup>
 
   <ItemGroup>
