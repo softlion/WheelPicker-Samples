@@ -5,7 +5,7 @@
              x:Class="WheelPickerMauiDemo.Views.SlotPage"
              x:DataType="views:SlotPageModel">
 
-    <StackLayout Margin="20" Spacing="10">
+    <VerticalStackLayout Margin="20" Spacing="10">
 
         <BoxView BackgroundColor="GreenYellow" HeightRequest="1" />
         <Label Text="Vapolia Wheel Picker for Xamarin Forms" HorizontalOptions="Center" TextColor="Green" />
@@ -23,21 +23,27 @@
                         SelectionLinesColor="Aquamarine">
             <wp:WheelDefinition Width="*" HorizontalOptions="Left" Alignment="Center" IsCircular="True" RowHeight="100">
                 <DataTemplate x:DataType="x:String">
-                    <Image Source="{Binding .}" HeightRequest="100" Aspect="AspectFit" />
+                    <VerticalStackLayout BackgroundColor="#80FFFF00">
+                        <Image Source="{Binding .}" HeightRequest="100" Aspect="AspectFit" />
+                    </VerticalStackLayout>
+                </DataTemplate>
+            </wp:WheelDefinition>
+            <wp:WheelDefinition Width="*" HorizontalOptions="Center" Alignment="Center" IsCircular="True" RowHeight="100">
+                <DataTemplate x:DataType="x:String">
+                    <VerticalStackLayout BackgroundColor="#80FF00FF">
+                        <Image Source="{Binding .}" HeightRequest="100" Aspect="AspectFit" />
+                    </VerticalStackLayout>
                 </DataTemplate>
             </wp:WheelDefinition>
             <wp:WheelDefinition Width="*" HorizontalOptions="Left" Alignment="Center" IsCircular="True" RowHeight="100">
                 <DataTemplate x:DataType="x:String">
-                    <Image Source="{Binding .}" HeightRequest="100" Aspect="AspectFit" />
-                </DataTemplate>
-            </wp:WheelDefinition>
-            <wp:WheelDefinition Width="*" HorizontalOptions="Left" Alignment="Center" IsCircular="True" RowHeight="100">
-                <DataTemplate x:DataType="x:String">
-                    <Image Source="{Binding .}" HeightRequest="100" Aspect="AspectFit" />
+                    <VerticalStackLayout BackgroundColor="#8000FFFF">
+                        <Image Source="{Binding .}" HeightRequest="100" Aspect="AspectFit" />
+                    </VerticalStackLayout>
                 </DataTemplate>
             </wp:WheelDefinition>
         </wp:WheelPicker>
 
-    </StackLayout>
+    </VerticalStackLayout>
 
 </ContentPage>

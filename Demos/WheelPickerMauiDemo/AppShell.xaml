@@ -9,10 +9,11 @@
 
     <TabBar>
         <ShellContent Route="DayPickerPage" ContentTemplate="{DataTemplate views:DayPickerPage}" Title="Day" Icon="{svg:Svg Source=day.svg, Height=26}" />
+        <ShellContent Route="WeekDayPickerPage" ContentTemplate="{DataTemplate views:WeekDayPickerPage}" Title="WeekDay" Icon="{svg:Svg Source=day.svg, Height=26}" />
         <ShellContent Route="DayMonthPickerPage" ContentTemplate="{DataTemplate views:DayMonthPickerPage}" Title="DayMonth" Icon="{svg:Svg Source=day-month.svg, Height=26}" />
         <ShellContent Route="CountryPickerPage" ContentTemplate="{DataTemplate views:CountryPickerPage}" Title="Country" Icon="{svg:Svg Source=country.svg, Height=26}" />
         <ShellContent Route="SlotPage" ContentTemplate="{DataTemplate views:SlotPage}" Title="Slots" Icon="{svg:Svg Source=carnival.svg, Height=26}" />
-        <ShellContent Route="SeparatorLinePage" ContentTemplate="{DataTemplate views:SeparatorLine}" Title="Sep" Icon="{svg:Svg Source=separator.svg, Height=26}" />
+        <ShellContent Route="SeparatorLinePage" ContentTemplate="{DataTemplate views:SeparatorLine}" Title="Separator" Icon="{svg:Svg Source=separator.svg, Height=26}" />
     </TabBar>
 
 </Shell>

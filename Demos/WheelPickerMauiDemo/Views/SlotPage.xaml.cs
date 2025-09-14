@@ -49,7 +49,7 @@ public class SlotModel : INotifyPropertyChanged
 
     public SlotModel()
     {
-        ItemsSource = new [] {GetValues(), GetValues(), GetValues()};
+        ItemsSource = [GetValues(), GetValues(), GetValues()];
 
         //Subscribe to the selection changed command
         ItemSelectedCommand = new Command<Tuple<int, int, IList<int>>>(tuple =>
@@ -63,11 +63,11 @@ public class SlotModel : INotifyPropertyChanged
     }
 
     #region Utilities
-    protected virtual void OnPropertyChanged([CallerMemberName] string propertyName = null)
+    private void OnPropertyChanged([CallerMemberName] string propertyName = null)
         => PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propertyName));
 
     private static string[] GetValues() 
-        => new[] { "seven", "seven", "seven", "seven", "seven", "seven", "seven" };
+        => ["seven", "seven", "seven", "seven", "seven", "seven", "seven"];
 
     #endregion
 }

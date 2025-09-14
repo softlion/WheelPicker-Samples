@@ -1,0 +1,41 @@
+﻿<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:wp="clr-namespace:Vapolia.WheelPickers;assembly=Vapolia.WheelPicker"
+             x:Class="WheelPickerMauiDemo.Views.WeekDayPickerPage">
+    
+    <VerticalStackLayout Margin="20" Spacing="10">
+
+        <Line BackgroundColor="LightGray" HeightRequest="1" />
+        <Label Text="Vapolia Wheel Picker for Maui" HorizontalOptions="Center" TextColor="DimGray" />
+        <Label Text="Day of week Wheel (circular = infinite scroll)" HorizontalOptions="Center" />
+        <Line BackgroundColor="LightGray" HeightRequest="1" />
+
+        <!-- 
+            ItemTextSelectedColor: android only. Ios uses the ItemTextColor.
+            SelectionLinesColor: android only. Ios does not allow changing this color directly.
+            -->
+        <wp:WheelPicker SelectionLinesColor="DeepSkyBlue">
+            <wp:WheelPicker.ItemsSource>
+                <x:Array Type="{x:Type x:String}">
+                    <x:String>Monday</x:String>
+                    <x:String>Tuesday</x:String>
+                    <x:String>Wednesday</x:String>
+                    <x:String>Thursday</x:String>
+                    <x:String>Friday</x:String>
+                    <x:String>Saturday</x:String>
+                    <x:String>Sunday</x:String>
+                </x:Array>
+            </wp:WheelPicker.ItemsSource>
+
+            <wp:WheelDefinition Width="*" HorizontalOptions="Center" Alignment="Center" RowHeight="50" IsCircular="True">
+                <DataTemplate x:DataType="x:String">
+                    <Image Source="{Binding .}" 
+                           HeightRequest="50" 
+                           Aspect="AspectFill" />
+                </DataTemplate>
+            </wp:WheelDefinition>
+        </wp:WheelPicker>
+        
+    </VerticalStackLayout>   
+    
+</ContentPage>

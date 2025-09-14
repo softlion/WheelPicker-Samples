@@ -11,7 +11,7 @@
     <VerticalStackLayout Margin="20" Spacing="10">
 
         <Line BackgroundColor="LightGray" HeightRequest="1" />
-        <Label Text="Vapolia Wheel Picker for Maui, Xamarin, Forms" HorizontalOptions="Center" TextColor="DimGray" />
+        <Label Text="Vapolia Wheel Picker for Maui" HorizontalOptions="Center" TextColor="DimGray" />
         <Label Text="Basic Wheel" HorizontalOptions="Center" />
         <Line BackgroundColor="LightGray" HeightRequest="1" />
 
@@ -19,13 +19,12 @@
             ItemTextSelectedColor: android only. Ios uses the ItemTextColor.
             SelectionLinesColor: android only. Ios does not allow changing this color directly.
             -->
-        <wp:WheelPicker 
+        <wp:WheelPicker
             ItemsSourceMulti="{Binding PickerModel.ItemsSource}" 
-            HorizontalOptions="Fill"
             SelectedItemsIndex="0"
             Command="{Binding PickerModel.ItemSelectedCommand}" 
-            ItemTextFontSize="Medium"
-            ItemTextSelectedColor="Blue"
+            ItemTextFontSize="20"
+            ItemTextSelectedColor="DarkBlue"
             SelectionLinesColor="DeepSkyBlue"
             ItemTextColor="{OnPlatform iOS='Blue',Android='LightBlue'}"
         >

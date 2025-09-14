@@ -3,7 +3,8 @@
              xmlns:wp="clr-namespace:Vapolia.WheelPickers;assembly=Vapolia.WheelPicker"
              xmlns:views="clr-namespace:WheelPickerMauiDemo.Views"
              x:Class="WheelPickerMauiDemo.Views.SeparatorLine"
-             x:DataType="views:SeparatorLine">
+             x:DataType="views:SeparatorLine"
+             BackgroundColor="LightGoldenrodYellow">
 
     <ContentPage.Resources>
         <ResourceDictionary>
@@ -11,9 +12,9 @@
         </ResourceDictionary>
     </ContentPage.Resources>
 
-    <Grid BackgroundColor="LightGoldenrodYellow">
+    <VerticalStackLayout>
 
-        <wp:WheelPicker HorizontalOptions="Fill" VerticalOptions="Start"
+        <wp:WheelPicker
             HorizontalSpaceBetweenWheels="50"
             ItemsSource="{Binding MetricWeightItems}"
             SelectionLinesColor="{StaticResource BaseSeparatorColor}"
@@ -23,7 +24,7 @@
                 Width="*" IsCircular="True" RowHeight="110"
                 Alignment="Right" HorizontalOptions="Right">
                 <wp:WheelDefinition.ItemTemplate>
-                    <DataTemplate>
+                    <DataTemplate x:DataType="x:String">
                         <Grid BackgroundColor="#80E080E0">
                             <VerticalStackLayout>
                                 <Label BackgroundColor="MediumSpringGreen" Text="{Binding .}" VerticalOptions="Center" HorizontalOptions="Center" />
@@ -37,16 +38,18 @@
             
             <wp:WheelDefinition
                 Width="*" IsCircular="True" RowHeight="30"
-                Alignment="Left" HorizontalOptions="Left">
+                Alignment="Left" HorizontalOptions="Center">
                 <wp:WheelDefinition.ItemTemplate>
-                    <DataTemplate>
-                        <Label FontSize="20" BackgroundColor="Orange" HeightRequest="20" Text="{Binding .}" VerticalOptions="Center" />
+                    <DataTemplate x:DataType="x:String">
+                        <Border BackgroundColor="Orange">
+                            <Label FontSize="20" Text="{Binding .}" VerticalOptions="Center" />
+                        </Border>
                     </DataTemplate>
                 </wp:WheelDefinition.ItemTemplate>
             </wp:WheelDefinition>
             
         </wp:WheelPicker>
 
-    </Grid>
+    </VerticalStackLayout>
 
 </ContentPage>

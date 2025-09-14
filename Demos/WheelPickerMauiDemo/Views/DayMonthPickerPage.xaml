@@ -12,8 +12,8 @@
     <VerticalStackLayout Margin="20" Spacing="10">
 
         <BoxView BackgroundColor="LightGray" HeightRequest="1" />
-        <Label Text="Vapolia Wheel Picker for Maui, Xamarin, Forms" HorizontalOptions="Center" TextColor="DimGray" />
-        <Label Text="Basic Wheel" HorizontalOptions="Center" />
+        <Label Text="Vapolia Wheel Picker for Maui" HorizontalOptions="Center" TextColor="DimGray" />
+        <Label Text="Day of the month picker" HorizontalOptions="Center" />
         <BoxView BackgroundColor="LightGray" HeightRequest="1" />
 
         <Label Text="{Binding DayMonth.SelectedDate,StringFormat='Selection: \'{0:D}\''}" />

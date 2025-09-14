@@ -10,7 +10,7 @@ public partial class SeparatorLine : ContentPage
 
     public SeparatorLine()
     {
-        InitializeComponent();
         BindingContext = this;
+        InitializeComponent();
     }
 }

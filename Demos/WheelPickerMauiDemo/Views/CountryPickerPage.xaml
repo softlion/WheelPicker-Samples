@@ -12,8 +12,8 @@
     <VerticalStackLayout Margin="20" Spacing="10">
 
         <Line BackgroundColor="LightGray" HeightRequest="1" />
-        <Label Text="Vapolia Wheel Picker for Maui, Xamarin, Forms" HorizontalOptions="Center" TextColor="DimGray" />
-        <Label Text="Basic Wheel" HorizontalOptions="Center" />
+        <Label Text="Vapolia Wheel Picker for Maui" HorizontalOptions="Center" TextColor="DimGray" />
+        <Label Text="Country Picker" HorizontalOptions="Center" />
         <Line BackgroundColor="LightGray" HeightRequest="1" />
 
         <!-- <Label Text="{Binding PickerModel.SelectedItemsIndex,StringFormat='Selection: \'{0}\''}" /> -->
